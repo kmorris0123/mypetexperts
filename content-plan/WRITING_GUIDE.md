@@ -8,8 +8,9 @@ automation.
 1. **Every health or safety claim must come from a source you actually opened and read in this session.** Use
    reputable veterinary sources: Merck Veterinary Manual (merckvetmanual.com), ASPCA Animal Poison Control
    (aspca.org), Pet Poison Helpline (petpoisonhelpline.com), U.S. FDA Center for Veterinary Medicine (fda.gov),
-   International Cat Care (icatcare.org), AKC (akc.org), VCA Animal Hospitals (vcahospitals.com), Cornell Feline
-   Health Center (vet.cornell.edu), or peer-reviewed papers. Not other pet blogs.
+   International Cat Care (icatcare.org/articles/...), AKC (akc.org), Cornell Feline Health Center (vet.cornell.edu),
+   or peer-reviewed papers. Not other pet blogs. **Don't use VCA (vcahospitals.com)**: its terms forbid using AI to
+   rewrite its content. Skip any site whose terms forbid AI use.
 2. **Verify every source URL** returns HTTP 200 and is the real page, not a redirect to a homepage:
    `curl -sL -o /dev/null -w '%{http_code} %{url_effective}' -A 'Mozilla/5.0 (Macintosh)' URL`
    If a URL redirects somewhere generic or 404s, don't use it.
