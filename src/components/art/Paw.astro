@@ -1,0 +1,6 @@
+---
+interface Props { size?: number; class?: string }
+const { size, class: className } = Astro.props;
+---
+
+<svg viewBox="0 0 32 32" width={size} class={className} aria-hidden="true" focusable="false"><ellipse cx="6.6" cy="14.2" rx="2.7" ry="3.5"></ellipse><ellipse cx="12.4" cy="8.4" rx="2.8" ry="3.7"></ellipse><ellipse cx="19.6" cy="8.4" rx="2.8" ry="3.7"></ellipse><ellipse cx="25.4" cy="14.2" rx="2.7" ry="3.5"></ellipse><path d="M16 15.2c-4.4 0-8.3 4.1-8.3 7.9 0 2.6 1.9 4.1 4.2 4.1 1.6 0 2.6-.8 4.1-.8s2.5.8 4.1.8c2.3 0 4.2-1.5 4.2-4.1 0-3.8-3.9-7.9-8.3-7.9z"></path></svg>

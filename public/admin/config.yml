@@ -1,0 +1,93 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+# Admin for mypetexperts.com (Sveltia CMS). Open https://mypetexperts.com/admin/ and choose "Sign In with Token".
+# Every save commits to GitHub, and the site rebuilds and goes live in about a minute.
+
+backend:
+  name: github
+  repo: kmorris0123/mypetexperts
+  branch: main
+
+site_url: https://mypetexperts.com
+display_url: https://mypetexperts.com
+media_folder: public/products
+public_folder: /products
+
+output:
+  omit_empty_optional_fields: true
+
+editor:
+  preview: false
+
+collections:
+  - name: articles
+    label: Articles
+    label_singular: Article
+    description: Guides and product roundups. Rules for writing them are in content-plan/WRITING_GUIDE.md.
+    folder: src/content/articles
+    extension: mdx
+    format: yaml-frontmatter
+    create: true
+    slug: '{{title}}'
+    summary: '{{title}} ({{pet}}, {{kind}}){{draft | ternary(" · DRAFT", "")}}'
+    sortable_fields: { fields: [pubDate, title], default: { field: pubDate, direction: descending } }
+    view_filters:
+      - { label: Dogs, field: pet, pattern: dogs }
+      - { label: Cats, field: pet, pattern: cats }
+      - { label: Product roundups, field: kind, pattern: roundup }
+      - { label: Drafts, field: draft, pattern: true }
+    fields:
+      - { name: title, label: Title }
+      - { name: description, label: Description, widget: text, hint: 'Shown in Google results and on cards. Max 170 characters.', pattern: ['^[\s\S]{1,170}$', 'Keep it under 170 characters'] }
+      - { name: pet, label: Pet, widget: select, options: [dogs, cats] }
+      - { name: kind, label: Type, widget: select, options: [{ label: Guide, value: guide }, { label: Product roundup, value: roundup }], default: guide }
+      - { name: pubDate, label: Published, widget: datetime, format: YYYY-MM-DD, time_format: false }
+      - { name: updatedDate, label: Last updated, widget: datetime, format: YYYY-MM-DD, time_format: false, required: false, hint: 'Set this when you meaningfully revise an article.' }
+      - { name: quickAnswer, label: Short answer, required: false, hint: 'For "Can dogs eat X?" guides, e.g. "No." or "Yes, in moderation."' }
+      - { name: quickNote, label: Handwritten note, required: false, hint: 'Optional 2-5 word aside next to the short answer, e.g. "not even one".' }
+      - { name: featured, label: Feature on home page, widget: boolean, default: false, required: false, hint: 'Only one guide should be featured.' }
+      - { name: hasAffiliateLinks, label: Has affiliate links, widget: boolean, default: false, required: false }
+      - { name: draft, label: Draft (hidden from the live site), widget: boolean, default: false, required: false }
+      - name: sources
+        label: Sources
+        label_singular: Source
+        widget: list
+        required: false
+        fields:
+          - { name: title, label: Title }
+          - { name: url, label: URL }
+      - name: body
+        label: Article
+        widget: markdown
+        modes: [raw]
+        hint: 'Components: <Callout type="danger|info|warn" title="...">...</Callout> and <ProductPick id="product-id">Why we picked it.</ProductPick>'
+
+  - name: data
+    label: Products
+    files:
+      - name: products
+        label: Products and affiliate links
+        file: src/data/products.yaml
+        fields:
+          - name: products
+            label: Products
+            label_singular: Product
+            widget: list
+            root: true
+            summary: '{{fields.name}}{{fields.href | ternary("", " · NEEDS AFFILIATE LINK")}}'
+            fields:
+              - { name: id, label: ID, hint: 'Lowercase-with-dashes. Used in articles as <ProductPick id="...">. Don''t change it once used.' }
+              - { name: name, label: Product name }
+              - { name: pet, label: Pet, widget: select, options: [dogs, cats] }
+              - { name: category, label: Category, hint: 'e.g. "No-pull dog harnesses"' }
+              - { name: award, label: Award, required: false, hint: 'e.g. "Best overall", "Best budget pick"' }
+              - { name: blurb, label: Short description, widget: text }
+              - { name: bestFor, label: Best for, required: false }
+              - { name: pros, label: Pros, widget: list, required: false }
+              - { name: cons, label: Cons, widget: list, required: false }
+              - { name: href, label: Affiliate link, required: false, hint: 'Paste your Amazon/Chewy affiliate URL. Products without one are hidden from the home page.' }
+              - { name: retailer, label: Retailer, default: Amazon, required: false }
+              - { name: image, label: Product photo, widget: image, required: false }
+              - { name: art, label: Fallback illustration, widget: select, options: [harness, fountain, bed, bowl, scratcher, wand], default: harness, required: false }
+              - { name: note, label: Handwritten note, required: false }
+              - { name: roundup, label: Roundup article slug, required: false, hint: 'e.g. best-no-pull-dog-harness' }
+              - { name: featured, label: Lead product on home page, widget: boolean, default: false, required: false }

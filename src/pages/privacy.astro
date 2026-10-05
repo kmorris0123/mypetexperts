@@ -1,0 +1,26 @@
+---
+import Page from '../layouts/Page.astro';
+import { SITE_NAME, CONTACT_EMAIL } from '../consts';
+---
+
+<Page title="Privacy Policy" description={`How ${SITE_NAME} handles your information.`}>
+  <!-- TODO: update this if you add analytics, ads, or an email newsletter. -->
+  <p class="muted">Last updated October 4, 2026</p>
+  <p>
+    {SITE_NAME} doesn't ask you to create an account and doesn't collect personal information through forms.
+  </p>
+  <h2>Hosting and server logs</h2>
+  <p>
+    Like most websites, our hosting provider may automatically log basic technical information, such as your IP address,
+    browser type, and the pages you visit, to keep the site secure and running.
+  </p>
+  <h2>Affiliate links and cookies</h2>
+  <p>
+    When you click an affiliate link, the retailer (for example, Amazon) may set cookies so it can credit us for the
+    referral. Those cookies are governed by the retailer's own privacy policy.
+  </p>
+  <h2>Fonts</h2>
+  <p>Our fonts load from Google Fonts, which means your browser connects to Google's servers to download them.</p>
+  <h2>Contact</h2>
+  <p>Questions? Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+</Page>

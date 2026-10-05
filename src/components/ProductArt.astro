@@ -1,0 +1,16 @@
+---
+import type { Product } from '../lib/articles';
+import Harness from './art/Harness.astro';
+import Fountain from './art/Fountain.astro';
+import Bed from './art/Bed.astro';
+import Bowl from './art/Bowl.astro';
+import Scratcher from './art/Scratcher.astro';
+import Wand from './art/Wand.astro';
+
+interface Props { product: Product; size: number }
+const { product, size } = Astro.props;
+const { image, name, art } = product.data;
+const Art = { harness: Harness, fountain: Fountain, bed: Bed, bowl: Bowl, scratcher: Scratcher, wand: Wand }[art];
+---
+
+{image ? <img src={image} alt={name} loading="lazy" /> : <Art size={size} />}

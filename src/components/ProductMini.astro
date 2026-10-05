@@ -1,0 +1,37 @@
+---
+import type { Product } from '../lib/articles';
+import ProductArt from './ProductArt.astro';
+import Arrow from './icons/Arrow.astro';
+
+interface Props { product: Product }
+const { product } = Astro.props;
+const { name, award, category, blurb, href, retailer, art, roundup } = product.data;
+const tint = art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'var(--art-sand)';
+---
+
+<article class="mini">
+  <div class="media" style={`background: ${tint}`}><ProductArt product={product} size={100} /></div>
+  <div class="body">
+    <p class="eyebrow">{category}{award && ` · ${award}`}</p>
+    <h3>{roundup ? <a class="plain" href={`/${roundup}/`}>{name}</a> : name}</h3>
+    <p class="muted">{blurb}</p>
+    {href ? (
+      <a class="btn" href={href} rel="sponsored nofollow noopener" target="_blank">Check price on {retailer} <Arrow size={16} kind="external" /></a>
+    ) : (
+      <span class="btn missing">Affiliate link needed</span>
+    )}
+  </div>
+</article>
+
+<style>
+  .mini { flex: 1 1 auto; display: flex; gap: 20px; padding: 18px; border: 1.5px solid var(--line); border-radius: 20px; background: var(--surface); }
+  .media { flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 124px; border-radius: 12px; overflow: hidden; }
+  .body { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
+  .eyebrow { margin: 0; font-size: 12.5px; }
+  h3 { margin: 0; font-size: 22px; line-height: 1.15; letter-spacing: -0.01em; }
+  h3 a { color: var(--ink); }
+  p.muted { margin: 0 0 8px; font-size: 15.5px; line-height: 1.45; }
+  .btn { align-self: flex-start; min-height: 46px; margin-top: auto; padding: 0 18px; font-size: 15.5px; }
+  .missing { background: var(--sand); color: var(--ink-2); border: 1.5px dashed var(--line); }
+  @media (max-width: 420px) { .media { width: 88px; } .btn { align-self: stretch; } }
+</style>

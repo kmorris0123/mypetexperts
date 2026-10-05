@@ -1,0 +1,100 @@
+/* Design tokens from "My Pet Experts Design A". */
+:root {
+  --ink: #1c1a17;
+  --ink-2: #5b564e;
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --sand: #f6efe3;
+  --sage: #dde9dc;
+  --line: #e6ded0;
+  --yellow: #ffcf33;
+  --pine: #114b3a;
+  --pine-text: #114b3a;
+  --tomato: #f0553a;
+  --tomato-ink: #b8371f;
+  --focus: #114b3a;
+  --on-pine: #ffffff;
+  /* Fixed colors for blocks that keep their color in dark mode (hero, pet tiles). */
+  --fixed-ink: #1c1a17;
+  /* Product image panels stay light in dark mode so dark-outlined art and photos stay visible. */
+  --art-sand: #f6efe3;
+  --art-sage: #dde9dc;
+
+  --display: 'Bricolage Grotesque', 'Arial Narrow', system-ui, sans-serif;
+  --body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --hand: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive;
+
+  --max: 1280px;
+  --gutter: 40px;
+  --prose: 46rem;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --ink: #f3eee6;
+    --ink-2: #b9b1a5;
+    --paper: #151412;
+    --surface: #1e1c19;
+    --sand: #29251f;
+    --sage: #1f2b25;
+    --line: #38332c;
+    --pine-text: #7fd1b0;
+    --tomato-ink: #ff8a70;
+    --focus: #7fd1b0;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+img { max-width: 100%; height: auto; }
+
+a { color: var(--pine-text); text-underline-offset: 4px; text-decoration-thickness: 2px; }
+a:hover { color: var(--tomato-ink); }
+a.plain, a.btn { text-decoration: none; }
+a.plain:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 12px; }
+
+h1, h2, h3 { font-family: var(--display); letter-spacing: -0.015em; text-wrap: balance; }
+h1 { font-weight: 800; font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.02; letter-spacing: -0.02em; margin: 0 0 1rem; }
+h2 { font-weight: 800; font-size: clamp(1.75rem, 4vw, 2.2rem); line-height: 1.08; margin: 2.75rem 0 0.85rem; }
+h3 { font-weight: 700; font-size: 1.4rem; line-height: 1.15; margin: 2rem 0 0.5rem; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+@media (max-width: 720px) { :root { --gutter: 16px; } }
+
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--tomato-ink); line-height: 1.35; }
+.muted { color: var(--ink-2); }
+.hand { font-family: var(--hand); font-weight: 700; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 0 24px; border-radius: 12px;
+  background: var(--pine); color: var(--on-pine); font-size: 16.5px; font-weight: 700; font-family: var(--body);
+}
+.btn:hover { color: var(--on-pine); filter: brightness(0.92); }
+.btn svg { flex-shrink: 0; }
+
+/* Long-form article text. */
+.prose { max-width: var(--prose); }
+.prose p, .prose li { font-size: 18px; line-height: 1.7; }
+.prose ul, .prose ol { padding-left: 1.3rem; }
+.prose li { margin: 0.35rem 0; }
+.prose table { width: 100%; border-collapse: collapse; font-size: 16px; display: block; overflow-x: auto; margin: 1.5rem 0; }
+.prose th, .prose td { text-align: left; padding: 0.7rem 0.85rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+.prose th { background: var(--sand); font-weight: 700; }
+.prose thead th:first-child { border-top-left-radius: 10px; }
+.prose thead th:last-child { border-top-right-radius: 10px; }
+
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 16px; top: 8px; background: var(--paper); padding: 0.5rem 0.75rem; z-index: 10; }

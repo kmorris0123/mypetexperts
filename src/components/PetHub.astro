@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import GuideList from './GuideList.astro';
+import Dog from './art/Dog.astro';
+import Cat from './art/Cat.astro';
+import { getArticles } from '../lib/articles';
+import { PETS, type Pet } from '../consts';
+
+interface Props { pet: Pet }
+const { pet } = Astro.props;
+const articles = await getArticles(pet);
+const guides = articles.filter((a) => a.data.kind === 'guide');
+const roundups = articles.filter((a) => a.data.kind === 'roundup');
+---
+
+<Base title={`${PETS[pet].label}: Guides and Product Picks`} description={PETS[pet].blurb}>
+  <div class="wrap">
+    <section class={`banner ${pet}`}>
+      <div>
+        <h1>{PETS[pet].label}</h1>
+        <p>{PETS[pet].blurb}</p>
+      </div>
+      {pet === 'dogs' ? <Dog size={230} class="art" /> : <Cat size={230} class="art" />}
+    </section>
+    {roundups.length > 0 && (
+      <section>
+        <h2>Product picks</h2>
+        <GuideList articles={roundups} />
+      </section>
+    )}
+    {guides.length > 0 && (
+      <section>
+        <h2>Guides</h2>
+        <GuideList articles={guides} />
+      </section>
+    )}
+    {articles.length === 0 && <p>New articles are on the way.</p>}
+  </div>
+</Base>
+
+<style>
+  .banner { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 240px; padding: 44px 48px; border-radius: 28px; }
+  .dogs { background: var(--pine); color: #fff; }
+  .cats { background: var(--tomato); color: var(--fixed-ink); }
+  h1 { font-size: clamp(3rem, 8vw, 80px); margin: 0 0 8px; }
+  .banner p { margin: 0; max-width: 420px; font-size: 19px; line-height: 1.45; position: relative; z-index: 1; }
+  .banner :global(.art) { flex-shrink: 0; margin-bottom: -96px; align-self: flex-end; }
+  section h2 { margin-top: 56px; }
+  @media (max-width: 600px) {
+    .banner { padding: 32px 26px; min-height: 200px; }
+    .banner :global(.art) { position: absolute; right: -10px; bottom: -40px; width: 150px; margin: 0; opacity: 0.95; }
+    .banner p { max-width: 62%; font-size: 17px; }
+  }
+</style>

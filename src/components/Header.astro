@@ -1,0 +1,43 @@
+---
+import { SITE_NAME } from '../consts';
+import Paw from './art/Paw.astro';
+const path = Astro.url.pathname;
+const links = [
+  { href: '/dogs/', label: 'Dogs' },
+  { href: '/cats/', label: 'Cats' },
+  { href: '/how-we-research/', label: 'How we research' },
+];
+---
+
+<div class="topbar">
+  We're reader-supported. If you buy through our links, we may earn a commission.{' '}<a href="/affiliate-disclosure/">How that works</a>
+</div>
+<header class="wrap">
+  <a class="brand plain" href="/">
+    <Paw size={32} class="paw" />
+    <span>{SITE_NAME}</span>
+  </a>
+  <nav aria-label="Main">
+    {links.map((l) => (
+      <a class="plain" href={l.href} aria-current={path.startsWith(l.href) ? 'page' : undefined}>{l.label}</a>
+    ))}
+  </nav>
+</header>
+
+<style>
+  .topbar { background: var(--pine); color: #fff; font-size: 14px; line-height: 1.4; text-align: center; padding: 10px 16px; }
+  .topbar a { color: #fff; font-weight: 600; }
+  header { min-height: 84px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0 24px; }
+  .brand { display: flex; align-items: center; gap: 10px; min-height: 48px; color: var(--ink); font-family: var(--display); font-weight: 800; font-size: 24px; letter-spacing: -0.02em; }
+  .brand:hover { text-decoration: none; color: var(--ink); }
+  .brand :global(.paw) { fill: var(--tomato); flex-shrink: 0; }
+  nav { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+  nav a { display: flex; align-items: center; min-height: 48px; padding: 0 16px; color: var(--ink); font-size: 16.5px; font-weight: 600; }
+  nav a[aria-current='page'] { text-decoration: underline; text-decoration-color: var(--tomato); text-decoration-thickness: 3px; text-underline-offset: 8px; }
+  @media (max-width: 720px) {
+    header { padding-top: 10px; padding-bottom: 6px; min-height: 0; }
+    .brand { font-size: 21px; }
+    nav { width: 100%; margin-left: -12px; }
+    nav a { padding: 0 12px; font-size: 15.5px; min-height: 44px; }
+  }
+</style>

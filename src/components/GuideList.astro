@@ -1,0 +1,12 @@
+---
+import type { Article } from '../lib/articles';
+import GuideRow from './GuideRow.astro';
+interface Props { articles: Article[] }
+const { articles } = Astro.props;
+---
+
+<div class="list">{articles.map((a) => <GuideRow article={a} />)}</div>
+
+<style>
+  .list { display: flex; flex-direction: column; border-top: 2px solid var(--ink); }
+</style>

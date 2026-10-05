@@ -1,0 +1,45 @@
+---
+import { SITE_NAME } from '../consts';
+import Paw from './art/Paw.astro';
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="wrap inner">
+    <div class="top">
+      <div class="about">
+        <div class="brand"><Paw size={28} class="paw" /><span>{SITE_NAME}</span></div>
+        <p>
+          We share general information, not veterinary advice. Always talk to your vet about your own pet. If you think
+          your pet has eaten something harmful, call your vet or the ASPCA Animal Poison Control Center at
+          <a href="tel:+18884264435" class="tel">(888) 426-4435</a> right away.
+        </p>
+      </div>
+      <nav aria-label="Footer">
+        <a class="plain" href="/about/">About</a>
+        <a class="plain" href="/affiliate-disclosure/">Affiliate disclosure</a>
+        <a class="plain" href="/how-we-research/">How we research</a>
+        <a class="plain" href="/privacy/">Privacy</a>
+      </nav>
+    </div>
+    <div class="bottom">
+      <span>As an Amazon Associate, {SITE_NAME} earns from qualifying purchases.</span>
+      <span>© {year} {SITE_NAME}</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer { margin-top: 72px; background: var(--pine); color: #fff; }
+  .inner { padding-top: 56px; padding-bottom: 36px; display: flex; flex-direction: column; gap: 36px; }
+  .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px 64px; }
+  .about { flex: 1 1 420px; max-width: 600px; display: flex; flex-direction: column; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 800; font-size: 21px; letter-spacing: -0.02em; }
+  .brand :global(.paw) { fill: var(--yellow); flex-shrink: 0; }
+  p { margin: 0; font-size: 15.5px; line-height: 1.6; color: #dce9e2; }
+  .tel { color: #fff; font-weight: 700; white-space: nowrap; }
+  nav { display: grid; grid-template-columns: repeat(2, minmax(0, auto)); gap: 0 48px; align-content: start; }
+  nav a { display: flex; align-items: center; min-height: 44px; font-size: 16px; font-weight: 600; color: #fff; }
+  .bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 32px; padding-top: 22px; border-top: 1px solid #2e6452; font-size: 14px; line-height: 1.5; color: #c9ddd3; }
+  @media (max-width: 720px) { .about { flex-basis: 100%; } }
+</style>

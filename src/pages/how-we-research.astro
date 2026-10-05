@@ -1,0 +1,42 @@
+---
+import Page from '../layouts/Page.astro';
+import { CONTACT_EMAIL } from '../consts';
+---
+
+<Page title="How We Research" description="How we write, source, and update our pet guides and product recommendations.">
+  <h2>Health and safety guides</h2>
+  <p>
+    Anything about food safety or pet health is based on published veterinary sources, such as the ASPCA Animal Poison
+    Control Center, the Merck Veterinary Manual, the U.S. FDA Center for Veterinary Medicine, and International Cat
+    Care. Each article lists its sources at the bottom so you can read them yourself.
+  </p>
+  <p>
+    Our guides are general information, not a diagnosis. When the right answer is "call your vet," we say so plainly.
+  </p>
+
+  <h2>Product recommendations</h2>
+  <p>
+    Our product picks are researched, not lab-tested. We compare manufacturer specifications, sizing and materials,
+    recall history, return policies, and patterns across large numbers of owner reviews, then explain who each product
+    is (and isn't) a good fit for. When we have personally used a product, we say so in the article. If we haven't,
+    we don't pretend otherwise.
+  </p>
+
+  <h2>How we use AI</h2>
+  <p>
+    We use AI tools to help research and draft articles. Every article is checked against the sources it cites before
+    it's published, and we don't publish health claims we can't back up with a reputable source.
+  </p>
+
+  <h2>Updates and corrections</h2>
+  <p>
+    Each article shows when it was last updated. We review popular articles regularly and fix errors as soon as we
+    find them. Spot something wrong? Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+  </p>
+
+  <h2>Affiliate links</h2>
+  <p>
+    Some links earn us a commission. That never decides what we recommend. See our
+    <a href="/affiliate-disclosure/">affiliate disclosure</a>.
+  </p>
+</Page>

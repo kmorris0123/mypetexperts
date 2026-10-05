@@ -1,0 +1,117 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import GuideList from '../components/GuideList.astro';
+import AffiliateNotice from '../components/AffiliateNotice.astro';
+import Callout from '../components/Callout.astro';
+import ProductPick from '../components/ProductPick.astro';
+import { getArticles, lastUpdated, formatDate, type Article } from '../lib/articles';
+import { PETS, SITE_NAME } from '../consts';
+
+export async function getStaticPaths() {
+  const articles = await getArticles();
+  return articles.map((article) => ({ params: { slug: article.id }, props: { article } }));
+}
+
+const { article } = Astro.props as { article: Article };
+const { title, description, pet, kind, pubDate, hasAffiliateLinks, sources, draft, quickAnswer, quickNote } = article.data;
+const updated = lastUpdated(article);
+const { Content, headings } = await render(article);
+const toc = headings.filter((h) => h.depth === 2);
+const related = (await getArticles(pet)).filter((a) => a.id !== article.id).slice(0, 3);
+const url = new URL(`/${article.id}/`, Astro.site).href;
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    datePublished: pubDate.toISOString(),
+    dateModified: updated.toISOString(),
+    mainEntityOfPage: url,
+    author: { '@type': 'Organization', name: SITE_NAME, url: Astro.site?.href },
+    publisher: { '@type': 'Organization', name: SITE_NAME, url: Astro.site?.href },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: PETS[pet].label, item: new URL(`/${pet}/`, Astro.site).href },
+      { '@type': 'ListItem', position: 2, name: title, item: url },
+    ],
+  },
+];
+---
+
+<Base title={title} description={description} schema={schema} noindex={draft}>
+  <article class="wrap">
+    <header class="prose">
+      <p class="eyebrow"><a class="plain" href={`/${pet}/`}>{PETS[pet].label}</a> · {kind === 'roundup' ? 'Product picks' : 'Guide'}</p>
+      <h1>{title}</h1>
+      <p class="lede">{description}</p>
+      <p class="meta">
+        Updated <time datetime={updated.toISOString()}>{formatDate(updated)}</time>
+        {sources.length > 0 && <>{' · '}<a href="#sources">{sources.length} vet sources</a></>}
+        {' · '}<a href="/how-we-research/">How we research</a>
+      </p>
+      {draft && <Callout type="warn" title="Draft">This article isn't published yet. It only shows up in local development.</Callout>}
+      {hasAffiliateLinks && <AffiliateNotice />}
+      {quickAnswer && (
+        <div class="verdict">
+          <span class="label">Short answer</span>
+          <span class="big">{quickAnswer}</span>
+          {quickNote && <span class="hand aside">{quickNote}</span>}
+        </div>
+      )}
+    </header>
+
+    {toc.length > 2 && (
+      <nav class="toc prose" aria-label="On this page">
+        <p class="label">On this page</p>
+        <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+      </nav>
+    )}
+
+    <div class="prose body">
+      <Content components={{ Callout, ProductPick }} />
+    </div>
+
+    {sources.length > 0 && (
+      <section class="prose sources">
+        <h2 id="sources">Sources</h2>
+        <ol>
+          {sources.map((s) => <li><a href={s.url} rel="noopener" target="_blank">{s.title}</a></li>)}
+        </ol>
+      </section>
+    )}
+
+    {related.length > 0 && (
+      <section class="related">
+        <h2>More for {PETS[pet].label.toLowerCase()}</h2>
+        <GuideList articles={related} />
+      </section>
+    )}
+  </article>
+</Base>
+
+<style>
+  article { padding-top: 48px; }
+  .eyebrow { margin: 0 0 14px; }
+  .eyebrow a { color: inherit; }
+  .lede { font-size: 21px; line-height: 1.5; color: var(--ink-2); margin: 0 0 14px; }
+  .meta { font-size: 15px; font-weight: 600; color: var(--ink-2); }
+  .verdict { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; background: var(--sand); border-radius: 24px; padding: 26px 32px; margin: 1.5rem 0; }
+  .verdict .label { flex-basis: 100%; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
+  .big { font-family: var(--display); font-weight: 800; font-size: clamp(64px, 11vw, 96px); line-height: 0.9; letter-spacing: -0.03em; color: var(--tomato-ink); }
+  .aside { font-size: 28px; line-height: 1; transform: rotate(-3deg); }
+  .toc { background: var(--sand); border-radius: 20px; padding: 22px 28px; margin: 1.75rem 0; }
+  .toc .label { font-family: var(--display); font-weight: 800; font-size: 1.15rem; margin: 0 0 6px; }
+  .toc ol { margin: 0; padding-left: 1.3rem; }
+  .toc li { margin: 4px 0; font-size: 16.5px; }
+  .body :global(h2) { scroll-margin-top: 16px; }
+  .sources { margin-top: 3.5rem; padding-top: 0.5rem; border-top: 2px solid var(--ink); }
+  .sources h2 { font-size: 1.5rem; margin-top: 1.25rem; }
+  .sources li { font-size: 15.5px; }
+  .related { margin-top: 3.5rem; max-width: 60rem; }
+</style>

@@ -1,0 +1,72 @@
+---
+/**
+ * A product card. In .mdx roundups: <ProductPick id="ruffwear-front-range">Why we picked it.</ProductPick>
+ * Product details (name, pros, link...) come from src/data/products.yaml.
+ */
+import { getEntry } from 'astro:content';
+import ProductArt from './ProductArt.astro';
+import Arrow from './icons/Arrow.astro';
+
+interface Props { id: string; showRoundupLink?: boolean }
+const { id, showRoundupLink = false } = Astro.props;
+const product = await getEntry('products', id);
+if (!product) throw new Error(`ProductPick: no product "${id}" in src/data/products.yaml`);
+const { name, award, category, blurb, bestFor, pros, cons, href, retailer, note, roundup, art } = product.data;
+const tint = art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'var(--art-sand)';
+const hasBody = Astro.slots.has('default');
+---
+
+<article class="pick">
+  <div class="media" style={`background: ${tint}`}>
+    <ProductArt product={product} size={220} />
+    {award && <span class="award">{award}</span>}
+    {note && <span class="note hand">{note}</span>}
+  </div>
+  <div class="body">
+    <p class="eyebrow">{category}</p>
+    <h3>{name}</h3>
+    {bestFor && <p class="best"><strong>Best for:</strong> {bestFor}</p>}
+    {hasBody ? <div class="why"><slot /></div> : <p class="why">{blurb}</p>}
+    {(pros.length > 0 || cons.length > 0) && (
+      <ul class="pc">
+        {pros.map((p) => (
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" class="ok"><path d="M20 6 9 17l-5-5" /></svg><span class="sr">Pro: </span>{p}</li>
+        ))}
+        {cons.map((c) => (
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" class="meh"><path d="M5 12h14" /></svg><span class="sr">Con: </span>{c}</li>
+        ))}
+      </ul>
+    )}
+    <div class="actions">
+      {href ? (
+        <a class="btn" href={href} rel="sponsored nofollow noopener" target="_blank">Check price on {retailer} <Arrow size={17} kind="external" /></a>
+      ) : (
+        <span class="btn missing">Affiliate link needed</span>
+      )}
+      {showRoundupLink && roundup && <a href={`/${roundup}/`}>Read the full roundup</a>}
+    </div>
+  </div>
+</article>
+
+<style>
+  .pick { display: flex; flex-wrap: wrap; border: 1.5px solid var(--ink); border-radius: 20px; overflow: hidden; background: var(--surface); margin: 2rem 0; }
+  .media { position: relative; flex: 1 1 260px; min-height: 280px; display: flex; align-items: center; justify-content: center; padding: 48px 20px 24px; }
+  .media img { max-height: 260px; object-fit: contain; }
+  .award { position: absolute; left: 16px; top: 16px; padding: 7px 14px; border-radius: 8px; background: var(--fixed-ink); color: #fff; font-size: 13.5px; font-weight: 700; line-height: 1.2; }
+  .note { position: absolute; right: 18px; top: 18px; max-width: 150px; font-size: 26px; line-height: 1; color: #b8371f; text-align: center; transform: rotate(5deg); }
+  .body { flex: 1.2 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 30px 32px; }
+  .eyebrow { margin: 0; }
+  h3 { margin: 0; font-size: clamp(1.5rem, 3vw, 1.95rem); line-height: 1.1; }
+  .best, .why, .why :global(p) { margin: 0; font-size: 16.5px; line-height: 1.55; }
+  .why, .why :global(p) { color: var(--ink-2); }
+  .pc { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 16px; }
+  .pc li { display: flex; gap: 10px; align-items: flex-start; margin: 0; font-size: 16px; line-height: 1.5; }
+  .pc svg { flex-shrink: 0; margin-top: 3px; fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .ok { stroke: var(--pine-text); }
+  .meh { stroke: var(--ink-2); }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; margin-top: auto; padding-top: 10px; }
+  .actions a:not(.btn) { font-size: 15.5px; font-weight: 600; }
+  .missing { background: var(--sand); color: var(--ink-2); border: 1.5px dashed var(--line); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  @media (max-width: 600px) { .body { padding: 24px 20px; } .media { min-height: 220px; } }
+</style>

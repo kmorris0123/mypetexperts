@@ -1,0 +1,8 @@
+---
+interface Props { size?: number; kind?: 'right' | 'external' }
+const { size = 18, kind = 'right' } = Astro.props;
+---
+
+<svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round">
+  {kind === 'right' ? <><path d="M5 12h14" /><path d="M12 5l7 7-7 7" /></> : <><path d="M7 17 17 7" /><path d="M8 7h9v9" /></>}
+</svg>

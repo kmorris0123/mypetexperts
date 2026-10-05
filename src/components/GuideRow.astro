@@ -1,0 +1,27 @@
+---
+import type { Article } from '../lib/articles';
+import { lastUpdated, formatDate } from '../lib/articles';
+import { PETS } from '../consts';
+
+interface Props { article: Article }
+const { article } = Astro.props;
+const { title, description, pet, kind, sources, draft } = article.data;
+const n = sources.length;
+---
+
+<a class="row plain" href={`/${article.id}/`}>
+  <span class="eyebrow muted">{PETS[pet].label} · {kind === 'roundup' ? 'Product picks' : 'Guide'}{draft && ' · Draft'}</span>
+  <span class="title">{title}</span>
+  <span class="desc">{description}</span>
+  <span class="meta">Updated {formatDate(lastUpdated(article))}{n > 0 && ` · ${n} vet source${n === 1 ? '' : 's'}`}</span>
+</a>
+
+<style>
+  .row { display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid var(--line); color: var(--ink); }
+  .row:hover { color: var(--ink); text-decoration: none; }
+  .row:hover .title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .eyebrow { color: var(--ink-2); }
+  .title { font-family: var(--display); font-weight: 700; font-size: clamp(1.35rem, 3vw, 1.7rem); line-height: 1.12; letter-spacing: -0.015em; }
+  .desc { font-size: 16px; line-height: 1.5; color: var(--ink-2); }
+  .meta { font-size: 14px; font-weight: 600; color: var(--ink-2); }
+</style>

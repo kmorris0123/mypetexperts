@@ -1,0 +1,18 @@
+---
+import Page from '../layouts/Page.astro';
+import { SITE_NAME, CONTACT_EMAIL } from '../consts';
+---
+
+<Page title="About" description={`Who runs ${SITE_NAME} and what we're trying to do.`}>
+  <!-- TODO: replace this with a short, real bio: who you are, your pets, and why you started the site. -->
+  <p>
+    {SITE_NAME} helps dog and cat owners make better everyday decisions about what's safe to feed, what's worth
+    buying, and when it's time to call the vet.
+  </p>
+  <p>
+    We keep things simple: clear answers up front, sources you can check yourself, and product recommendations we'd be
+    comfortable giving a friend. If something on the site is wrong or out of date, we want to know.
+  </p>
+  <h2>Contact</h2>
+  <p>Email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. We read everything, but we can't give medical advice for individual pets. Please contact your vet for that.</p>
+</Page>

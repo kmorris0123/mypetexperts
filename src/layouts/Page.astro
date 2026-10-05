@@ -1,0 +1,17 @@
+---
+import Base from './Base.astro';
+interface Props { title: string; description?: string }
+const { title, description } = Astro.props;
+---
+
+<Base title={title} description={description}>
+  <div class="wrap prose page">
+    <h1>{title}</h1>
+    <slot />
+  </div>
+</Base>
+
+<style>
+  .page { padding-top: 48px; }
+  .page :global(p), .page :global(li) { font-size: 18px; line-height: 1.7; }
+</style>
