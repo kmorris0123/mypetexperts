@@ -5,6 +5,8 @@ import GuideList from '../components/GuideList.astro';
 import AffiliateNotice from '../components/AffiliateNotice.astro';
 import Callout from '../components/Callout.astro';
 import ProductPick from '../components/ProductPick.astro';
+import FeaturedImage from '../components/FeaturedImage.astro';
+import Photo from '../components/Photo.astro';
 import { getArticles, lastUpdated, formatDate, type Article } from '../lib/articles';
 import { PETS, SITE_NAME } from '../consts';
 
@@ -14,7 +16,8 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props as { article: Article };
-const { title, description, pet, kind, pubDate, hasAffiliateLinks, sources, draft, quickAnswer, quickNote } = article.data;
+const { title, description, pet, kind, pubDate, hasAffiliateLinks, sources, draft, photos } = article.data;
+const ogImage = `/og/${article.id}.png`;
 const updated = lastUpdated(article);
 const { Content, headings } = await render(article);
 const toc = headings.filter((h) => h.depth === 2);
@@ -32,6 +35,7 @@ const schema = [
     mainEntityOfPage: url,
     author: { '@type': 'Organization', name: SITE_NAME, url: Astro.site?.href },
     publisher: { '@type': 'Organization', name: SITE_NAME, url: Astro.site?.href },
+    image: new URL(ogImage, Astro.site).href,
   },
   {
     '@context': 'https://schema.org',
@@ -44,7 +48,7 @@ const schema = [
 ];
 ---
 
-<Base title={title} description={description} schema={schema} noindex={draft}>
+<Base title={title} description={description} schema={schema} noindex={draft} image={ogImage}>
   <article class="wrap">
     <header class="prose">
       <p class="eyebrow"><a class="plain" href={`/${pet}/`}>{PETS[pet].label}</a> · {kind === 'roundup' ? 'Product picks' : 'Guide'}</p>
@@ -57,13 +61,7 @@ const schema = [
       </p>
       {draft && <Callout type="warn" title="Draft">This article isn't published yet. It only shows up in local development.</Callout>}
       {hasAffiliateLinks && <AffiliateNotice />}
-      {quickAnswer && (
-        <div class="verdict">
-          <span class="label">Short answer</span>
-          <span class="big">{quickAnswer}</span>
-          {quickNote && <span class="hand aside">{quickNote}</span>}
-        </div>
-      )}
+      <FeaturedImage article={article} class="hero" />
     </header>
 
     {toc.length > 2 && (
@@ -74,7 +72,7 @@ const schema = [
     )}
 
     <div class="prose body">
-      <Content components={{ Callout, ProductPick }} />
+      <Content components={{ Callout, ProductPick, Photo }} photos={photos} />
     </div>
 
     {sources.length > 0 && (
@@ -101,10 +99,7 @@ const schema = [
   .eyebrow a { color: inherit; }
   .lede { font-size: 21px; line-height: 1.5; color: var(--ink-2); margin: 0 0 14px; }
   .meta { font-size: 15px; font-weight: 600; color: var(--ink-2); }
-  .verdict { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; background: var(--sand); border-radius: 24px; padding: 26px 32px; margin: 1.5rem 0; }
-  .verdict .label { flex-basis: 100%; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
-  .big { font-family: var(--display); font-weight: 800; font-size: clamp(64px, 11vw, 96px); line-height: 0.9; letter-spacing: -0.03em; color: var(--tomato-ink); }
-  .aside { font-size: 28px; line-height: 1; transform: rotate(-3deg); }
+  header :global(.hero) { margin: 1.5rem 0 0.5rem; }
   .toc { background: var(--sand); border-radius: 20px; padding: 22px 28px; margin: 1.75rem 0; }
   .toc .label { font-family: var(--display); font-weight: 800; font-size: 1.15rem; margin: 0 0 6px; }
   .toc ol { margin: 0; padding-left: 1.3rem; }

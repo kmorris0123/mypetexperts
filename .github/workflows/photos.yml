@@ -1,0 +1,44 @@
+# Downloads Pexels photos requested in article frontmatter (photos: - query: ...),
+# commits them, and redeploys. Runs when articles change on main (e.g. edits from the admin).
+name: Fetch article photos
+
+on:
+  push:
+    branches: [main]
+    paths: ['src/content/articles/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: photos
+  cancel-in-progress: false
+
+jobs:
+  photos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Download photos
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: node scripts/fetch-photos.mjs
+      - name: Commit and redeploy if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "No new photos."; exit 0; fi
+          npm run build
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A src/content/articles src/assets/photos content-plan/used-photos.json
+          git commit -m "Add Pexels photos"
+          git push origin HEAD:main
+          gh workflow run deploy.yml --ref main

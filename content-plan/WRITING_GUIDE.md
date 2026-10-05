@@ -51,6 +51,28 @@ sources:
 
 Do not set `featured` (only one article is featured on the home page).
 
+The featured image at the top of the article is generated automatically from the title, `quickAnswer` and `quickNote`.
+For long titles that aren't "Can [pet] eat [food]?", add `heroText:` with a short 3-6 word version.
+
+## Photos
+
+Add 1 stock photo per article (2 for articles over 1,000 words). In the frontmatter, list a Pexels search query:
+
+```yaml
+photos:
+  - query: 'golden retriever eating apple slice'
+```
+
+Then place it in the body, usually just before the second `##` heading:
+
+```mdx
+<Photo {...props.photos[0]} />
+```
+
+A GitHub Action downloads a matching photo and fills in the image, alt text and credit; don't add `src` yourself.
+Queries should be simple and concrete (a pet, a food, a setting). Never choose a query that shows a pet eating
+something the article says is dangerous.
+
 ## Components (available without importing)
 
 - `<Callout type="danger" title="...">...</Callout>`: the emergency box. **Required** near the top of any article

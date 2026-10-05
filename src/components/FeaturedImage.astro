@@ -1,0 +1,17 @@
+---
+import type { Article } from '../lib/articles';
+import { featuredSvg, specFor } from '../lib/featured';
+
+interface Props { article: Article; class?: string }
+const { article, class: className } = Astro.props;
+const spec = specFor(article);
+const label = [`${spec.kicker} ${spec.subject}`, spec.verdict, spec.note].filter(Boolean).join(' ');
+const svg = featuredSvg(spec, { title: label });
+---
+
+<div class:list={['featured', className]} set:html={svg} />
+
+<style>
+  .featured { line-height: 0; border-radius: 20px; overflow: hidden; }
+  .featured :global(svg) { width: 100%; height: auto; display: block; }
+</style>

@@ -2,6 +2,7 @@
 import type { Article } from '../lib/articles';
 import { lastUpdated, formatDate } from '../lib/articles';
 import { PETS } from '../consts';
+import FeaturedImage from './FeaturedImage.astro';
 
 interface Props { article: Article }
 const { article } = Astro.props;
@@ -10,14 +11,20 @@ const n = sources.length;
 ---
 
 <a class="row plain" href={`/${article.id}/`}>
+  <FeaturedImage article={article} class="thumb" />
+  <span class="text">
   <span class="eyebrow muted">{PETS[pet].label} · {kind === 'roundup' ? 'Product picks' : 'Guide'}{draft && ' · Draft'}</span>
   <span class="title">{title}</span>
   <span class="desc">{description}</span>
   <span class="meta">Updated {formatDate(lastUpdated(article))}{n > 0 && ` · ${n} vet source${n === 1 ? '' : 's'}`}</span>
+  </span>
 </a>
 
 <style>
-  .row { display: flex; flex-direction: column; gap: 6px; padding: 22px 0; border-bottom: 1px solid var(--line); color: var(--ink); }
+  .row { display: flex; align-items: flex-start; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--line); color: var(--ink); }
+  .row :global(.thumb) { flex: 0 0 200px; border-radius: 12px; }
+  .text { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  @media (max-width: 600px) { .row { gap: 14px; } .row :global(.thumb) { flex-basis: 112px; border-radius: 8px; } }
   .row:hover { color: var(--ink); text-decoration: none; }
   .row:hover .title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
   .eyebrow { color: var(--ink-2); }

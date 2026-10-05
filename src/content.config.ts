@@ -4,7 +4,7 @@ import { z } from 'astro/zod';
 
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/articles' }),
-  schema: z.object({
+  schema: ({ image }) => z.object({
     title: z.string(),
     // Used for the meta description and article cards.
     description: z.string().max(170),
@@ -22,6 +22,22 @@ const articles = defineCollection({
     quickNote: z.string().optional(),
     // Shown in the big card on the home page.
     featured: z.boolean().default(false),
+    // Short text for the featured image when the title is long (non "Can X eat Y" articles).
+    heroText: z.string().optional(),
+    // Stock photos used inside the article with <Photo n={0} />. Add entries with just a `query`;
+    // scripts/fetch-photos.mjs downloads a matching Pexels photo and fills in src, alt and credit.
+    photos: z
+      .array(
+        z.object({
+          query: z.string().optional(),
+          src: image().optional(),
+          alt: z.string().optional(),
+          credit: z.string().optional(),
+          creditUrl: z.url().optional(),
+          pexelsId: z.number().optional(),
+        }),
+      )
+      .default([]),
     sources: z.array(z.object({ title: z.string(), url: z.url() })).default([]),
   }),
 });
