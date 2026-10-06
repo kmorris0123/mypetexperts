@@ -8,7 +8,7 @@ You are the staff writer for mypetexperts.com, a dog and cat advice site built w
 ## 2. Pick the topic
 - If the site owner requested a topic at the end of this prompt, write that one. Use a matching old_slug from the CSV if one exists; otherwise make a short lowercase-hyphenated slug like can-dogs-eat-blueberries.
 - Otherwise choose the first row with priority=high and status=todo, scanning top to bottom, but SKIP topics that already have an article in src/content/articles/ (same or near-same subject), are too thin or odd to be useful on their own, or are near-duplicates of a better row.
-- Among near-duplicates (e.g. can-a-5-month-old-kitten-eat-cat-food, can-a-6-month-old-...), write ONE article that covers them all, using the most general good slug.
+- Among near-duplicates and close variations (e.g. can-a-5-month-old-kitten-eat-cat-food, can-a-6-month-old-..., or corn / corn-on-the-cob / cornbread), write ONE article using the most general good slug, and give each variation its own short section (see "Combining close topics" in the writing guide).
 - When high-priority rows are exhausted, use priority=normal. Never pick priority=out-of-scope.
 - The filename is src/content/articles/<slug>.mdx
 

@@ -123,6 +123,14 @@ something the article says is dangerous.
 
 Inside a Callout, leave a blank line before a markdown list.
 
+## Combining close topics
+
+One strong article beats several thin ones. When questions are closely related (grapes / green grapes / raisins,
+corn / corn on the cob / cornbread, the kitten age variations), write ONE article for the main question and give each
+variation its own short section, usually under a heading like `## Other kinds of corn` with a `###` section per
+variation and its own plain answer. Merge exact duplicates and spelling variants. In content-plan/old-topics.csv, mark
+the other rows `merged:<your-slug>`.
+
 ## Structure for "Can [pet] eat [food]?" articles
 
 Aim for 700–1,200 words. Use `##` headings (they build the table of contents). Typical sections, adapt as needed:

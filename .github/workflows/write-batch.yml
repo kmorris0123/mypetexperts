@@ -63,7 +63,11 @@ jobs:
 
           BATCH MODE (this overrides sections 2 and 5 above):
           - Write exactly this article: title \"$TITLE\", pet: $PET, file $FILE. Do not pick a different topic.
-          - Older questions this article should also answer where it makes sense (e.g. raw vs cooked, specific products): $COVERS
+          - This article replaces these older, closely related pages: $COVERS
+            Cover them as sub-topics: add a section such as \"## Other kinds of [food]\" with a short ### section for each distinct
+            variation (e.g. raw vs cooked, a specific dish, a brand-name product), each with its own plain answer. Merge
+            duplicates (spelling variants, same thing twice) into one section, and skip any that are irrelevant or can't be
+            sourced. Each sub-topic must follow the same sourcing rules as the rest of the article.
           - Do NOT edit content-plan/old-topics.csv. Only create $FILE.
           - Only link to articles that already existed in src/content/articles/ when you started." \
               --model claude-sonnet-5-5 \
