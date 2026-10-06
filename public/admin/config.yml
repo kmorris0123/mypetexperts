@@ -44,6 +44,7 @@ collections:
       - { name: pubDate, label: Published, widget: datetime, format: YYYY-MM-DD, time_format: false }
       - { name: updatedDate, label: Last updated, widget: datetime, format: YYYY-MM-DD, time_format: false, required: false, hint: 'Set this when you meaningfully revise an article.' }
       - { name: quickAnswer, label: Short answer, required: false, hint: 'For "Can dogs eat X?" guides, e.g. "No." or "Yes, in moderation."' }
+      - { name: verdict, label: Short answer color, widget: select, required: false, options: [{ label: 'Green: safe / fine', value: yes }, { label: 'Yellow: be careful / only sometimes', value: caution }, { label: 'Red: not safe', value: no }] }
       - { name: quickNote, label: Handwritten note, required: false, hint: 'Optional 2-5 word aside next to the short answer, e.g. "not even one".' }
       - { name: featured, label: Feature on home page, widget: boolean, default: false, required: false, hint: 'Only one guide should be featured.' }
       - { name: hasAffiliateLinks, label: Has affiliate links, widget: boolean, default: false, required: false }

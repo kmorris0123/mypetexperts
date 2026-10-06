@@ -22,6 +22,8 @@ const articles = defineCollection({
     // For "Can dogs eat X?" style guides: the one-word answer ("No.", "Yes.", "Sometimes.")
     // and an optional handwritten aside. Shown big on the home page and at the top of the article.
     quickAnswer: z.string().optional(),
+    // Colors the short-answer box: yes = green (fine), caution = yellow (careful / only sometimes), no = red (dangerous).
+    verdict: z.enum(['yes', 'caution', 'no']).optional(),
     quickNote: z.string().optional(),
     // Shown in the big card on the home page.
     featured: z.boolean().default(false),

@@ -19,6 +19,16 @@
   /* Product image panels stay light in dark mode so dark-outlined art and photos stay visible. */
   --art-sand: #f6efe3;
   --art-sage: #dde9dc;
+  /* Short-answer box colors: green = safe, yellow = be careful, red = not safe. */
+  --v-yes-bg: #e3f1e6;
+  --v-yes-line: #8fc49f;
+  --v-yes-ink: #1d6b3a;
+  --v-caution-bg: #fff4cc;
+  --v-caution-line: #e8c547;
+  --v-caution-ink: #8a5a00;
+  --v-no-bg: #fde4df;
+  --v-no-line: #ef9a88;
+  --v-no-ink: #b3261e;
 
   --display: 'Bricolage Grotesque', 'Arial Narrow', system-ui, sans-serif;
   --body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -42,6 +52,15 @@
     --pine-text: #7fd1b0;
     --tomato-ink: #ff8a70;
     --focus: #7fd1b0;
+    --v-yes-bg: #17291e;
+    --v-yes-line: #2f6b45;
+    --v-yes-ink: #7fd69b;
+    --v-caution-bg: #2c2512;
+    --v-caution-line: #7a6320;
+    --v-caution-ink: #ffd166;
+    --v-no-bg: #33191a;
+    --v-no-line: #8a3a33;
+    --v-no-ink: #ff8f7f;
     color-scheme: dark;
   }
 }

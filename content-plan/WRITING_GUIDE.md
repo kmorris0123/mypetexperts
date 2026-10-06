@@ -61,6 +61,9 @@ These appear in the big short-answer box at the top of the article, so they must
 - `quickNote`: 2-5 lowercase words that add the single most useful detail. Good: 'not even one' 'never raw'
   'slices only, no core' 'kitten food until age 1'.
 - Test: would a 10-year-old know exactly what to do after reading just these two lines? If not, rewrite them.
+- `verdict` sets the box color and must match the answer: `yes` when it's fine to share (even in small amounts),
+  `caution` when it's only okay sometimes, only in a certain form, or depends on the label, `no` when it's toxic or
+  dangerous. When unsure between two, pick the safer one (caution over yes, no over caution).
 
 ## File format
 
@@ -75,6 +78,7 @@ teaser: 'A curiosity line for cards on the site, max 170 characters. Must NOT gi
 pet: dogs                                      # dogs | cats
 kind: guide                                    # guide | roundup
 pubDate: 2026-10-05                            # today's date
+verdict: yes                                   # yes (green, fine) | caution (yellow, careful/only sometimes) | no (red, dangerous)
 quickAnswer: 'Yes, a little.'                 # 2-5 plain words, see "The short answer" above
 quickNote: 'peeled, in small slices'           # optional handwritten aside, 2-5 words, lowercase
 sources:

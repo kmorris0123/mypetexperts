@@ -16,12 +16,21 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props as { article: Article };
-const { title, description, pet, kind, pubDate, hasAffiliateLinks, sources, draft, photos, quickAnswer, quickNote } = article.data;
+const { title, description, pet, kind, pubDate, hasAffiliateLinks, sources, draft, photos, quickAnswer, quickNote, verdict } = article.data;
+const VERDICT = {
+  yes: { label: 'Safe', icon: 'M20 6 9 17l-5-5' },
+  caution: { label: 'Be careful', icon: 'M12 7v6M12 17h.01' },
+  no: { label: 'Not safe', icon: 'M18 6 6 18M6 6l12 12' },
+} as const;
+const v = verdict ? VERDICT[verdict] : undefined;
 const ogImage = `/og/${article.id}.png`;
 const updated = lastUpdated(article);
 const { Content, headings } = await render(article);
 const toc = headings.filter((h) => h.depth === 2);
 const related = (await getArticles(pet)).filter((a) => a.id !== article.id).slice(0, 3);
+const more = (await getArticles())
+  .filter((a) => a.id !== article.id && !related.includes(a) && !a.data.draft)
+  .slice(0, 4);
 const url = new URL(`/${article.id}/`, Astro.site).href;
 
 const schema = [
@@ -49,7 +58,8 @@ const schema = [
 ---
 
 <Base title={title} description={description} schema={schema} noindex={draft} image={ogImage}>
-  <article class="wrap">
+  <article class="wrap layout">
+    <div class="main">
     <header class="prose">
       <p class="eyebrow"><a class="plain" href={`/${pet}/`}>{PETS[pet].label}</a> · {kind === 'roundup' ? 'Product picks' : 'Guide'}</p>
       <h1>{title}</h1>
@@ -63,8 +73,15 @@ const schema = [
       {hasAffiliateLinks && <AffiliateNotice />}
       <FeaturedImage article={article} class="hero" />
       {quickAnswer && (
-        <div class="verdict">
-          <span class="label">Short answer</span>
+        <div class:list={['verdict', verdict]}>
+          <span class="label">
+            {v && (
+              <span class="badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path d={v.icon} /></svg>
+              </span>
+            )}
+            Short answer{v && <>{' · '}<strong>{v.label}</strong></>}
+          </span>
           <span class="big">{quickAnswer}</span>
           {quickNote && <span class="hand aside">{quickNote}</span>}
         </div>
@@ -72,7 +89,7 @@ const schema = [
     </header>
 
     {toc.length > 2 && (
-      <nav class="toc prose" aria-label="On this page">
+      <nav class="toc prose inline-toc" aria-label="On this page">
         <p class="label">On this page</p>
         <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
       </nav>
@@ -97,7 +114,60 @@ const schema = [
         <GuideList articles={related} />
       </section>
     )}
+    </div>
+
+    <aside class="side" aria-label="Sidebar">
+      <div class="sticky">
+        {toc.length > 2 && (
+          <nav class="side-box side-toc" aria-label="On this page (sidebar)">
+            <p class="side-title">On this page</p>
+            <ol>{toc.map((h) => <li><a class="plain" href={`#${h.slug}`} data-toc={h.slug}>{h.text}</a></li>)}</ol>
+          </nav>
+        )}
+        <div class="side-box emergency">
+          <p class="side-title">Pet emergency?</p>
+          <p>If your pet ate something it shouldn't have, call your vet or a 24/7 poison hotline now.</p>
+          <a class="call" href="tel:+18884264435">ASPCA: (888) 426-4435</a>
+          <a class="call" href="tel:+18557647661">Pet Poison Helpline: (855) 764-7661</a>
+          <p class="fine">Fees may apply.</p>
+        </div>
+        {more.length > 0 && (
+          <div class="side-box more">
+            <p class="side-title">More guides</p>
+            {more.map((a) => (
+              <a class="mini plain" href={`/${a.id}/`}>
+                <FeaturedImage article={a} class="mini-img" />
+                <span>{a.data.title}</span>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </aside>
   </article>
+
+  <script>
+    // Highlight the sidebar table of contents entry for the section being read.
+    const links = new Map(
+      [...document.querySelectorAll<HTMLAnchorElement>('[data-toc]')].map((a) => [a.dataset.toc!, a]),
+    );
+    if (links.size) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (!e.isIntersecting) continue;
+            links.forEach((a) => a.removeAttribute('aria-current'));
+            links.get(e.target.id)?.setAttribute('aria-current', 'true');
+          }
+        },
+        { rootMargin: '0px 0px -70% 0px' },
+      );
+      links.forEach((_, id) => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    }
+  </script>
 </Base>
 
 <style>
@@ -107,9 +177,14 @@ const schema = [
   .lede { font-size: 21px; line-height: 1.5; color: var(--ink-2); margin: 0 0 14px; }
   .meta { font-size: 15px; font-weight: 600; color: var(--ink-2); }
   header :global(.hero) { margin: 1.5rem 0 0.5rem; }
-  .verdict { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; background: var(--sand); border-radius: 24px; padding: 22px 28px; margin: 1rem 0 1.5rem; }
-  .verdict .label { flex-basis: 100%; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
-  .big { font-family: var(--display); font-weight: 800; font-size: clamp(44px, 8vw, 72px); line-height: 0.95; letter-spacing: -0.03em; color: var(--tomato-ink); }
+  .verdict { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; background: var(--sand); border: 2px solid transparent; border-radius: 24px; padding: 22px 28px; margin: 1rem 0 1.5rem; --v-ink: var(--tomato-ink); }
+  .verdict.yes { background: var(--v-yes-bg); border-color: var(--v-yes-line); --v-ink: var(--v-yes-ink); }
+  .verdict.caution { background: var(--v-caution-bg); border-color: var(--v-caution-line); --v-ink: var(--v-caution-ink); }
+  .verdict.no { background: var(--v-no-bg); border-color: var(--v-no-line); --v-ink: var(--v-no-ink); }
+  .verdict .label { flex-basis: 100%; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--v-ink); }
+  .badge { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: var(--v-ink); }
+  .badge svg { fill: none; stroke: var(--paper); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .big { font-family: var(--display); font-weight: 800; font-size: clamp(44px, 8vw, 72px); line-height: 0.95; letter-spacing: -0.03em; color: var(--v-ink); }
   .aside { font-size: 28px; line-height: 1; transform: rotate(-3deg); }
   .toc { background: var(--sand); border-radius: 20px; padding: 22px 28px; margin: 1.75rem 0; }
   .toc .label { font-family: var(--display); font-weight: 800; font-size: 1.15rem; margin: 0 0 6px; }
@@ -119,5 +194,29 @@ const schema = [
   .sources { margin-top: 3.5rem; padding-top: 0.5rem; border-top: 2px solid var(--ink); }
   .sources h2 { font-size: 1.5rem; margin-top: 1.25rem; }
   .sources li { font-size: 15.5px; }
-  .related { margin-top: 3.5rem; max-width: 60rem; }
+  .related { margin-top: 3.5rem; }
+
+  /* Sidebar (desktop only) */
+  .side { display: none; }
+  @media (min-width: 1100px) {
+    .layout { display: grid; grid-template-columns: minmax(0, var(--prose)) 320px; justify-content: space-between; gap: 64px; }
+    .inline-toc { display: none; }
+    .side { display: block; padding-top: 4px; }
+    .sticky { position: sticky; top: 24px; display: flex; flex-direction: column; gap: 20px; }
+  }
+  .side-box { border-radius: 20px; padding: 20px 22px; background: var(--sand); }
+  .side-title { font-family: var(--display); font-weight: 800; font-size: 1.15rem; margin: 0 0 10px; }
+  .side-toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  .side-toc a { display: block; padding: 6px 10px; border-left: 3px solid transparent; border-radius: 0 8px 8px 0; color: var(--ink-2); font-size: 15px; line-height: 1.35; }
+  .side-toc a:hover { color: var(--ink); text-decoration: none; background: rgba(0, 0, 0, 0.04); }
+  .side-toc a[aria-current] { color: var(--ink); font-weight: 700; border-left-color: var(--tomato); }
+  .emergency { background: var(--surface); border: 2px solid var(--tomato); }
+  .emergency p { margin: 0 0 10px; font-size: 15px; line-height: 1.45; }
+  .call { display: block; margin: 6px 0; font-weight: 700; font-size: 15px; }
+  .emergency .fine { margin: 6px 0 0; font-size: 13px; color: var(--ink-2); }
+  .more { background: transparent; border: 1.5px solid var(--line); }
+  .mini { display: flex; align-items: center; gap: 12px; padding: 8px 0; color: var(--ink); font-weight: 600; font-size: 15px; line-height: 1.3; }
+  .mini + .mini { border-top: 1px solid var(--line); }
+  .mini:hover { color: var(--ink); }
+  .mini :global(.mini-img) { flex: 0 0 96px; border-radius: 8px; }
 </style>
