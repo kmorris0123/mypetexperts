@@ -2,14 +2,23 @@
 import type { Article } from '../lib/articles';
 import { featuredSvg, specFor } from '../lib/featured';
 
-interface Props { article: Article; class?: string }
-const { article, class: className } = Astro.props;
+interface Props {
+  article: Article;
+  class?: string;
+  /** Thumbnails next to a text link are decorative: screen readers already read the title. */
+  decorative?: boolean;
+}
+const { article, class: className, decorative = false } = Astro.props;
 const spec = specFor(article);
-const label = [`${spec.kicker} ${spec.subject}`, spec.verdict, spec.note].filter(Boolean).join(' ');
-const svg = featuredSvg(spec, { title: label });
+const label = `Illustration: ${spec.kicker.charAt(0)}${spec.kicker.slice(1).toLowerCase()} ${spec.subject.toLowerCase()}`;
+const svg = featuredSvg(spec);
 ---
 
-<div class:list={['featured', className]} set:html={svg} />
+{decorative ? (
+  <div class:list={['featured', className]} aria-hidden="true" set:html={svg} />
+) : (
+  <div class:list={['featured', className]} role="img" aria-label={label} set:html={svg} />
+)}
 
 <style>
   .featured { line-height: 0; border-radius: 20px; overflow: hidden; }

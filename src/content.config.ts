@@ -43,6 +43,8 @@ const articles = defineCollection({
         }),
       )
       .default([]),
+    // Short Q&As shown as "Common questions" at the end of the article and marked up as FAQPage for search/AI answers.
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     sources: z.array(z.object({ title: z.string(), url: z.url() })).default([]),
   }),
 });

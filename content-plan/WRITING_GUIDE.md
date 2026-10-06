@@ -73,7 +73,7 @@ Articles live in `src/content/articles/<slug>.mdx`. The filename is the URL. For
 ```mdx
 ---
 title: 'Can Dogs Eat Bananas?'                 # Title case; the question itself for "can X eat Y" topics
-description: 'One or two sentences, max 170 characters, that answer the question and say what the article covers.'
+description: '140-155 characters. Answer first, then say what the article covers.'
 teaser: 'A curiosity line for cards on the site, max 170 characters. Must NOT give the answer.'
 pet: dogs                                      # dogs | cats
 kind: guide                                    # guide | roundup
@@ -122,6 +122,31 @@ something the article says is dangerous.
 - `<Callout type="warn" title="...">...</Callout>`: a caution box.
 
 Inside a Callout, leave a blank line before a markdown list.
+
+## SEO and AEO (search and AI answers)
+
+Google, Google's AI Overviews, ChatGPT and other answer engines pull short, clear, well-sourced answers. Write for them
+the same way you write for a stressed owner on a phone:
+
+- **Title:** the exact question people search, under 60 characters ("Can Dogs Eat Corn?"). No clickbait.
+- **Description:** 140–155 characters. Answer the question in the first few words, then say what the article covers.
+- **First paragraph (the "answer paragraph"):** 40–60 words that fully answer the question on their own: yes/no,
+  the main reason, and the key condition. AI tools often quote exactly this paragraph.
+- **Headings:** use `##` headings phrased the way people ask ("Is corn on the cob safe for dogs?", "How much corn can a
+  dog eat?"). One idea per section, with the answer in the section's first sentence.
+- **Specific facts beat vague ones:** name the risk, the sign, the amount (only when a source gives it), and the source
+  ("The Merck Veterinary Manual says...").
+- **FAQ (required):** add 3–5 short Q&As in the frontmatter `faq` field for related questions that aren't already a
+  heading. Each answer is 1–3 plain sentences, follows the sourcing rules, and makes sense on its own.
+- **Internal links:** 1–3 links to related articles that already exist, using descriptive link text
+  ("[foods that are toxic to dogs](/foods-toxic-to-dogs/)", never "click here").
+- **Alt text** for photos and featured images is added automatically; don't add images any other way.
+
+```yaml
+faq:
+  - q: 'Can puppies eat corn?'
+    a: 'Plain corn kernels are not toxic to puppies, but ...'
+```
 
 ## Combining close topics
 

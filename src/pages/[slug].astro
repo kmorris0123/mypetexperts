@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props as { article: Article };
-const { title, description, pet, kind, pubDate, hasAffiliateLinks, sources, draft, photos, quickAnswer, quickNote, verdict } = article.data;
+const { title, description, pet, kind, pubDate, hasAffiliateLinks, sources, draft, photos, quickAnswer, quickNote, verdict, faq } = article.data;
 const VERDICT = {
   yes: { label: 'Safe', icon: 'M20 6 9 17l-5-5' },
   caution: { label: 'Be careful', icon: 'M12 7v6M12 17h.01' },
@@ -26,14 +26,16 @@ const v = verdict ? VERDICT[verdict] : undefined;
 const ogImage = `/og/${article.id}.png`;
 const updated = lastUpdated(article);
 const { Content, headings } = await render(article);
-const toc = headings.filter((h) => h.depth === 2);
+const toc = [...headings.filter((h) => h.depth === 2), ...(article.data.faq.length ? [{ depth: 2, slug: 'faq', text: 'Common questions' }] : [])];
 const related = (await getArticles(pet)).filter((a) => a.id !== article.id).slice(0, 3);
 const more = (await getArticles())
   .filter((a) => a.id !== article.id && !related.includes(a) && !a.data.draft)
   .slice(0, 4);
 const url = new URL(`/${article.id}/`, Astro.site).href;
 
-const schema = [
+const petName = pet === 'dogs' ? 'Dog' : 'Cat';
+const org = { '@type': 'Organization', name: SITE_NAME, url: Astro.site?.href, logo: new URL('/favicon.svg', Astro.site).href };
+const schema: Record<string, unknown>[] = [
   {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -42,22 +44,44 @@ const schema = [
     datePublished: pubDate.toISOString(),
     dateModified: updated.toISOString(),
     mainEntityOfPage: url,
-    author: { '@type': 'Organization', name: SITE_NAME, url: Astro.site?.href },
-    publisher: { '@type': 'Organization', name: SITE_NAME, url: Astro.site?.href },
     image: new URL(ogImage, Astro.site).href,
+    author: org,
+    publisher: org,
+    about: { '@type': 'Thing', name: petName },
+    articleSection: PETS[pet].label,
+    isAccessibleForFree: true,
+    inLanguage: 'en-US',
+    ...(quickAnswer ? { abstract: [quickAnswer, quickNote].filter(Boolean).join(' ') } : {}),
+    ...(sources.length ? { citation: sources.map((s) => ({ '@type': 'CreativeWork', name: s.title, url: s.url })) } : {}),
   },
   {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: PETS[pet].label, item: new URL(`/${pet}/`, Astro.site).href },
-      { '@type': 'ListItem', position: 2, name: title, item: url },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: Astro.site?.href },
+      { '@type': 'ListItem', position: 2, name: PETS[pet].label, item: new URL(`/${pet}/`, Astro.site).href },
+      { '@type': 'ListItem', position: 3, name: title, item: url },
     ],
   },
 ];
+if (faq.length) {
+  schema.push({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  });
+}
 ---
 
-<Base title={title} description={description} schema={schema} noindex={draft} image={ogImage}>
+<Base
+  title={title}
+  description={description}
+  schema={schema}
+  noindex={draft}
+  image={ogImage}
+  imageAlt={`Illustration with the question “${title}”`}
+  article={{ published: pubDate, modified: updated, section: PETS[pet].label }}
+>
   <article class="wrap layout">
     <div class="main">
     <header class="prose">
@@ -99,6 +123,18 @@ const schema = [
       <Content components={{ Callout, ProductPick, Photo }} photos={photos} />
     </div>
 
+    {faq.length > 0 && (
+      <section class="prose faq" aria-labelledby="faq">
+        <h2 id="faq">Common questions</h2>
+        {faq.map((f) => (
+          <div class="qa">
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+      </section>
+    )}
+
     {sources.length > 0 && (
       <section class="prose sources">
         <h2 id="sources">Sources</h2>
@@ -136,7 +172,7 @@ const schema = [
             <p class="side-title">More guides</p>
             {more.map((a) => (
               <a class="mini plain" href={`/${a.id}/`}>
-                <FeaturedImage article={a} class="mini-img" />
+                <FeaturedImage article={a} class="mini-img" decorative />
                 <span>{a.data.title}</span>
               </a>
             ))}
@@ -191,6 +227,10 @@ const schema = [
   .toc ol { margin: 0; padding-left: 1.3rem; }
   .toc li { margin: 4px 0; font-size: 16.5px; }
   .body :global(h2) { scroll-margin-top: 16px; }
+  .faq { margin-top: 3rem; }
+  .faq .qa { border-top: 1px solid var(--line); padding: 4px 0 2px; }
+  .faq h3 { font-size: 1.2rem; margin: 1rem 0 0.3rem; }
+  .faq p { margin: 0 0 1rem; }
   .sources { margin-top: 3.5rem; padding-top: 0.5rem; border-top: 2px solid var(--ink); }
   .sources h2 { font-size: 1.5rem; margin-top: 1.25rem; }
   .sources li { font-size: 15.5px; }

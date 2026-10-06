@@ -49,6 +49,15 @@ collections:
       - { name: featured, label: Feature on home page, widget: boolean, default: false, required: false, hint: 'Only one guide should be featured.' }
       - { name: hasAffiliateLinks, label: Has affiliate links, widget: boolean, default: false, required: false }
       - { name: draft, label: Draft (hidden from the live site), widget: boolean, default: false, required: false }
+      - name: faq
+        label: Common questions (FAQ)
+        label_singular: Question
+        widget: list
+        required: false
+        hint: '3-5 short Q&As shown at the end of the article and used by Google and AI answer engines.'
+        fields:
+          - { name: q, label: Question }
+          - { name: a, label: Answer, widget: text }
       - name: sources
         label: Sources
         label_singular: Source

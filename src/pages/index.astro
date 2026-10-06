@@ -8,7 +8,7 @@ import Cat from '../components/art/Cat.astro';
 import Paw from '../components/art/Paw.astro';
 import Arrow from '../components/icons/Arrow.astro';
 import { getArticles, getFeaturedProducts } from '../lib/articles';
-import { PETS, SITE_NAME, OWNER_NAME, OWNER_PHOTO } from '../consts';
+import { PETS, SITE_NAME, SITE_DESCRIPTION, OWNER_NAME, OWNER_PHOTO } from '../consts';
 
 const articles = await getArticles();
 const guides = articles.filter((a) => a.data.kind === 'guide');
@@ -20,7 +20,17 @@ const [lead, ...rest] = products;
 const side = rest.slice(0, 2);
 const grid = rest.slice(2);
 
-const schema = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: Astro.site?.href }];
+const schema = [
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: Astro.site?.href, inLanguage: 'en-US' },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: Astro.site?.href,
+    logo: new URL('/favicon.svg', Astro.site).href,
+    description: SITE_DESCRIPTION,
+  },
+];
 ---
 
 <Base schema={schema}>
