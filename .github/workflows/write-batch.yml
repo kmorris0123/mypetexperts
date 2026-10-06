@@ -1,0 +1,152 @@
+# Writes a batch of articles in parallel, then publishes them all in one go.
+# Topics come from a JSON file (default content-plan/batch-1.json): [{slug, pet, title, covers: [old slugs]}].
+# Safe to re-run: topics that already have an article are skipped.
+name: Write a batch of articles
+
+on:
+  workflow_dispatch:
+    inputs:
+      batch:
+        description: 'Batch file'
+        required: false
+        default: 'content-plan/batch-1.json'
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: write-batch
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm install -g @anthropic-ai/claude-code
+
+      - name: Write this shard's articles
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          BATCH: ${{ inputs.batch }}
+          SHARD: ${{ matrix.shard }}
+          SHARDS: 5
+        run: |
+          mkdir -p out
+          node -e '
+            const t = require("./" + process.env.BATCH);
+            t.forEach((x, i) => { if (i % +process.env.SHARDS === +process.env.SHARD) console.log(JSON.stringify(x)); });
+          ' > mine.jsonl
+          BASE="$(cat content-plan/WRITER_PROMPT.md)"
+          while IFS= read -r line; do
+            SLUG=$(node -e 'console.log(JSON.parse(process.argv[1]).slug)' "$line")
+            FILE="src/content/articles/$SLUG.mdx"
+            if [ -f "$FILE" ]; then echo "skip $SLUG (exists)"; continue; fi
+            TITLE=$(node -e 'console.log(JSON.parse(process.argv[1]).title)' "$line")
+            PET=$(node -e 'console.log(JSON.parse(process.argv[1]).pet)' "$line")
+            COVERS=$(node -e 'console.log(JSON.parse(process.argv[1]).covers.join(", ") || "none")' "$line")
+            echo "::group::$TITLE"
+            claude -p "$BASE
+
+          BATCH MODE (this overrides sections 2 and 5 above):
+          - Write exactly this article: title \"$TITLE\", pet: $PET, file $FILE. Do not pick a different topic.
+          - Older questions this article should also answer where it makes sense (e.g. raw vs cooked, specific products): $COVERS
+          - Do NOT edit content-plan/old-topics.csv. Only create $FILE.
+          - Only link to articles that already existed in src/content/articles/ when you started." \
+              --model claude-sonnet-5-5 \
+              --allowedTools "Bash Read Write Edit Glob Grep WebFetch WebSearch" || echo "writer failed for $SLUG"
+            if [ -f "$FILE" ]; then
+              if npm run build > build.log 2>&1; then
+                cp "$FILE" out/ && echo "ok $SLUG"
+              else
+                echo "build failed for $SLUG; dropping it"; tail -20 build.log; rm -f "$FILE"
+              fi
+            else
+              echo "no article written for $SLUG"
+            fi
+            git checkout -- . 2>/dev/null; git clean -fdq -- src content-plan 2>/dev/null
+            echo "::endgroup::"
+          done < mine.jsonl
+          ls out | wc -l
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: articles-${{ matrix.shard }}
+          path: out/
+          if-no-files-found: ignore
+
+  publish:
+    needs: write
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: articles-*
+          merge-multiple: true
+          path: incoming/
+      - name: Add articles and update the backlog
+        env:
+          BATCH: ${{ inputs.batch }}
+        run: |
+          mkdir -p incoming
+          for f in incoming/*.mdx; do [ -e "$f" ] || continue; [ -e "src/content/articles/$(basename "$f")" ] || cp "$f" src/content/articles/; done
+          node -e '
+            const fs = require("fs");
+            const batch = require("./" + process.env.BATCH);
+            const written = new Set(fs.readdirSync("incoming").map((f) => f.replace(/\.mdx$/, "")));
+            const lines = fs.readFileSync("content-plan/old-topics.csv", "utf8").trimEnd().split("\n");
+            const status = new Map();
+            for (const t of batch) if (written.has(t.slug)) {
+              for (const c of t.covers) if (!status.has(c)) status.set(c, c === t.slug ? "done" : "merged:" + t.slug);
+              status.set(t.slug, "done");
+            }
+            const out = lines.map((l, i) => {
+              if (i === 0) return l;
+              const slug = l.split(",")[0];
+              return status.has(slug) && l.endsWith(",todo") ? l.replace(/,todo$/, "," + status.get(slug)) : l;
+            });
+            fs.writeFileSync("content-plan/old-topics.csv", out.join("\n") + "\n");
+            console.log("written:", written.size);
+          '
+      - name: Download photos
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: node scripts/fetch-photos.mjs
+      - name: Build, commit and publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -z "$(git status --porcelain src/content/articles)" ]; then echo "Nothing to publish."; exit 0; fi
+          npm run build
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/articles content-plan/old-topics.csv
+          for p in src/assets/photos content-plan/used-photos.json; do [ -e "$p" ] && git add "$p"; done
+          N=$(git diff --cached --name-only --diff-filter=A -- src/content/articles | wc -l | tr -d ' ')
+          git commit -m "Add $N articles (batch)"
+          git pull --rebase "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" main
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
+          gh workflow run deploy.yml --ref main
