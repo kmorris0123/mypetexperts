@@ -69,6 +69,7 @@ jobs:
           git add src/content/articles content-plan/old-topics.csv
           for p in src/assets/photos content-plan/used-photos.json; do [ -e "$p" ] && git add "$p"; done
           NEW=$(git diff --cached --name-only --diff-filter=A -- src/content/articles | head -1)
-          git commit -m "Add article: ${NEW:-backlog update}"
+          TITLE=$( [ -n "$NEW" ] && sed -n "s/^title: *['\"]\{0,1\}\(.*\)['\"]\{0,1\} *$/\1/p" "$NEW" | head -1 | sed "s/['\"]$//" )
+          git commit -m "Add article: ${TITLE:-backlog update}"
           git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
           gh workflow run deploy.yml --ref main
