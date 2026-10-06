@@ -9,54 +9,58 @@ import type { Article } from './articles';
 export const FEATURED_WIDTH = 1200;
 export const FEATURED_HEIGHT = 630;
 
-type Tone = 'no' | 'yes' | 'maybe' | 'guide';
+type Tone = 'tomato' | 'pine' | 'yellow' | 'sand';
 
 const INK = '#1C1A17';
 const PALETTE: Record<Tone, { bg: string; text: string; verdict: string; photo: string }> = {
-  no: { bg: '#F0553A', text: INK, verdict: '#FFFFFF', photo: '#114B3A' },
-  yes: { bg: '#114B3A', text: '#FFFFFF', verdict: '#FFCF33', photo: '#F0553A' },
-  maybe: { bg: '#FFCF33', text: INK, verdict: '#B8371F', photo: '#114B3A' },
-  guide: { bg: '#F6EFE3', text: INK, verdict: '#B8371F', photo: '#F0553A' },
+  tomato: { bg: '#F0553A', text: INK, verdict: '#FFFFFF', photo: '#114B3A' },
+  pine: { bg: '#114B3A', text: '#FFFFFF', verdict: '#FFCF33', photo: '#F0553A' },
+  yellow: { bg: '#FFCF33', text: INK, verdict: '#B8371F', photo: '#114B3A' },
+  sand: { bg: '#F6EFE3', text: INK, verdict: '#B8371F', photo: '#F0553A' },
+};
+const TONES: Tone[] = ['tomato', 'pine', 'yellow', 'sand'];
+
+const CAPTIONS = {
+  dogs: ['chief treat tester', 'professional beggar', 'will sit for snacks', 'head of the snack patrol'],
+  cats: ['head of knocking things off shelves', 'snack inspector', 'judging your dinner', 'counter-surfing pro'],
 };
 
 export interface FeaturedSpec {
   pet: 'dogs' | 'cats';
   kicker: string;
   subject: string;
+  /** Optional big answer line. Articles leave it out so the image doesn't give the answer away. */
   verdict?: string;
   note?: string;
   tone: Tone;
 }
 
+/**
+ * The image shows the question, never the answer: no verdict, no answer-revealing note, and a color
+ * that's picked per article (not by answer) so "red" doesn't mean "no".
+ */
 export function specFor(article: Article): FeaturedSpec {
-  const { title, pet, quickAnswer, quickNote, heroText, kind } = article.data;
+  const { title, pet, heroText, kind } = article.data;
+  const n = hash(article.id);
+  const tone = TONES[n % TONES.length];
+  const note = CAPTIONS[pet][Math.floor(n / TONES.length) % CAPTIONS[pet].length];
   const m = title.match(/^Can (Dogs|Cats|Puppies|Kittens) (Eat|Drink|Have) (.+?)\??$/i);
-  const verdict = quickAnswer?.trim();
   if (m) {
-    return {
-      pet,
-      kicker: `Can ${m[1]} ${m[2]}`.toUpperCase(),
-      subject: `${capitalize(m[3])}?`,
-      verdict,
-      note: quickNote,
-      tone: toneOf(verdict),
-    };
+    return { pet, kicker: `Can ${m[1]} ${m[2]}`.toUpperCase(), subject: `${capitalize(m[3])}?`, note, tone };
   }
   return {
     pet,
     kicker: `${pet === 'dogs' ? 'Dogs' : 'Cats'} · ${kind === 'roundup' ? 'Product picks' : 'Guide'}`.toUpperCase(),
     subject: heroText ?? title,
-    verdict,
-    note: quickNote,
-    tone: verdict ? toneOf(verdict) : 'guide',
+    note,
+    tone,
   };
 }
 
-function toneOf(verdict?: string): Tone {
-  if (!verdict) return 'guide';
-  if (/^(no|not|never)\b/i.test(verdict)) return 'no';
-  if (/^yes\b/i.test(verdict)) return 'yes';
-  return 'maybe';
+function hash(s: string): number {
+  let h = 0;
+  for (const ch of s) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return h;
 }
 
 const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -96,7 +100,9 @@ export function featuredSvg(spec: FeaturedSpec, opts: { title?: string } = {}): 
   const textWidth = 620;
   const x = 72;
 
-  const subject = fit(spec.subject, [118, 100, 84, 70, 58], textWidth, spec.verdict ? 2 : 4);
+  const subject = spec.verdict
+    ? fit(spec.subject, [118, 100, 84, 70, 58], textWidth, 2)
+    : fit(spec.subject, [150, 124, 104, 88, 72, 58], textWidth, 3);
   const verdict = spec.verdict ? fit(spec.verdict, [150, 112, 84, 66], textWidth, 2) : null;
 
   // Vertical layout: kicker, subject lines, verdict lines, centered as a block.
@@ -129,7 +135,7 @@ export function featuredSvg(spec: FeaturedSpec, opts: { title?: string } = {}): 
   }
 
   // Polaroid with the pet character, captioned with the handwritten note.
-  const caption = spec.note ?? (spec.pet === 'dogs' ? 'chief treat tester' : 'head of knocking things off shelves');
+  const caption = spec.note ?? CAPTIONS[spec.pet][0];
   const captionFit = fit(caption, [40, 34, 28], 300, 2);
   const polaroid = `
     <g transform="translate(790 70) rotate(4 170 245)">

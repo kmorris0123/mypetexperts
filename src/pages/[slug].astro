@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { article } = Astro.props as { article: Article };
-const { title, description, pet, kind, pubDate, hasAffiliateLinks, sources, draft, photos } = article.data;
+const { title, description, pet, kind, pubDate, hasAffiliateLinks, sources, draft, photos, quickAnswer, quickNote } = article.data;
 const ogImage = `/og/${article.id}.png`;
 const updated = lastUpdated(article);
 const { Content, headings } = await render(article);
@@ -62,6 +62,13 @@ const schema = [
       {draft && <Callout type="warn" title="Draft">This article isn't published yet. It only shows up in local development.</Callout>}
       {hasAffiliateLinks && <AffiliateNotice />}
       <FeaturedImage article={article} class="hero" />
+      {quickAnswer && (
+        <div class="verdict">
+          <span class="label">Short answer</span>
+          <span class="big">{quickAnswer}</span>
+          {quickNote && <span class="hand aside">{quickNote}</span>}
+        </div>
+      )}
     </header>
 
     {toc.length > 2 && (
@@ -100,6 +107,10 @@ const schema = [
   .lede { font-size: 21px; line-height: 1.5; color: var(--ink-2); margin: 0 0 14px; }
   .meta { font-size: 15px; font-weight: 600; color: var(--ink-2); }
   header :global(.hero) { margin: 1.5rem 0 0.5rem; }
+  .verdict { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; background: var(--sand); border-radius: 24px; padding: 22px 28px; margin: 1rem 0 1.5rem; }
+  .verdict .label { flex-basis: 100%; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
+  .big { font-family: var(--display); font-weight: 800; font-size: clamp(44px, 8vw, 72px); line-height: 0.95; letter-spacing: -0.03em; color: var(--tomato-ink); }
+  .aside { font-size: 28px; line-height: 1; transform: rotate(-3deg); }
   .toc { background: var(--sand); border-radius: 20px; padding: 22px 28px; margin: 1.75rem 0; }
   .toc .label { font-family: var(--display); font-weight: 800; font-size: 1.15rem; margin: 0 0 6px; }
   .toc ol { margin: 0; padding-left: 1.3rem; }

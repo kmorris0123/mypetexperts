@@ -9,7 +9,7 @@ const fontFiles = ['BricolageGrotesque-ExtraBold.ttf', 'DMSans-Bold.ttf', 'Cavea
   path.resolve(process.cwd(), 'src/og-fonts', f),
 );
 
-const HOME: FeaturedSpec = { pet: 'dogs', kicker: 'MY PET EXPERTS', subject: 'Good stuff for good dogs.', note: 'and cats, if they allow it', tone: 'maybe' };
+const HOME: FeaturedSpec = { pet: 'dogs', kicker: 'MY PET EXPERTS', subject: 'Good stuff for good dogs.', note: 'and cats, if they allow it', tone: 'yellow' };
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const articles = await getArticles();
