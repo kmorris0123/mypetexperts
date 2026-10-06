@@ -1,12 +1,13 @@
 # Writes and publishes one new article with Claude.
-# Runs Mon/Wed/Fri at 6am Pacific (13:00 UTC). Run it any time from the Actions tab
+# Runs 3 times a day, every day: about 6am, 11am and 4pm Pacific (13:17, 18:17, 23:17 UTC).
+# Each run publishes one article. Run it any time from the Actions tab
 # ("Write an article" → Run workflow), optionally with a specific topic.
 # Instructions for the writer live in content-plan/WRITER_PROMPT.md and content-plan/WRITING_GUIDE.md.
 name: Write an article
 
 on:
   schedule:
-    - cron: '0 13 * * 1,3,5'
+    - cron: '17 13,18,23 * * *'
   workflow_dispatch:
     inputs:
       topic:
