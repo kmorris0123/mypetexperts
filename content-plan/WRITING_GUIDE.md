@@ -61,9 +61,13 @@ These appear in the big short-answer box at the top of the article, so they must
 - `quickNote`: 2-5 lowercase words that add the single most useful detail. Good: 'not even one' 'never raw'
   'slices only, no core' 'kitten food until age 1'.
 - Test: would a 10-year-old know exactly what to do after reading just these two lines? If not, rewrite them.
-- `verdict` sets the box color and must match the answer: `yes` when it's fine to share (even in small amounts),
-  `caution` when it's only okay sometimes, only in a certain form, or depends on the label, `no` when it's toxic or
-  dangerous. When unsure between two, pick the safer one (caution over yes, no over caution).
+- `verdict` sets the box color and must match the answer:
+  - `yes` (green): the answer starts with "Yes", even with normal conditions like "if cooked", "if plain",
+    "a little" or "no seeds". Most safe foods are green.
+  - `caution` (yellow): only a tiny amount, only rarely, discouraged ("Not really", "Better not"), or there's a
+    hidden danger to check for (like xylitol in peanut butter).
+  - `no` (red): toxic or dangerous ("No.").
+  Don't default to yellow; pick the color that matches what the answer actually says.
 
 ## File format
 
