@@ -32,3 +32,14 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Notify search engines (IndexNow)
+        run: node scripts/indexnow.mjs || echo "IndexNow submission failed; it will be retried on the next deploy."

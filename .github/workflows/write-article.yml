@@ -18,6 +18,7 @@ on:
 permissions:
   contents: write
   actions: write
+  issues: write
 
 concurrency:
   group: write-article
@@ -74,3 +75,10 @@ jobs:
           git commit -m "Add article: ${TITLE:-backlog update}"
           git push "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main
           gh workflow run deploy.yml --ref main
+          if [ -n "$NEW" ]; then
+            URL="https://mypetexperts.com/$(basename "$NEW" .mdx)/"
+            ENC=$(node -e 'console.log(encodeURIComponent(process.argv[1]))' "$URL")
+            gh issue comment 1 --repo "${{ github.repository }}" --body "**${TITLE}** is live: $URL
+
+          👉 [Request indexing in Google Search Console](https://search.google.com/search-console/inspect?resource_id=sc-domain%3Amypetexperts.com&id=$ENC) (opens the page inspection; click **Request indexing**, after it finishes deploying in ~2 minutes)" || true
+          fi
