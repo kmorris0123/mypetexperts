@@ -1,16 +1,33 @@
 ---
+import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import GuideList from './GuideList.astro';
+import GuideRow from './GuideRow.astro';
 import Dog from './art/Dog.astro';
 import Cat from './art/Cat.astro';
-import { getArticles } from '../lib/articles';
+import { getArticles, lastUpdated } from '../lib/articles';
+import { CATEGORIES, categoryOf, type Category } from '../lib/categories';
 import { PETS, type Pet } from '../consts';
 
 interface Props { pet: Pet }
 const { pet } = Astro.props;
 const articles = await getArticles(pet);
-const guides = articles.filter((a) => a.data.kind === 'guide');
 const roundups = articles.filter((a) => a.data.kind === 'roundup');
+const guides = articles
+  .filter((a) => a.data.kind === 'guide')
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+// Search covers the title, teaser, and every section heading (so "drumsticks" finds the chicken article).
+const rows = await Promise.all(
+  guides.map(async (a) => {
+    const { headings } = await render(a);
+    const text = [a.data.title, a.data.teaser ?? '', ...headings.map((h) => h.text)].join(' ').toLowerCase();
+    return { article: a, category: categoryOf(a), text };
+  }),
+);
+const counts = rows.reduce<Record<string, number>>((acc, r) => ((acc[r.category] = (acc[r.category] ?? 0) + 1), acc), {});
+const usedCategories = (Object.keys(CATEGORIES) as Category[]).filter((c) => counts[c]);
+const petWord = pet === 'dogs' ? 'dog' : 'cat';
 ---
 
 <Base title={`${PETS[pet].label}: Guides and Product Picks`} description={PETS[pet].blurb}>
@@ -22,21 +39,111 @@ const roundups = articles.filter((a) => a.data.kind === 'roundup');
       </div>
       {pet === 'dogs' ? <Dog size={230} class="art" /> : <Cat size={230} class="art" />}
     </section>
+
     {roundups.length > 0 && (
       <section>
         <h2>Product picks</h2>
         <GuideList articles={roundups} />
       </section>
     )}
+
     {guides.length > 0 && (
-      <section>
-        <h2>Guides</h2>
-        <GuideList articles={guides} />
+      <section class="guides" id="guides">
+        <div class="guides-head">
+          <h2>Guides</h2>
+          <p class="count" aria-live="polite"><span data-count>{guides.length}</span> of {guides.length}</p>
+        </div>
+
+        <div class="tools" role="search">
+          <label class="search">
+            <span class="sr">Search {petWord} guides</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+            <input type="search" data-q placeholder={`Search ${petWord} guides, e.g. "cheese" or "bones"`} autocomplete="off" />
+          </label>
+          <label class="sort">
+            <span class="sr">Sort</span>
+            <select data-sort>
+              <option value="az">A–Z</option>
+              <option value="new">Newest</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="chips" role="group" aria-label="Filter by food type">
+          <button type="button" class="chip" data-cat="" aria-pressed="true">All <span>{guides.length}</span></button>
+          {usedCategories.map((c) => (
+            <button type="button" class="chip" data-cat={c} aria-pressed="false">{CATEGORIES[c]} <span>{counts[c]}</span></button>
+          ))}
+        </div>
+
+        <div class="list" data-list>
+          {rows.map((r) => (
+            <GuideRow
+              article={r.article}
+              data={{
+                search: r.text,
+                cat: r.category,
+                title: r.article.data.title.toLowerCase(),
+                date: String(lastUpdated(r.article).valueOf()),
+              }}
+            />
+          ))}
+        </div>
+        <p class="empty" data-empty hidden>
+          No guides match that yet. Try a simpler word, or <a href={`/${pet}/`}>see all {petWord} guides</a>. New guides are added every day.
+        </p>
       </section>
     )}
     {articles.length === 0 && <p>New articles are on the way.</p>}
   </div>
 </Base>
+
+<script>
+  const root = document.getElementById('guides');
+  if (root) {
+    const q = root.querySelector<HTMLInputElement>('[data-q]')!;
+    const sort = root.querySelector<HTMLSelectElement>('[data-sort]')!;
+    const list = root.querySelector<HTMLElement>('[data-list]')!;
+    const rows = [...list.querySelectorAll<HTMLAnchorElement>('a[data-search]')];
+    const chips = [...root.querySelectorAll<HTMLButtonElement>('.chip')];
+    const countEl = root.querySelector('[data-count]')!;
+    const empty = root.querySelector<HTMLElement>('[data-empty]')!;
+
+    const params = new URLSearchParams(location.search);
+    let cat = params.get('type') ?? '';
+    q.value = params.get('q') ?? '';
+    if (params.get('sort') === 'new') sort.value = 'new';
+
+    function apply() {
+      const words = q.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+      let shown = 0;
+      for (const r of rows) {
+        const ok = (!cat || r.dataset.cat === cat) && words.every((w) => r.dataset.search!.includes(w));
+        r.hidden = !ok;
+        if (ok) shown++;
+      }
+      const sorted = [...rows].sort((a, b) =>
+        sort.value === 'new' ? +b.dataset.date! - +a.dataset.date! : a.dataset.title!.localeCompare(b.dataset.title!),
+      );
+      list.append(...sorted);
+      chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.cat === cat)));
+      countEl.textContent = String(shown);
+      empty.hidden = shown > 0;
+
+      const next = new URLSearchParams();
+      if (q.value.trim()) next.set('q', q.value.trim());
+      if (cat) next.set('type', cat);
+      if (sort.value === 'new') next.set('sort', 'new');
+      const qs = next.toString();
+      history.replaceState(null, '', qs ? `?${qs}#guides` : location.pathname);
+    }
+
+    q.addEventListener('input', apply);
+    sort.addEventListener('change', apply);
+    chips.forEach((c) => c.addEventListener('click', () => { cat = c.dataset.cat ?? ''; apply(); }));
+    if (q.value || cat || sort.value !== 'az') apply();
+  }
+</script>
 
 <style>
   .banner { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 240px; padding: 44px 48px; border-radius: 28px; }
@@ -46,9 +153,33 @@ const roundups = articles.filter((a) => a.data.kind === 'roundup');
   .banner p { margin: 0; max-width: 420px; font-size: 19px; line-height: 1.45; position: relative; z-index: 1; }
   .banner :global(.art) { flex-shrink: 0; margin-bottom: -96px; align-self: flex-end; }
   section h2 { margin-top: 56px; }
+
+  .guides-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+  .count { margin: 0; color: var(--ink-2); font-weight: 600; font-size: 15px; }
+  .tools { display: flex; gap: 12px; margin: 8px 0 14px; }
+  .search { flex: 1; display: flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 18px; border: 2px solid var(--ink); border-radius: 14px; background: var(--surface); }
+  .search:focus-within { outline: 3px solid var(--focus); outline-offset: 2px; }
+  .search svg { flex-shrink: 0; fill: none; stroke: var(--ink-2); stroke-width: 2.4; stroke-linecap: round; }
+  .search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--ink); font: inherit; font-size: 17px; }
+  .search input::placeholder { color: var(--ink-2); }
+  .sort select { height: 56px; padding: 0 14px; border: 2px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--ink); font: inherit; font-weight: 600; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .chip span { color: var(--ink-2); font-weight: 600; font-size: 13px; }
+  .chip:hover { border-color: var(--ink); }
+  .chip[aria-pressed='true'] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+  .chip[aria-pressed='true'] span { color: var(--paper); opacity: 0.75; }
+  .list { border-top: 2px solid var(--ink); }
+  .list :global(a[hidden]) { display: none; }
+  .empty { padding: 28px 0; font-size: 17px; color: var(--ink-2); }
+  .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   @media (max-width: 600px) {
     .banner { padding: 32px 26px; min-height: 200px; }
     .banner :global(.art) { position: absolute; right: -10px; bottom: -40px; width: 150px; margin: 0; opacity: 0.95; }
     .banner p { max-width: 62%; font-size: 17px; }
+    .tools { flex-direction: column; }
+    .sort select { width: 100%; }
+    .chips { flex-wrap: nowrap; overflow-x: auto; margin-right: calc(-1 * var(--gutter)); padding-right: var(--gutter); scrollbar-width: none; }
+    .chip { flex-shrink: 0; }
   }
 </style>

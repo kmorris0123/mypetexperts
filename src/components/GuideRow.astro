@@ -4,13 +4,18 @@ import { lastUpdated, formatDate } from '../lib/articles';
 import { PETS } from '../consts';
 import FeaturedImage from './FeaturedImage.astro';
 
-interface Props { article: Article }
-const { article } = Astro.props;
+interface Props {
+  article: Article;
+  /** Extra data-* attributes (used by search and filters). */
+  data?: Record<string, string>;
+}
+const { article, data = {} } = Astro.props;
+const dataAttrs = Object.fromEntries(Object.entries(data).map(([k, v]) => [`data-${k}`, v]));
 const { title, description, teaser, pet, kind, sources, draft } = article.data;
 const n = sources.length;
 ---
 
-<a class="row plain" href={`/${article.id}/`}>
+<a class="row plain" href={`/${article.id}/`} {...dataAttrs}>
   <FeaturedImage article={article} class="thumb" decorative />
   <span class="text">
   <span class="eyebrow muted">{PETS[pet].label} · {kind === 'roundup' ? 'Product picks' : 'Guide'}{draft && ' · Draft'}</span>

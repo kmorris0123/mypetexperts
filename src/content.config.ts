@@ -27,6 +27,8 @@ const articles = defineCollection({
     quickNote: z.string().optional(),
     // Shown in the big card on the home page.
     featured: z.boolean().default(false),
+    // Food type for filters on the Dogs/Cats pages. Usually worked out from the URL; set it to override.
+    category: z.enum(['fruit', 'veggies', 'meat', 'dairy', 'grains', 'nuts', 'other']).optional(),
     // Short text for the featured image when the title is long (non "Can X eat Y" articles).
     heroText: z.string().optional(),
     // Stock photos used inside the article with <Photo n={0} />. Add entries with just a `query`;
