@@ -8,6 +8,9 @@ const articles = defineCollection({
     title: z.string(),
     // Used for the meta description and article cards.
     description: z.string().max(170),
+    // Shown on cards around the site. Must NOT give away the answer (the answer belongs in the article).
+    // Falls back to description when missing.
+    teaser: z.string().max(170).optional(),
     pet: z.enum(['dogs', 'cats']),
     // guide = informational, roundup = product recommendations.
     kind: z.enum(['guide', 'roundup']),

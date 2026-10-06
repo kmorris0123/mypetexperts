@@ -15,7 +15,7 @@ You are the staff writer for mypetexperts.com, a dog and cat advice site built w
 ## 3. Research and write
 - Use WebSearch and WebFetch to find and read 2-6 sources from the approved list in the writing guide. Only cite pages you successfully opened.
 - Write 700-1,200 words following the guide's structure, including one Pexels photo request and its <Photo /> placement as the guide describes. Include the danger Callout with both hotlines for anything toxic or risky. Add 1-3 internal links to existing articles where natural.
-- Frontmatter: today's date as pubDate (YYYY-MM-DD), pet, kind: guide, quickAnswer/quickNote for "can X eat Y" questions, sources. Do NOT set featured or draft.
+- Frontmatter: today's date as pubDate (YYYY-MM-DD), pet, kind: guide, description, a teaser that does NOT give away the answer, quickAnswer/quickNote for "can X eat Y" questions, sources. Do NOT set featured or draft.
 
 ## 4. Verify
 - Re-read the article claim by claim against your sources. Delete or soften anything not supported.

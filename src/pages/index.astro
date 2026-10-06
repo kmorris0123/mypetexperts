@@ -95,12 +95,8 @@ const schema = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SI
           <article class="answer">
             <p class="eyebrow muted">{PETS[featuredGuide.data.pet].label} · Guide</p>
             <h3><a class="plain" href={`/${featuredGuide.id}/`}>{featuredGuide.data.title}</a></h3>
-            <div class="verdict">
-              <span class="big">{featuredGuide.data.quickAnswer}</span>
-              {featuredGuide.data.quickNote && <span class="hand aside">{featuredGuide.data.quickNote}</span>}
-            </div>
-            <p>{featuredGuide.data.description}</p>
-            <a class="more" href={`/${featuredGuide.id}/`}>Read the guide <Arrow /></a>
+            <p>{featuredGuide.data.teaser ?? featuredGuide.data.description}</p>
+            <a class="more" href={`/${featuredGuide.id}/`}>Find out <Arrow /></a>
           </article>
         )}
         <div class="rest"><GuideList articles={otherGuides} /></div>
@@ -185,11 +181,8 @@ const schema = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SI
   .guides { display: flex; flex-wrap: wrap; gap: 24px 48px; }
   .answer { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 40px 44px; border-radius: 24px; background: var(--sand); }
   .answer .eyebrow { margin: 0; }
-  .answer h3 { margin: 0; font-size: clamp(1.6rem, 3.4vw, 34px); line-height: 1.1; }
+  .answer h3 { margin: 4px 0; font-size: clamp(2.2rem, 5vw, 56px); line-height: 1.02; letter-spacing: -0.02em; }
   .answer h3 a { color: var(--ink); }
-  .verdict { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 20px; margin-top: 4px; }
-  .big { font-family: var(--display); font-weight: 800; font-size: clamp(72px, 12vw, 104px); line-height: 0.9; letter-spacing: -0.03em; color: var(--tomato-ink); }
-  .aside { font-size: 28px; line-height: 1; transform: rotate(-3deg); }
   .answer p { margin: 6px 0 0; max-width: 440px; font-size: 17px; line-height: 1.55; }
   .more, .sign a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 16.5px; font-weight: 700; }
   .more { margin-top: auto; }

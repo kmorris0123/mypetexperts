@@ -41,9 +41,19 @@ or not a native English speaker. Aim for a 6th-grade reading level.
 - One idea per sentence. If a sentence has more than about 20 words, split it.
 - Name a chemical only when owners need it to read a label (like xylitol), and explain it right away.
 
+### Keep the answer inside the article
+
+The answer appears only in the article itself (opening paragraph, short-answer box, and Google's search snippet via
+`description`). Everywhere else on the site (cards, lists, the home page, the featured image) shows the question
+only, so people click through. That's what `teaser` is for:
+
+- Good: "A grape rolls off the counter and your dog gets it first. Here's what vets want you to know."
+- Bad: "No. Grapes can cause kidney failure." (gives the answer away)
+- Don't hint with words like "safe", "dangerous", "toxic", "fine" or "okay" either.
+
 ### The short answer (`quickAnswer` and `quickNote`)
 
-These appear huge on the featured image and are the first thing people read, so they must be instantly clear.
+These appear in the big short-answer box at the top of the article, so they must be instantly clear.
 
 - `quickAnswer`: 2-5 plain words that start with Yes, No, or a clear limit. Good: 'No.' 'Yes.' 'Yes, a little.'
   'Yes, if cooked.' 'Not every day.' 'Only once in a while.' 'Yes, but check the label.' Bad: 'Only as a stopgap.'
@@ -61,6 +71,7 @@ Articles live in `src/content/articles/<slug>.mdx`. The filename is the URL. For
 ---
 title: 'Can Dogs Eat Bananas?'                 # Title case; the question itself for "can X eat Y" topics
 description: 'One or two sentences, max 170 characters, that answer the question and say what the article covers.'
+teaser: 'A curiosity line for cards on the site, max 170 characters. Must NOT give the answer.'
 pet: dogs                                      # dogs | cats
 kind: guide                                    # guide | roundup
 pubDate: 2026-10-05                            # today's date
@@ -74,7 +85,7 @@ sources:
 
 Do not set `featured` (only one article is featured on the home page).
 
-The featured image at the top of the article is generated automatically from the title, `quickAnswer` and `quickNote`.
+The featured image at the top of the article is generated automatically from the title (question only, never the answer).
 For long titles that aren't "Can [pet] eat [food]?", add `heroText:` with a short 3-6 word version.
 
 ## Photos

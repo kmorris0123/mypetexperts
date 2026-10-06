@@ -38,6 +38,7 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: description, label: Description, widget: text, hint: 'Shown in Google results and on cards. Max 170 characters.', pattern: ['^[\s\S]{1,170}$', 'Keep it under 170 characters'] }
+      - { name: teaser, label: Card teaser, widget: text, required: false, hint: 'Shown on cards around the site. Must NOT give away the answer. Max 170 characters.' }
       - { name: pet, label: Pet, widget: select, options: [dogs, cats] }
       - { name: kind, label: Type, widget: select, options: [{ label: Guide, value: guide }, { label: Product roundup, value: roundup }], default: guide }
       - { name: pubDate, label: Published, widget: datetime, format: YYYY-MM-DD, time_format: false }

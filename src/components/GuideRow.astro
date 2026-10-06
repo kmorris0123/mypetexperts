@@ -6,7 +6,7 @@ import FeaturedImage from './FeaturedImage.astro';
 
 interface Props { article: Article }
 const { article } = Astro.props;
-const { title, description, pet, kind, sources, draft } = article.data;
+const { title, description, teaser, pet, kind, sources, draft } = article.data;
 const n = sources.length;
 ---
 
@@ -15,7 +15,7 @@ const n = sources.length;
   <span class="text">
   <span class="eyebrow muted">{PETS[pet].label} · {kind === 'roundup' ? 'Product picks' : 'Guide'}{draft && ' · Draft'}</span>
   <span class="title">{title}</span>
-  <span class="desc">{description}</span>
+  <span class="desc">{teaser ?? description}</span>
   <span class="meta">Updated {formatDate(lastUpdated(article))}{n > 0 && ` · ${n} vet source${n === 1 ? '' : 's'}`}</span>
   </span>
 </a>
