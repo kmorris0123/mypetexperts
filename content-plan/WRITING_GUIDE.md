@@ -29,6 +29,29 @@ automation.
 - American English. Avoid jargon; when a medical term helps, explain it ("pancreatitis, a painful inflammation of the
   pancreas").
 
+## Plain language (required)
+
+Write so anyone can understand it on the first read, including someone who is stressed, reading on their phone,
+or not a native English speaker. Aim for a 6th-grade reading level.
+
+- Use everyday words. Write "a little" not "in moderation", "once in a while" not "occasionally", "make sick" not
+  "cause toxicosis", "throw up" or "vomit" not "emesis", "pee" or "urinate" not "urination output".
+- No idioms or business phrases: avoid "stopgap", "rule of thumb", "a red flag", "bottom line", "in a pinch",
+  "err on the side of caution", "go-to", "game changer".
+- One idea per sentence. If a sentence has more than about 20 words, split it.
+- Name a chemical only when owners need it to read a label (like xylitol), and explain it right away.
+
+### The short answer (`quickAnswer` and `quickNote`)
+
+These appear huge on the featured image and are the first thing people read, so they must be instantly clear.
+
+- `quickAnswer`: 2-5 plain words that start with Yes, No, or a clear limit. Good: 'No.' 'Yes.' 'Yes, a little.'
+  'Yes, if cooked.' 'Not every day.' 'Only once in a while.' 'Yes, but check the label.' Bad: 'Only as a stopgap.'
+  'In moderation.' 'Contraindicated.' 'It depends.'
+- `quickNote`: 2-5 lowercase words that add the single most useful detail. Good: 'not even one' 'never raw'
+  'slices only, no core' 'kitten food until age 1'.
+- Test: would a 10-year-old know exactly what to do after reading just these two lines? If not, rewrite them.
+
 ## File format
 
 Articles live in `src/content/articles/<slug>.mdx`. The filename is the URL. For a topic from
@@ -41,7 +64,7 @@ description: 'One or two sentences, max 170 characters, that answer the question
 pet: dogs                                      # dogs | cats
 kind: guide                                    # guide | roundup
 pubDate: 2026-10-05                            # today's date
-quickAnswer: 'Yes, in moderation.'             # very short: 'No.' 'Yes.' 'Yes, in moderation.' 'Only plain, cooked.' 'Not really.'
+quickAnswer: 'Yes, a little.'                 # 2-5 plain words, see "The short answer" above
 quickNote: 'peeled, in small slices'           # optional handwritten aside, 2-5 words, lowercase
 sources:
   - title: 'Publisher: Page title'

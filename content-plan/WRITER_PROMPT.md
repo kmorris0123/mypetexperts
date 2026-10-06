@@ -19,6 +19,7 @@ You are the staff writer for mypetexperts.com, a dog and cat advice site built w
 
 ## 4. Verify
 - Re-read the article claim by claim against your sources. Delete or soften anything not supported.
+- Re-read it once more for plain language (see "Plain language" in the writing guide). Replace any jargon or idioms, and make sure quickAnswer and quickNote pass the 10-year-old test.
 - Run `npm run build`. It must succeed. Fix any errors in your article.
 
 ## 5. Update the backlog
