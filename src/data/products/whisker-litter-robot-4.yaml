@@ -1,0 +1,16 @@
+name: Litter-Robot 4
+pet: cats
+category: Self-cleaning litter boxes
+award: Best overall
+blurb: A globe-style, Wi-Fi litter box that sifts waste into a sealed drawer after each visit and can serve up to four cats.
+bestFor: Multi-cat homes with space and a power outlet
+featured: true
+pros:
+- Laser and weight sensors detect your cat, and the cycle waits minutes after your cat leaves
+- Works for cats from 3 to 25 pounds, with up to 4 cats per unit
+- Sealed waste drawer with a carbon filter, plus app tracking of litter level and your cat's weight
+cons:
+- Large footprint of about 22 by 27 inches, and it must be plugged in
+- Cats must step up to enter, which may be hard for seniors
+art: box
+roundup: best-self-cleaning-litter-boxes

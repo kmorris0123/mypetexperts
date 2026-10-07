@@ -137,7 +137,7 @@ jobs:
               return status.has(slug) && l.endsWith(",todo") ? l.replace(/,todo$/, "," + status.get(slug)) : l;
             });
             fs.writeFileSync("content-plan/old-topics.csv", out.join("\n") + "\n");
-            // Roundup topics: done if written, back to todo if this batch didn't manage it.
+            // Roundup topics: done if written, otherwise back to todo.
             const rf = "content-plan/roundup-topics.csv";
             const roundups = new Set(batch.filter((t) => t.kind === "roundup").map((t) => t.slug));
             if (roundups.size && fs.existsSync(rf)) {

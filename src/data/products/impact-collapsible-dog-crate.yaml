@@ -1,0 +1,16 @@
+name: Impact Collapsible Dog Crate
+pet: dogs
+category: Dog crates
+award: Best overall
+blurb: A folding aluminum crate that sets up without tools and works at home or in the car.
+bestFor: Owners who want one crate for home and travel
+featured: true
+pros:
+- High-grade aluminum with diamond-shaped openings for airflow
+- Sets up without tools and folds flat for storage
+- One-handed door latch
+cons:
+- Not currently sold as airline-approved
+- Dog damage isn't covered by the warranty
+art: box
+roundup: best-dog-crates

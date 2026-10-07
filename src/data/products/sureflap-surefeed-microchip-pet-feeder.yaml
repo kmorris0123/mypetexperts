@@ -1,0 +1,15 @@
+name: SureFeed Microchip Pet Feeder
+pet: cats
+category: Automatic cat feeders
+award: Best for multi-cat homes
+blurb: A feeder whose lid opens only for the pet whose microchip it recognizes, so other pets can't eat that food.
+bestFor: Homes where cats steal each other's food
+pros:
+- Opens only for your pet's microchip number
+- Works with wet and dry food
+- 6+ months of typical battery life on 4 C batteries
+cons:
+- Your cat needs a microchip
+- Guards food rather than serving timed meals
+art: box
+roundup: best-automatic-cat-feeders
