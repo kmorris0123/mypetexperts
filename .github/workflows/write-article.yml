@@ -1,15 +1,21 @@
 # Writes and publishes one new article with Claude.
 # Runs 3 times a day, every day: about 6am, 11am and 4pm Pacific (13:17, 18:17, 23:17 UTC).
-# Each run publishes one article. Run it any time from the Actions tab
+# Each run publishes one article: the 11am run writes a product roundup, the others write food/safety guides. Run it any time from the Actions tab
 # ("Write an article" → Run workflow), optionally with a specific topic.
 # Instructions for the writer live in content-plan/WRITER_PROMPT.md and content-plan/WRITING_GUIDE.md.
 name: Write an article
 
 on:
   schedule:
-    - cron: '17 13,18,23 * * *'
+    - cron: '17 13,23 * * *'
+    - cron: '17 18 * * *'
   workflow_dispatch:
     inputs:
+      kind:
+        description: 'What to write'
+        type: choice
+        options: [guide, roundup]
+        default: guide
       topic:
         description: 'Optional topic, e.g. "Can dogs eat blueberries?" (leave blank to use the backlog)'
         required: false
@@ -44,8 +50,9 @@ jobs:
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           TOPIC: ${{ inputs.topic }}
+          KIND: ${{ github.event.schedule == '17 18 * * *' && 'roundup' || inputs.kind || 'guide' }}
         run: |
-          PROMPT="$(cat content-plan/WRITER_PROMPT.md)"
+          if [ "$KIND" = "roundup" ]; then PROMPT="$(cat content-plan/ROUNDUP_PROMPT.md)"; else PROMPT="$(cat content-plan/WRITER_PROMPT.md)"; fi
           if [ -n "$TOPIC" ]; then PROMPT="$PROMPT
 
           The site owner requested this topic for today: $TOPIC"; fi
@@ -62,13 +69,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$(git status --porcelain src/content/articles content-plan/old-topics.csv)" ]; then
+          if [ -z "$(git status --porcelain src/content/articles)" ]; then
             echo "No article was written this run."; exit 0
           fi
           npm run build
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/content/articles content-plan/old-topics.csv
+          git add src/content/articles src/data/products content-plan/old-topics.csv content-plan/roundup-topics.csv
           for p in src/assets/photos content-plan/used-photos.json; do [ -e "$p" ] && git add "$p"; done
           NEW=$(git diff --cached --name-only --diff-filter=A -- src/content/articles | head -1)
           TITLE=$( [ -n "$NEW" ] && sed -n "s/^title: *['\"]\{0,1\}\(.*\)['\"]\{0,1\} *$/\1/p" "$NEW" | head -1 | sed "s/['\"]$//" )

@@ -14,3 +14,7 @@ export const PETS = {
 } as const;
 
 export type Pet = keyof typeof PETS;
+
+// Amazon Associates tracking ID (looks like "mypetexperts-20"). Once set, every Amazon link on the site
+// becomes an affiliate link. Leave empty until the Associates account is approved.
+export const AMAZON_TAG = '';

@@ -50,8 +50,9 @@ jobs:
             const t = require("./" + process.env.BATCH);
             t.forEach((x, i) => { if (i % +process.env.SHARDS === +process.env.SHARD) console.log(JSON.stringify(x)); });
           ' > mine.jsonl
-          BASE="$(cat content-plan/WRITER_PROMPT.md)"
           while IFS= read -r line; do
+            KIND=$(node -e 'console.log(JSON.parse(process.argv[1]).kind || "guide")' "$line")
+            if [ "$KIND" = "roundup" ]; then BASE="$(cat content-plan/ROUNDUP_PROMPT.md)"; else BASE="$(cat content-plan/WRITER_PROMPT.md)"; fi
             SLUG=$(node -e 'console.log(JSON.parse(process.argv[1]).slug)' "$line")
             FILE="src/content/articles/$SLUG.mdx"
             if [ -f "$FILE" ]; then echo "skip $SLUG (exists)"; continue; fi
@@ -61,22 +62,24 @@ jobs:
             echo "::group::$TITLE"
             claude -p "$BASE
 
-          BATCH MODE (this overrides sections 2 and 5 above):
+          BATCH MODE (this overrides how the topic is picked and any CSV instructions above):
           - Write exactly this article: title \"$TITLE\", pet: $PET, file $FILE. Do not pick a different topic.
           - This article replaces these older, closely related pages: $COVERS
-            Cover them as sub-topics: add a section such as \"## Other kinds of [food]\" with a short ### section for each distinct
-            variation (e.g. raw vs cooked, a specific dish, a brand-name product), each with its own plain answer. Merge
-            duplicates (spelling variants, same thing twice) into one section, and skip any that are irrelevant or can't be
-            sourced. Each sub-topic must follow the same sourcing rules as the rest of the article.
-          - Do NOT edit content-plan/old-topics.csv. Only create $FILE.
+            If that list isn't \"none\", cover them as sub-topics: add a section such as \"## Other kinds of [food]\" with a short ### section
+            for each distinct variation (e.g. raw vs cooked, a specific dish, a brand-name product), each with its own plain answer.
+            Merge duplicates and skip any that are irrelevant or can't be sourced, following the same sourcing rules.
+          - Do NOT edit any CSV file. Only create $FILE (and, for product roundups, its files in src/data/products/).
           - Only link to articles that already existed in src/content/articles/ when you started." \
               --model claude-sonnet-5-5 \
               --allowedTools "Bash Read Write Edit Glob Grep WebFetch WebSearch" || echo "writer failed for $SLUG"
             if [ -f "$FILE" ]; then
               if npm run build > build.log 2>&1; then
-                cp "$FILE" out/ && echo "ok $SLUG"
+                mkdir -p out/products
+                cp "$FILE" out/
+                git ls-files --others --exclude-standard src/data/products | xargs -r -I{} cp {} out/products/
+                echo "ok $SLUG"
               else
-                echo "build failed for $SLUG; dropping it"; tail -20 build.log; rm -f "$FILE"
+                echo "build failed for $SLUG; dropping it"; tail -20 build.log
               fi
             else
               echo "no article written for $SLUG"
@@ -117,6 +120,7 @@ jobs:
         run: |
           mkdir -p incoming
           for f in incoming/*.mdx; do [ -e "$f" ] || continue; [ -e "src/content/articles/$(basename "$f")" ] || cp "$f" src/content/articles/; done
+          for f in incoming/products/*.y*ml; do [ -e "$f" ] || continue; [ -e "src/data/products/$(basename "$f")" ] || cp "$f" src/data/products/; done
           node -e '
             const fs = require("fs");
             const batch = require("./" + process.env.BATCH);
@@ -133,6 +137,17 @@ jobs:
               return status.has(slug) && l.endsWith(",todo") ? l.replace(/,todo$/, "," + status.get(slug)) : l;
             });
             fs.writeFileSync("content-plan/old-topics.csv", out.join("\n") + "\n");
+            // Roundup topics: done if written, back to todo if this batch didn't manage it.
+            const rf = "content-plan/roundup-topics.csv";
+            const roundups = new Set(batch.filter((t) => t.kind === "roundup").map((t) => t.slug));
+            if (roundups.size && fs.existsSync(rf)) {
+              const rl = fs.readFileSync(rf, "utf8").trimEnd().split("\n").map((l, i) => {
+                const slug = l.split(",")[0];
+                if (i === 0 || !roundups.has(slug)) return l;
+                return l.replace(/,(todo|done)$/, written.has(slug) ? ",done" : ",todo");
+              });
+              fs.writeFileSync(rf, rl.join("\n") + "\n");
+            }
             console.log("written:", written.size);
           '
       - name: Download photos
@@ -147,7 +162,7 @@ jobs:
           npm run build
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/content/articles content-plan/old-topics.csv
+          git add src/content/articles src/data/products content-plan/old-topics.csv content-plan/roundup-topics.csv
           for p in src/assets/photos content-plan/used-photos.json; do [ -e "$p" ] && git add "$p"; done
           N=$(git diff --cached --name-only --diff-filter=A -- src/content/articles | wc -l | tr -d ' ')
           git commit -m "Add $N articles (batch)"

@@ -72,33 +72,30 @@ collections:
         modes: [raw]
         hint: 'Components: <Callout type="danger|info|warn" title="...">...</Callout> and <ProductPick id="product-id">Why we picked it.</ProductPick>'
 
-  - name: data
+  - name: products
     label: Products
-    files:
-      - name: products
-        label: Products and affiliate links
-        file: src/data/products.yaml
-        fields:
-          - name: products
-            label: Products
-            label_singular: Product
-            widget: list
-            root: true
-            summary: '{{fields.name}}{{fields.href | ternary("", " · NEEDS AFFILIATE LINK")}}'
-            fields:
-              - { name: id, label: ID, hint: 'Lowercase-with-dashes. Used in articles as <ProductPick id="...">. Don''t change it once used.' }
-              - { name: name, label: Product name }
-              - { name: pet, label: Pet, widget: select, options: [dogs, cats] }
-              - { name: category, label: Category, hint: 'e.g. "No-pull dog harnesses"' }
-              - { name: award, label: Award, required: false, hint: 'e.g. "Best overall", "Best budget pick"' }
-              - { name: blurb, label: Short description, widget: text }
-              - { name: bestFor, label: Best for, required: false }
-              - { name: pros, label: Pros, widget: list, required: false }
-              - { name: cons, label: Cons, widget: list, required: false }
-              - { name: href, label: Affiliate link, required: false, hint: 'Paste your Amazon/Chewy affiliate URL. Products without one are hidden from the home page.' }
-              - { name: retailer, label: Retailer, default: Amazon, required: false }
-              - { name: image, label: Product photo, widget: image, required: false }
-              - { name: art, label: Fallback illustration, widget: select, options: [harness, fountain, bed, bowl, scratcher, wand], default: harness, required: false }
-              - { name: note, label: Handwritten note, required: false }
-              - { name: roundup, label: Roundup article slug, required: false, hint: 'e.g. best-no-pull-dog-harness' }
-              - { name: featured, label: Lead product on home page, widget: boolean, default: false, required: false }
+    label_singular: Product
+    description: One file per product. The file name is the id used in articles as <ProductPick id="...">.
+    folder: src/data/products
+    extension: yaml
+    format: yaml
+    create: true
+    identifier_field: name
+    slug: '{{fields.name}}'
+    summary: '{{name}} ({{pet}}){{roundup | ternary(" · in " + roundup, "")}}'
+    fields:
+      - { name: name, label: Product name, hint: 'Exact name as the brand writes it. Used for the Amazon search link.' }
+      - { name: pet, label: Pet, widget: select, options: [dogs, cats] }
+      - { name: category, label: Category, hint: 'e.g. "Chew toys for dogs"' }
+      - { name: award, label: Award, required: false, hint: 'e.g. "Best overall", "Best budget"' }
+      - { name: blurb, label: Short description, widget: text }
+      - { name: bestFor, label: Best for, required: false }
+      - { name: pros, label: Pros, widget: list, required: false }
+      - { name: cons, label: Cons, widget: list, required: false }
+      - { name: href, label: Exact product link (optional), required: false, hint: 'Leave empty to link to an Amazon search for the product name. Your Amazon tracking ID is added automatically.' }
+      - { name: retailer, label: Retailer, default: Amazon, required: false }
+      - { name: image, label: Product photo, widget: image, required: false }
+      - { name: art, label: Fallback illustration, widget: select, options: [ball, box, brush, bed, bowl, fountain, harness, scratcher, wand], default: ball, required: false }
+      - { name: note, label: Handwritten note, required: false }
+      - { name: roundup, label: Roundup article slug, required: false, hint: 'e.g. best-cat-litter' }
+      - { name: featured, label: Lead product on home page, widget: boolean, default: false, required: false }

@@ -41,9 +41,9 @@ Components available in `.mdx` without importing:
 
 ## Products and affiliate links
 
-Every product lives once in `src/data/products.yaml` (name, pros/cons, award, affiliate `href`, optional photo).
+Every product lives in its own file in `src/data/products/` (name, pros/cons, award, optional photo). Buttons link to an Amazon search for the product name (or an exact `href`), and `AMAZON_TAG` in `src/consts.ts` turns every Amazon link into an affiliate link.
 Roundups reference products by `id`, and the home page's "What we'd buy" section shows them automatically.
-Products without an `href` show "Affiliate link needed" and are hidden from the home page in production.
+Product roundups are written by `content-plan/ROUNDUP_PROMPT.md` (daily at 11am Pacific, topics in `content-plan/roundup-topics.csv`).
 
 ## Topic backlog
 
@@ -62,7 +62,7 @@ from scratch (never reuse old text). Reuse the old slug as the filename so the o
 - [ ] Replace the placeholder bio on `src/pages/about.astro`
 - [ ] Set `OWNER_NAME` and `OWNER_PHOTO` in `src/consts.ts` (signature and photo on the home page)
 - [ ] Set up the contact inbox in `src/consts.ts`
-- [ ] Add affiliate links in `src/data/products.yaml`, then set `draft: false` on `best-no-pull-dog-harness.mdx`
+- [ ] Get an Amazon Associates tracking ID and set `AMAZON_TAG` in `src/consts.ts`
 - [ ] Deploy `dist/` (Cloudflare Pages or Netlify: build command `npm run build`, output `dist`)
 - [ ] Point the mypetexperts.com DNS at the new host; old WordPress URLs return 404 until their topic is rewritten
 - [ ] Submit `https://mypetexperts.com/sitemap-index.xml` in Google Search Console

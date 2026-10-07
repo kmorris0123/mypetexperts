@@ -2,10 +2,11 @@
 import type { Product } from '../lib/articles';
 import ProductArt from './ProductArt.astro';
 import Arrow from './icons/Arrow.astro';
+import { productLink } from '../lib/articles';
 
 interface Props { product: Product }
 const { product } = Astro.props;
-const { name, award, category, blurb, href, retailer, art, roundup } = product.data;
+const { name, award, category, blurb, retailer, art, roundup } = product.data;
 const tint = art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'var(--art-sand)';
 ---
 
@@ -15,11 +16,7 @@ const tint = art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'va
     <p class="eyebrow">{category}{award && ` · ${award}`}</p>
     <h3>{roundup ? <a class="plain" href={`/${roundup}/`}>{name}</a> : name}</h3>
     <p class="muted">{blurb}</p>
-    {href ? (
-      <a class="btn" href={href} rel="sponsored nofollow noopener" target="_blank">Check price on {retailer} <Arrow size={16} kind="external" /></a>
-    ) : (
-      <span class="btn missing">Affiliate link needed</span>
-    )}
+    <a class="btn" href={productLink(product)} rel="sponsored nofollow noopener" target="_blank">Check price on {retailer} <Arrow size={16} kind="external" /></a>
   </div>
 </article>
 
@@ -32,6 +29,5 @@ const tint = art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'va
   h3 a { color: var(--ink); }
   p.muted { margin: 0 0 8px; font-size: 15.5px; line-height: 1.45; }
   .btn { align-self: flex-start; min-height: 46px; margin-top: auto; padding: 0 18px; font-size: 15.5px; }
-  .missing { background: var(--sand); color: var(--ink-2); border: 1.5px dashed var(--line); }
   @media (max-width: 420px) { .media { width: 88px; } .btn { align-self: stretch; } }
 </style>

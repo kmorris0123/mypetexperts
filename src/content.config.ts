@@ -1,5 +1,5 @@
 import { defineCollection } from 'astro:content';
-import { glob, file } from 'astro/loaders';
+import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const articles = defineCollection({
@@ -51,8 +51,9 @@ const articles = defineCollection({
   }),
 });
 
+// One file per product: src/data/products/<id>.yaml (the filename is the id used in <ProductPick id="..." />).
 const products = defineCollection({
-  loader: file('src/data/products.yaml'),
+  loader: glob({ pattern: '*.{yaml,yml}', base: './src/data/products' }),
   schema: z.object({
     name: z.string(),
     pet: z.enum(['dogs', 'cats']),
@@ -62,10 +63,11 @@ const products = defineCollection({
     bestFor: z.string().optional(),
     pros: z.array(z.string()).default([]),
     cons: z.array(z.string()).default([]),
+    // Exact product link. Leave empty to link to an Amazon search for the product name (see AMAZON_TAG in consts.ts).
     href: z.url().optional(),
     retailer: z.string().default('Amazon'),
     image: z.string().optional(),
-    art: z.enum(['harness', 'fountain', 'bed', 'bowl', 'scratcher', 'wand']).default('harness'),
+    art: z.enum(['harness', 'fountain', 'bed', 'bowl', 'scratcher', 'wand', 'ball', 'box', 'brush']).default('ball'),
     note: z.string().optional(),
     roundup: z.string().optional(),
     featured: z.boolean().default(false),

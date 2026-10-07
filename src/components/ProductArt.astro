@@ -6,11 +6,14 @@ import Bed from './art/Bed.astro';
 import Bowl from './art/Bowl.astro';
 import Scratcher from './art/Scratcher.astro';
 import Wand from './art/Wand.astro';
+import Ball from './art/Ball.astro';
+import Box from './art/Box.astro';
+import Brush from './art/Brush.astro';
 
 interface Props { product: Product; size: number }
 const { product, size } = Astro.props;
 const { image, name, art } = product.data;
-const Art = { harness: Harness, fountain: Fountain, bed: Bed, bowl: Bowl, scratcher: Scratcher, wand: Wand }[art];
+const Art = { harness: Harness, fountain: Fountain, bed: Bed, bowl: Bowl, scratcher: Scratcher, wand: Wand, ball: Ball, box: Box, brush: Brush }[art];
 ---
 
 {image ? <img src={image} alt={name} loading="lazy" /> : <Art size={size} />}

@@ -6,12 +6,13 @@
 import { getEntry } from 'astro:content';
 import ProductArt from './ProductArt.astro';
 import Arrow from './icons/Arrow.astro';
+import { productLink } from '../lib/articles';
 
 interface Props { id: string; showRoundupLink?: boolean }
 const { id, showRoundupLink = false } = Astro.props;
 const product = await getEntry('products', id);
 if (!product) throw new Error(`ProductPick: no product "${id}" in src/data/products.yaml`);
-const { name, award, category, blurb, bestFor, pros, cons, href, retailer, note, roundup, art } = product.data;
+const { name, award, category, blurb, bestFor, pros, cons, retailer, note, roundup, art } = product.data;
 const tint = art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'var(--art-sand)';
 const hasBody = Astro.slots.has('default');
 ---
@@ -38,11 +39,7 @@ const hasBody = Astro.slots.has('default');
       </ul>
     )}
     <div class="actions">
-      {href ? (
-        <a class="btn" href={href} rel="sponsored nofollow noopener" target="_blank">Check price on {retailer} <Arrow size={17} kind="external" /></a>
-      ) : (
-        <span class="btn missing">Affiliate link needed</span>
-      )}
+      <a class="btn" href={productLink(product)} rel="sponsored nofollow noopener" target="_blank">Check price on {retailer} <Arrow size={17} kind="external" /></a>
       {showRoundupLink && roundup && <a href={`/${roundup}/`}>Read the full roundup</a>}
     </div>
   </div>
@@ -66,7 +63,6 @@ const hasBody = Astro.slots.has('default');
   .meh { stroke: var(--ink-2); }
   .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; margin-top: auto; padding-top: 10px; }
   .actions a:not(.btn) { font-size: 15.5px; font-weight: 600; }
-  .missing { background: var(--sand); color: var(--ink-2); border: 1.5px dashed var(--line); }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   @media (max-width: 600px) { .body { padding: 24px 20px; } .media { min-height: 220px; } }
 </style>
