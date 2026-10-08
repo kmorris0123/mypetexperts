@@ -43,7 +43,7 @@ can-cats-eat-chicken-broth,cats,Can cats eat chicken broth?,high,done
 can-cats-eat-chicken-liver,cats,Can cats eat chicken liver?,high,done
 can-cats-eat-chicken-noodle-soup,cats,Can cats eat chicken noodle soup?,high,todo
 can-cats-eat-chicken-nuggets,cats,Can cats eat chicken nuggets?,high,todo
-can-cats-eat-chickpeas,cats,Can cats eat chickpeas?,high,todo
+can-cats-eat-chickpeas,cats,Can cats eat chickpeas?,high,done
 can-cats-eat-chocolate,cats,Can cats eat chocolate?,high,done
 can-cats-eat-chocolate-ice-cream,cats,Can cats eat chocolate ice cream?,high,todo
 can-cats-eat-cooked-eggs,cats,Can cats eat cooked eggs?,high,todo
@@ -498,7 +498,7 @@ can-cats-eat-gummy-bears,cats,Can cats eat gummy bears?,normal,todo
 can-cats-eat-hot-cheetos,cats,Can cats eat hot cheetos?,normal,todo
 can-cats-eat-hot-dogs,cats,Can cats eat hot dogs?,normal,todo
 can-cats-eat-human-food,cats,Can cats eat human food?,normal,todo
-can-cats-eat-hummus,cats,Can cats eat hummus?,normal,todo
+can-cats-eat-hummus,cats,Can cats eat hummus?,normal,merged:can-cats-eat-chickpeas
 can-cats-eat-imitation-crab,cats,Can cats eat imitation crab?,normal,todo
 can-cats-eat-jalapenos,cats,Can cats eat jalapenos?,normal,todo
 can-cats-eat-jello,cats,Can cats eat jello?,normal,todo
