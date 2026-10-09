@@ -94,7 +94,9 @@ collections:
       - { name: cons, label: Cons, widget: list, required: false }
       - { name: href, label: Exact product link (optional), required: false, hint: 'Leave empty to link to an Amazon search for the product name. Your Amazon tracking ID is added automatically.' }
       - { name: retailer, label: Retailer, default: Amazon, required: false }
-      - { name: image, label: Product photo, widget: image, required: false }
+      - { name: image, label: Product photo, widget: image, required: false, hint: 'Only use photos the brand allows (press/media kit) or that you took yourself.' }
+      - { name: imageCredit, label: Photo credit, required: false, hint: 'e.g. "Photo: KONG Company"' }
+      - { name: imagePermission, label: Photo permission page, required: false, hint: 'Link to the brand page that allows using the photo.' }
       - { name: art, label: Fallback illustration, widget: select, options: [ball, box, brush, bed, bowl, fountain, harness, scratcher, wand], default: ball, required: false }
       - { name: note, label: Handwritten note, required: false }
       - { name: roundup, label: Roundup article slug, required: false, hint: 'e.g. best-cat-litter' }

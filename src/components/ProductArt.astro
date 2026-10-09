@@ -16,4 +16,8 @@ const { image, name, art } = product.data;
 const Art = { harness: Harness, fountain: Fountain, bed: Bed, bowl: Bowl, scratcher: Scratcher, wand: Wand, ball: Ball, box: Box, brush: Brush }[art];
 ---
 
-{image ? <img src={image} alt={name} loading="lazy" /> : <Art size={size} />}
+{image ? <img class="product-photo" src={image} alt={`${name} product photo`} loading="lazy" decoding="async" /> : <Art size={size} />}
+
+<style>
+  .product-photo { width: 100%; height: 100%; object-fit: contain; }
+</style>

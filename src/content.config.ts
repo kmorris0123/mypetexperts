@@ -67,6 +67,9 @@ const products = defineCollection({
     href: z.url().optional(),
     retailer: z.string().default('Amazon'),
     image: z.string().optional(),
+    // Credit shown under the photo (e.g. "Photo: KONG Company") and the page that permits using it.
+    imageCredit: z.string().optional(),
+    imagePermission: z.url().optional(),
     art: z.enum(['harness', 'fountain', 'bed', 'bowl', 'scratcher', 'wand', 'ball', 'box', 'brush']).default('ball'),
     note: z.string().optional(),
     roundup: z.string().optional(),

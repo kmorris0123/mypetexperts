@@ -1,7 +1,7 @@
 ---
 /**
  * A product card. In .mdx roundups: <ProductPick id="ruffwear-front-range">Why we picked it.</ProductPick>
- * Product details (name, pros, link...) come from src/data/products.yaml.
+ * Product details (name, pros, link...) come from src/data/products/<id>.yaml.
  */
 import { getEntry } from 'astro:content';
 import ProductArt from './ProductArt.astro';
@@ -11,9 +11,9 @@ import { productLink } from '../lib/articles';
 interface Props { id: string; showRoundupLink?: boolean }
 const { id, showRoundupLink = false } = Astro.props;
 const product = await getEntry('products', id);
-if (!product) throw new Error(`ProductPick: no product "${id}" in src/data/products.yaml`);
-const { name, award, category, blurb, bestFor, pros, cons, retailer, note, roundup, art } = product.data;
-const tint = art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'var(--art-sand)';
+if (!product) throw new Error(`ProductPick: no product "${id}" in src/data/products/`);
+const { name, award, category, blurb, bestFor, pros, cons, retailer, note, roundup, art, image, imageCredit } = product.data;
+const tint = image ? '#ffffff' : art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'var(--art-sand)';
 const hasBody = Astro.slots.has('default');
 ---
 
@@ -22,6 +22,7 @@ const hasBody = Astro.slots.has('default');
     <ProductArt product={product} size={220} />
     {award && <span class="award">{award}</span>}
     {note && <span class="note hand">{note}</span>}
+    {image && imageCredit && <span class="credit">{imageCredit}</span>}
   </div>
   <div class="body">
     <p class="eyebrow">{category}</p>
@@ -48,7 +49,8 @@ const hasBody = Astro.slots.has('default');
 <style>
   .pick { display: flex; flex-wrap: wrap; border: 1.5px solid var(--ink); border-radius: 20px; overflow: hidden; background: var(--surface); margin: 2rem 0; }
   .media { position: relative; flex: 1 1 260px; min-height: 280px; display: flex; align-items: center; justify-content: center; padding: 48px 20px 24px; }
-  .media img { max-height: 260px; object-fit: contain; }
+  .media :global(.product-photo) { max-height: 280px; }
+  .credit { position: absolute; right: 12px; bottom: 8px; font-size: 11.5px; color: #6b665e; }
   .award { position: absolute; left: 16px; top: 16px; padding: 7px 14px; border-radius: 8px; background: var(--fixed-ink); color: #fff; font-size: 13.5px; font-weight: 700; line-height: 1.2; }
   .note { position: absolute; right: 18px; top: 18px; max-width: 150px; font-size: 26px; line-height: 1; color: #b8371f; text-align: center; transform: rotate(5deg); }
   .body { flex: 1.2 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 30px 32px; }

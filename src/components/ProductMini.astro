@@ -6,8 +6,8 @@ import { productLink } from '../lib/articles';
 
 interface Props { product: Product }
 const { product } = Astro.props;
-const { name, award, category, blurb, retailer, art, roundup } = product.data;
-const tint = art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'var(--art-sand)';
+const { name, award, category, blurb, retailer, art, roundup, image } = product.data;
+const tint = image ? '#ffffff' : art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'var(--art-sand)';
 ---
 
 <article class="mini">
@@ -22,7 +22,7 @@ const tint = art === 'fountain' || art === 'scratcher' ? 'var(--art-sage)' : 'va
 
 <style>
   .mini { flex: 1 1 auto; display: flex; gap: 20px; padding: 18px; border: 1.5px solid var(--line); border-radius: 20px; background: var(--surface); }
-  .media { flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 124px; border-radius: 12px; overflow: hidden; }
+  .media { flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 124px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); padding: 6px; }
   .body { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
   .eyebrow { margin: 0; font-size: 12.5px; }
   h3 { margin: 0; font-size: 22px; line-height: 1.15; letter-spacing: -0.01em; }
