@@ -56,6 +56,8 @@ const products = defineCollection({
   loader: glob({ pattern: '*.{yaml,yml}', base: './src/data/products' }),
   schema: z.object({
     name: z.string(),
+    // Brand name as it should appear in the photo credit ("Photo: KONG").
+    brand: z.string().optional(),
     pet: z.enum(['dogs', 'cats']),
     category: z.string(),
     award: z.string().optional(),

@@ -60,6 +60,8 @@ jobs:
             --model claude-sonnet-5-5 \
             --allowedTools "Bash Read Write Edit Glob Grep WebFetch WebSearch"
 
+      - name: Download official product photos
+        run: node scripts/fetch-product-images.mjs
       - name: Download photos
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
@@ -76,7 +78,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add src/content/articles src/data/products content-plan/old-topics.csv content-plan/roundup-topics.csv
-          for p in src/assets/photos content-plan/used-photos.json; do [ -e "$p" ] && git add "$p"; done
+          for p in src/assets/photos public/products content-plan/used-photos.json; do [ -e "$p" ] && git add "$p"; done
           NEW=$(git diff --cached --name-only --diff-filter=A -- src/content/articles | head -1)
           TITLE=$( [ -n "$NEW" ] && sed -n "s/^title: *['\"]\{0,1\}\(.*\)['\"]\{0,1\} *$/\1/p" "$NEW" | head -1 | sed "s/['\"]$//" )
           git commit -m "Add article: ${TITLE:-backlog update}"

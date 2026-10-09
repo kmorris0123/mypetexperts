@@ -5,7 +5,7 @@ name: Fetch article photos
 on:
   push:
     branches: [main]
-    paths: ['src/content/articles/**']
+    paths: ['src/content/articles/**', 'src/data/products/**']
   workflow_dispatch:
 
 permissions:
@@ -26,6 +26,8 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - name: Download official product photos
+        run: node scripts/fetch-product-images.mjs
       - name: Download photos
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
@@ -38,7 +40,7 @@ jobs:
           npm run build
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A src/content/articles src/assets/photos content-plan/used-photos.json
+          git add -A src/content/articles src/data/products src/assets/photos public/products content-plan/used-photos.json
           git commit -m "Add Pexels photos"
           git push origin HEAD:main
           gh workflow run deploy.yml --ref main

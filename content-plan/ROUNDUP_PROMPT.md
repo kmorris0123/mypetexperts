@@ -19,6 +19,8 @@ Create one file per product: `src/data/products/<brand-product-short-id>.yaml` (
 
 ```yaml
 name: KONG Classic Dog Toy          # exact product name as the brand writes it (it's used for the Amazon search link)
+brand: KONG                         # brand name, used for the photo credit
+imageSource: 'https://www.kongcompany.com/...'   # the product's page on the BRAND'S OWN site (never Amazon or another retailer); the official photo is pulled from it automatically
 pet: dogs                           # dogs | cats
 category: Chew toys for dogs        # short plural category
 award: Best overall                 # Best overall / Best budget / Best for X
@@ -30,7 +32,7 @@ art: ball                           # fallback picture: ball (toys), box (litter
 roundup: best-dog-toys-for-aggressive-chewers   # the article slug
 ```
 
-Don't add `href` (the site links to Amazon automatically and adds our affiliate ID). Set `featured: true` on the "Best overall" product only.
+Don't add `href` (the site links to Amazon automatically and adds our affiliate ID). Don't add `image`; it's filled in from `imageSource` after you finish. Set `featured: true` on the "Best overall" product only.
 
 ## 5. Write the article
 File: `src/content/articles/<slug>.mdx`. Frontmatter:
