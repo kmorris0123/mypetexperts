@@ -112,7 +112,7 @@ can-cats-eat-parmesan-cheese,cats,Can cats eat parmesan cheese?,high,todo
 can-cats-eat-peanut-butter,cats,Can cats eat peanut butter?,high,todo
 can-cats-eat-peas,cats,Can cats eat peas?,high,todo
 can-cats-eat-pineapples,cats,Can cats eat pineapples?,high,todo
-can-cats-eat-pistachios,cats,Can cats eat pistachios?,high,todo
+can-cats-eat-pistachios,cats,Can cats eat pistachios?,high,done
 can-cats-eat-popcorn,cats,Can cats eat popcorn?,high,todo
 can-cats-eat-pork,cats,Can cats eat pork?,high,todo
 can-cats-eat-pork-chops,cats,Can cats eat pork chops?,high,todo
@@ -160,7 +160,7 @@ can-cats-eat-tuna-in-water,cats,Can cats eat tuna in water?,high,todo
 can-cats-eat-turkey,cats,Can cats eat turkey?,high,todo
 can-cats-eat-turkey-bacon,cats,Can cats eat turkey bacon?,high,todo
 can-cats-eat-vanilla-ice-cream,cats,Can cats eat vanilla ice cream?,high,todo
-can-cats-eat-walnuts,cats,Can cats eat walnuts?,high,todo
+can-cats-eat-walnuts,cats,Can cats eat walnuts?,high,merged:can-cats-eat-pistachios
 can-cats-eat-watermelon,cats,Can cats eat watermelon?,high,todo
 can-cats-eat-wet-dog-food,cats,Can cats eat wet dog food?,high,todo
 can-cats-eat-wheatgrass,cats,Can cats eat wheatgrass?,high,todo
