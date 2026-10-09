@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import Page from '../layouts/Page.astro';
+import { SITE_NAME, CONTACT_EMAIL } from '../consts';
+
+const products = (await getCollection('products'))
+  .filter((p) => p.data.image)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+---
+
+<Page title="Image Credits" description={`Where the product photos on ${SITE_NAME} come from, and how to request a change.`}>
+  <p>
+    Product photos on {SITE_NAME} are official images from each brand, shown to help readers identify the products we
+    recommend. All trademarks and images belong to their respective owners, and each photo is credited to its brand.
+  </p>
+  <h2>Request a change</h2>
+  <p>
+    If you represent a brand and would like a photo removed, replaced, or credited differently, email
+    <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with the page link. We'll act on it within 2 business days.
+  </p>
+  <h2>Photo sources</h2>
+  <ul class="credits">
+    {products.map((p) => {
+      const src = p.data.imagePermission ?? p.data.imageSource;
+      return (
+        <li>
+          <strong>{p.data.name}</strong>: {p.data.imageCredit?.replace(/^Photo:\s*/, '') ?? 'Brand image'}
+          {src && <> (<a href={src} rel="nofollow noopener" target="_blank">source</a>)</>}
+          {p.data.roundup && <> · <a href={`/${p.data.roundup}/`}>see the guide</a></>}
+        </li>
+      );
+    })}
+  </ul>
+</Page>
+
+<style>
+  .credits li { font-size: 16px !important; margin: 6px 0; }
+</style>
