@@ -1,0 +1,19 @@
+name: K&H Coolin' Pet Pad
+brand: K&H Pet Products
+imageSource: 'https://khpet.com/products/coolin-pet-pad'
+pet: dogs
+category: Cooling mats for dogs
+award: Best water-filled mat
+blurb: A thin, lightweight pad that you fill with water, with no gel inside, sold in four sizes.
+bestFor: Owners who want a gel-free, travel-friendly pad
+pros:
+  - No toxic gels, and no power or fridge needed
+  - Lightweight and easy to travel with
+  - Four sizes, from 11 x 15 inches to 27 x 38 inches
+cons:
+  - Cools by moving heat into the air, so it stays at room temperature
+  - Works best on a hard floor, not carpet, and must be hand-cleaned
+art: bed
+roundup: best-dog-cooling-mats
+image: /products/kh-coolin-pet-pad.jpg
+imageCredit: "Photo: K&H Pet Products"

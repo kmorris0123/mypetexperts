@@ -1,0 +1,20 @@
+name: Cool Pet Pad
+brand: The Green Pet Shop
+imageSource: 'https://www.thegreenpetshop.com/products/cool-pet-pad'
+pet: dogs
+category: Cooling mats for dogs
+award: Best overall
+featured: true
+blurb: A pressure-activated gel mat that needs no water, power or fridge, sold in five sizes from XS to XL.
+bestFor: Dogs of almost any size
+pros:
+  - Five sizes, from 11.8 x 15.7 inches to 27.5 x 43.3 inches
+  - Cools for up to 3 hours, then recharges after 15-20 minutes of non-use
+  - Wipes clean and folds up
+cons:
+  - Made for indoor use and not for dogs that chew or scratch a lot
+  - Heat and direct sun reduce how well it cools
+art: bed
+roundup: best-dog-cooling-mats
+image: /products/green-pet-shop-cool-pet-pad.jpg
+imageCredit: "Photo: The Green Pet Shop"
