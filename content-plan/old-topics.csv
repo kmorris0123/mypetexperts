@@ -257,7 +257,7 @@ can-dogs-eat-corn-dogs,dogs,Can dogs eat corn dogs?,high,todo
 can-dogs-eat-corn-grits,dogs,Can dogs eat corn grits?,high,todo
 can-dogs-eat-corn-muffins,dogs,Can dogs eat corn muffins?,high,todo
 can-dogs-eat-corn-nuts,dogs,Can dogs eat corn nuts?,high,todo
-can-dogs-eat-corn-tortillas,dogs,Can dogs eat corn tortillas?,high,todo
+can-dogs-eat-corn-tortillas,dogs,Can dogs eat corn tortillas?,high,merged:can-dogs-eat-tortillas
 can-dogs-eat-cornbeef,dogs,Can dogs eat cornbeef?,high,todo
 can-dogs-eat-cornbread,dogs,Can dogs eat cornbread?,high,todo
 can-dogs-eat-corned-beef,dogs,Can dogs eat corned beef?,high,todo
@@ -396,7 +396,7 @@ can-dogs-eat-toasted-bread,dogs,Can dogs eat toasted bread?,high,todo
 can-dogs-eat-tomato,dogs,Can dogs eat tomato?,high,todo
 can-dogs-eat-tomato-paste,dogs,Can dogs eat tomato paste?,high,todo
 can-dogs-eat-tomato-sauce,dogs,Can dogs eat tomato sauce?,high,todo
-can-dogs-eat-tortillas-corn,dogs,Can dogs eat tortillas corn?,high,todo
+can-dogs-eat-tortillas-corn,dogs,Can dogs eat tortillas corn?,high,merged:can-dogs-eat-tortillas
 can-dogs-eat-tuna,dogs,Can dogs eat tuna?,high,todo
 can-dogs-eat-walnut,dogs,Can dogs eat walnut?,high,todo
 can-dogs-eat-walnut-oil,dogs,Can dogs eat walnut oil?,high,todo
@@ -775,7 +775,7 @@ can-dogs-eat-fishsticks,dogs,Can dogs eat fishsticks?,normal,todo
 can-dogs-eat-flan,dogs,Can dogs eat flan?,normal,todo
 can-dogs-eat-flaxseeds,dogs,Can dogs eat flaxseeds?,normal,todo
 can-dogs-eat-flour,dogs,Can dogs eat flour?,normal,todo
-can-dogs-eat-flour-tortillas,dogs,Can dogs eat flour tortillas?,normal,todo
+can-dogs-eat-flour-tortillas,dogs,Can dogs eat flour tortillas?,normal,merged:can-dogs-eat-tortillas
 can-dogs-eat-foie-gras,dogs,Can dogs eat foie gras?,normal,todo
 can-dogs-eat-food-cooked-in-olive-oil,dogs,Can dogs eat food cooked in olive oil?,normal,todo
 can-dogs-eat-food-cooked-with-bay-leaves,dogs,Can dogs eat food cooked with bay leaves?,normal,todo
@@ -1063,7 +1063,7 @@ can-dogs-eat-thyme,dogs,Can dogs eat thyme?,normal,todo
 can-dogs-eat-toffee,dogs,Can dogs eat toffee?,normal,todo
 can-dogs-eat-toffee-peanuts,dogs,Can dogs eat toffee peanuts?,normal,todo
 can-dogs-eat-tofu,dogs,Can dogs eat tofu?,normal,todo
-can-dogs-eat-tortillas,dogs,Can dogs eat tortillas?,normal,todo
+can-dogs-eat-tortillas,dogs,Can dogs eat tortillas?,normal,done
 can-dogs-eat-turnip,dogs,Can dogs eat turnip?,normal,todo
 can-dogs-eat-turtle-food,dogs,Can dogs eat turtle food?,normal,todo
 can-dogs-eat-twisties,dogs,Can dogs eat twisties?,normal,todo
