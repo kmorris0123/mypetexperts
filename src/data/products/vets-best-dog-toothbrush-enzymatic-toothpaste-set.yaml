@@ -1,0 +1,19 @@
+name: Dog Toothbrush & Enzymatic Toothpaste Set
+brand: Vet's Best
+imageSource: 'https://vetsbest.com/collections/dog-dental/products/dog-toothbrush-enzymatic-toothpaste-set'
+pet: dogs
+category: Dog dental kits
+award: Best brush-and-gel set
+blurb: A toothbrush with a three-sided head and an enzymatic dental gel in one set.
+bestFor: Owners who want a plant-based gel and a brush together
+pros:
+  - Triple-sided brush head cleans several sides of each tooth at once
+  - Gel is safe to swallow and needs no rinsing
+  - Gel made with aloe, baking soda and enzymes
+cons:
+  - Brand's page doesn't list sizes or an age range
+  - The page says brush several times a week, while the AKC suggests daily brushing
+art: brush
+roundup: best-dog-toothbrushes
+image: /products/vets-best-dog-toothbrush-enzymatic-toothpaste-set.jpg
+imageCredit: "Photo: Vet's Best"
