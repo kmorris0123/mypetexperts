@@ -184,7 +184,7 @@ can-dogs-eat-arbys-roast-beef,dogs,Can dogs eat arbys roast beef?,high,todo
 can-dogs-eat-avocado,dogs,Can dogs eat avocado?,high,todo
 can-dogs-eat-bacon,dogs,Can dogs eat bacon?,high,todo
 can-dogs-eat-bacon-fat,dogs,Can dogs eat bacon fat?,high,todo
-can-dogs-eat-baked-beans-in-tomato-sauce,dogs,Can dogs eat baked beans in tomato sauce?,high,todo
+can-dogs-eat-baked-beans-in-tomato-sauce,dogs,Can dogs eat baked beans in tomato sauce?,high,merged:can-dogs-eat-baked-beans
 can-dogs-eat-baked-potato,dogs,Can dogs eat baked potato?,high,todo
 can-dogs-eat-bbq-pork,dogs,Can dogs eat bbq pork?,high,todo
 can-dogs-eat-bean-and-cheese-burritos,dogs,Can dogs eat bean and cheese burritos?,high,todo
@@ -339,7 +339,7 @@ can-dogs-eat-plain-rice-cakes,dogs,Can dogs eat plain rice cakes?,high,todo
 can-dogs-eat-plain-white-rice,dogs,Can dogs eat plain white rice?,high,todo
 can-dogs-eat-pomegranate-yogurt,dogs,Can dogs eat pomegranate yogurt?,high,todo
 can-dogs-eat-pork,dogs,Can dogs eat pork?,high,todo
-can-dogs-eat-pork-and-beans,dogs,Can dogs eat pork and beans?,high,todo
+can-dogs-eat-pork-and-beans,dogs,Can dogs eat pork and beans?,high,merged:can-dogs-eat-baked-beans
 can-dogs-eat-pork-cooked,dogs,Can dogs eat pork cooked?,high,todo
 can-dogs-eat-pork-liver,dogs,Can dogs eat pork liver?,high,todo
 can-dogs-eat-pork-meat,dogs,Can dogs eat pork meat?,high,todo
