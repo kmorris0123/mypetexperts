@@ -243,7 +243,7 @@ can-dogs-eat-cooked-bones-pork,dogs,Can dogs eat cooked bones pork?,high,todo
 can-dogs-eat-cooked-chicken-necks,dogs,Can dogs eat cooked chicken necks?,high,todo
 can-dogs-eat-cooked-chicken-necks-2,dogs,Can dogs eat cooked chicken necks 2?,high,todo
 can-dogs-eat-cooked-corn,dogs,Can dogs eat cooked corn?,high,todo
-can-dogs-eat-cooked-eggplant,dogs,Can dogs eat cooked eggplant?,high,todo
+can-dogs-eat-cooked-eggplant,dogs,Can dogs eat cooked eggplant?,high,merged:can-dogs-eat-eggplant
 can-dogs-eat-cooked-ham,dogs,Can dogs eat cooked ham?,high,todo
 can-dogs-eat-cooked-peas,dogs,Can dogs eat cooked peas?,high,todo
 can-dogs-eat-cooked-pork,dogs,Can dogs eat cooked pork?,high,todo
@@ -273,7 +273,7 @@ can-dogs-eat-egg-custard,dogs,Can dogs eat egg custard?,high,todo
 can-dogs-eat-egg-custard-tarts,dogs,Can dogs eat egg custard tarts?,high,todo
 can-dogs-eat-egg-rolls,dogs,Can dogs eat egg rolls?,high,todo
 can-dogs-eat-egg-salad,dogs,Can dogs eat egg salad?,high,todo
-can-dogs-eat-eggplant-cooked,dogs,Can dogs eat eggplant cooked?,high,todo
+can-dogs-eat-eggplant-cooked,dogs,Can dogs eat eggplant cooked?,high,merged:can-dogs-eat-eggplant
 can-dogs-eat-expired-raw-chicken,dogs,Can dogs eat expired raw chicken?,high,todo
 can-dogs-eat-flavored-yogurt,dogs,Can dogs eat flavored yogurt?,high,todo
 can-dogs-eat-food-with-garlic,dogs,Can dogs eat food with garlic?,high,todo
