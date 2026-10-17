@@ -1,0 +1,19 @@
+name: Catit Litter Mat
+brand: Catit
+imageSource: 'https://www.catit.com/products/litter-boxes-accessories/litter-mat/'
+pet: cats
+category: Cat litter mats
+award: Best for fine litter and dust
+blurb: A two-texture, anti-tracking mat that comes in a regular and a jumbo size.
+bestFor: Cats who track fine litter bits
+pros:
+  - Pockets catch large pieces, mesh catches small bits and dust
+  - Non-slip surface
+  - Two sizes to match regular or jumbo boxes
+cons:
+  - The maker's page doesn't name the material
+  - The maker's page gives no cleaning steps
+art: box
+roundup: best-cat-litter-mats
+image: /products/catit-litter-mat.jpg
+imageCredit: "Photo: Catit"

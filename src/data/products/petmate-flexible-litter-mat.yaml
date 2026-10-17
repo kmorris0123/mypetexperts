@@ -1,0 +1,19 @@
+name: Petmate Flexible Litter Mat
+brand: Petmate
+imageSource: 'https://www.petmate.com/products/petmate-flexible-litter-mat'
+pet: cats
+category: Cat litter mats
+award: Best simple everyday mat
+blurb: A small, paw-print-themed rubber mat you can shake out, vacuum or wash.
+bestFor: Single-cat homes with a standard litter box
+pros:
+  - Made to stay in place outside the box
+  - Shake, vacuum or wash to clean
+  - Light at under one pound
+cons:
+  - Only one size, about 17 by 14 inches
+  - Small for large boxes or cats who fling litter far
+art: box
+roundup: best-cat-litter-mats
+image: /products/petmate-flexible-litter-mat.jpg
+imageCredit: "Photo: Petmate"
