@@ -9,7 +9,7 @@ can-cats-eat-apples,cats,Can cats eat apples?,high,todo
 can-cats-eat-applesauce,cats,Can cats eat applesauce?,high,todo
 can-cats-eat-avocados,cats,Can cats eat avocados?,high,todo
 can-cats-eat-bacon,cats,Can cats eat bacon?,high,todo
-can-cats-eat-bacon-raw,cats,Can cats eat bacon raw?,high,todo
+can-cats-eat-bacon-raw,cats,Can cats eat bacon raw?,high,merged:can-cats-eat-raw-meat
 can-cats-eat-banana-bread,cats,Can cats eat banana bread?,high,done
 can-cats-eat-bananas,cats,Can cats eat bananas?,high,todo
 can-cats-eat-beef,cats,Can cats eat beef?,high,todo
@@ -125,15 +125,15 @@ can-cats-eat-pumpkin-puree,cats,Can cats eat pumpkin puree?,high,todo
 can-cats-eat-pumpkin-seeds,cats,Can cats eat pumpkin seeds?,high,todo
 can-cats-eat-pumpkins,cats,Can cats eat pumpkins?,high,todo
 can-cats-eat-raisins,cats,Can cats eat raisins?,high,todo
-can-cats-eat-raw-bacon,cats,Can cats eat raw bacon?,high,todo
-can-cats-eat-raw-beef,cats,Can cats eat raw beef?,high,todo
-can-cats-eat-raw-chicken,cats,Can cats eat raw chicken?,high,todo
-can-cats-eat-raw-eggs,cats,Can cats eat raw eggs?,high,todo
-can-cats-eat-raw-pork,cats,Can cats eat raw pork?,high,todo
+can-cats-eat-raw-bacon,cats,Can cats eat raw bacon?,high,merged:can-cats-eat-raw-meat
+can-cats-eat-raw-beef,cats,Can cats eat raw beef?,high,merged:can-cats-eat-raw-meat
+can-cats-eat-raw-chicken,cats,Can cats eat raw chicken?,high,merged:can-cats-eat-raw-meat
+can-cats-eat-raw-eggs,cats,Can cats eat raw eggs?,high,merged:can-cats-eat-raw-meat
+can-cats-eat-raw-pork,cats,Can cats eat raw pork?,high,merged:can-cats-eat-raw-meat
 can-cats-eat-raw-pumpkin,cats,Can cats eat raw pumpkin?,high,todo
-can-cats-eat-raw-salmon,cats,Can cats eat raw salmon?,high,todo
-can-cats-eat-raw-shrimp,cats,Can cats eat raw shrimp?,high,todo
-can-cats-eat-raw-tuna,cats,Can cats eat raw tuna?,high,todo
+can-cats-eat-raw-salmon,cats,Can cats eat raw salmon?,high,merged:can-cats-eat-raw-meat
+can-cats-eat-raw-shrimp,cats,Can cats eat raw shrimp?,high,merged:can-cats-eat-raw-meat
+can-cats-eat-raw-tuna,cats,Can cats eat raw tuna?,high,merged:can-cats-eat-raw-meat
 can-cats-eat-rice,cats,Can cats eat rice?,high,todo
 can-cats-eat-roast-beef,cats,Can cats eat roast beef?,high,todo
 can-cats-eat-rotisserie-chicken,cats,Can cats eat rotisserie chicken?,high,todo
@@ -562,9 +562,9 @@ can-cats-eat-quinoa,cats,Can cats eat quinoa?,normal,todo
 can-cats-eat-ranch,cats,Can cats eat ranch?,normal,todo
 can-cats-eat-raspberries,cats,Can cats eat raspberries?,normal,todo
 can-cats-eat-raspberry,cats,Can cats eat raspberry?,normal,todo
-can-cats-eat-raw-fish,cats,Can cats eat raw fish?,normal,todo
-can-cats-eat-raw-meat,cats,Can cats eat raw meat?,normal,todo
-can-cats-eat-raw-steak,cats,Can cats eat raw steak?,normal,todo
+can-cats-eat-raw-fish,cats,Can cats eat raw fish?,normal,merged:can-cats-eat-raw-meat
+can-cats-eat-raw-meat,cats,Can cats eat raw meat?,normal,done
+can-cats-eat-raw-steak,cats,Can cats eat raw steak?,normal,merged:can-cats-eat-raw-meat
 can-cats-eat-refried-beans,cats,Can cats eat refried beans?,normal,todo
 can-cats-eat-roaches,cats,Can cats eat roaches?,normal,todo
 can-cats-eat-romaine-lettuce,cats,Can cats eat romaine lettuce?,normal,todo
