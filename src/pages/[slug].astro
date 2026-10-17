@@ -7,6 +7,7 @@ import Callout from '../components/Callout.astro';
 import ProductPick from '../components/ProductPick.astro';
 import FeaturedImage from '../components/FeaturedImage.astro';
 import Photo from '../components/Photo.astro';
+import SisterGrooming from '../components/SisterGrooming.astro';
 import { getArticles, lastUpdated, formatDate, type Article } from '../lib/articles';
 import { PETS, SITE_NAME } from '../consts';
 
@@ -24,6 +25,8 @@ const VERDICT = {
 } as const;
 const v = verdict ? VERDICT[verdict] : undefined;
 const ogImage = `/og/${article.id}.png`;
+// Dog grooming topics get a note about our Orange County grooming sister site.
+const isGrooming = pet === 'dogs' && /(^|-)(shampoos?|nails?|groom|grooming|groomers?|brush|brushes|brushing|deshedding|shedding|bath|baths|bathing|matted|mats?-in)(-|$)/.test(article.id);
 const updated = lastUpdated(article);
 const { Content, headings } = await render(article);
 const toc = [...headings.filter((h) => h.depth === 2), ...(article.data.faq.length ? [{ depth: 2, slug: 'faq', text: 'Common questions' }] : [])];
@@ -122,6 +125,8 @@ if (faq.length) {
     <div class="prose body">
       <Content components={{ Callout, ProductPick, Photo }} photos={photos} />
     </div>
+
+    {isGrooming && <div class="prose"><SisterGrooming /></div>}
 
     {faq.length > 0 && (
       <section class="prose faq" aria-labelledby="faq">
