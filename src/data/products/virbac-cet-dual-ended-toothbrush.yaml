@@ -1,6 +1,6 @@
 name: C.E.T. Dual-Ended Toothbrush
 brand: Virbac
-imageSource: 'https://nz.virbac.com/home/everydaycare/dental/dental-care-for-dogs/c-e-t-r-enzymatic-toothbrush.html'
+imageSource: 'https://vet-us.virbac.com/home/products/dental.html'
 pet: dogs
 category: Dog toothbrushes
 award: Best toothbrush on its own
@@ -15,3 +15,5 @@ cons:
 - Sold as a single brush, with no size range listed
 art: brush
 roundup: best-dog-toothbrushes
+image: /products/virbac-cet-dual-ended-toothbrush.jpg
+imageCredit: 'Photo: Virbac'
