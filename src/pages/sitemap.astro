@@ -1,0 +1,43 @@
+---
+import Page from '../layouts/Page.astro';
+import { getArticles } from '../lib/articles';
+import { PETS, SITE_NAME, type Pet } from '../consts';
+
+const articles = (await getArticles()).filter((a) => !a.data.draft);
+const byTitle = (list: typeof articles) => [...list].sort((a, b) => a.data.title.localeCompare(b.data.title));
+const sections = (Object.keys(PETS) as Pet[]).flatMap((pet) => [
+  { title: `${PETS[pet].label}: product picks`, items: byTitle(articles.filter((a) => a.data.pet === pet && a.data.kind === 'roundup')) },
+  { title: `${PETS[pet].label}: guides`, items: byTitle(articles.filter((a) => a.data.pet === pet && a.data.kind === 'guide')) },
+]).filter((s) => s.items.length);
+
+const pages = [
+  { href: '/', label: 'Home' },
+  { href: '/dogs/', label: 'Dogs' },
+  { href: '/cats/', label: 'Cats' },
+  { href: '/about/', label: 'About' },
+  { href: '/how-we-research/', label: 'How we research' },
+  { href: '/affiliate-disclosure/', label: 'Affiliate disclosure' },
+  { href: '/privacy/', label: 'Privacy' },
+  { href: '/image-credits/', label: 'Image credits' },
+];
+---
+
+<Page title="Sitemap" description={`Every guide and product pick on ${SITE_NAME}, in one place.`}>
+  <p class="muted">{articles.length} articles. Search engines can use the <a href="/sitemap-index.xml">XML sitemap</a>.</p>
+
+  <h2>Site pages</h2>
+  <ul class="cols">{pages.map((p) => <li><a href={p.href}>{p.label}</a></li>)}</ul>
+
+  {sections.map((s) => (
+    <>
+      <h2>{s.title} <span class="n">{s.items.length}</span></h2>
+      <ul class="cols">{s.items.map((a) => <li><a href={`/${a.id}/`}>{a.data.title}</a></li>)}</ul>
+    </>
+  ))}
+</Page>
+
+<style>
+  .cols { columns: 2 18rem; column-gap: 2rem; padding-left: 1.1rem; }
+  .cols li { break-inside: avoid; font-size: 16px !important; margin: 4px 0; }
+  h2 .n { font-family: var(--body); font-size: 15px; font-weight: 600; color: var(--ink-2); }
+</style>
