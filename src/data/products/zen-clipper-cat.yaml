@@ -1,0 +1,20 @@
+name: Zen Clipper
+brand: Zen Clipper
+imageSource: 'https://petppi.com/products/zen-clipper'
+pet: cats
+category: Cat nail clippers
+award: Best overall
+blurb: A size-specific clipper with a conical stainless steel blade that lets only the nail tip into the cutting area.
+bestFor: Cat owners nervous about cutting the quick
+pros:
+  - Cat-specific sizes, including XS for most adult cats and S for older cats with larger nails
+  - Conical blade is designed to let only the nail tip reach the cutting edge
+  - Stainless steel blade with a cushioned non-slip handle
+cons:
+  - Sold in seven sizes, so you need to pick the right one
+  - Still needs a calm cat and a steady hand
+art: brush
+roundup: best-cat-nail-clippers
+featured: true
+image: /products/zen-clipper-cat.jpg
+imageCredit: "Photo: Zen Clipper"
