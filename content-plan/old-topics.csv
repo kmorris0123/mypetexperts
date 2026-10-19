@@ -179,7 +179,7 @@ can-dogs-eat-almond-milk,dogs,Can dogs eat almond milk?,high,done
 can-dogs-eat-american-cheese,dogs,Can dogs eat american cheese?,high,todo
 can-dogs-eat-american-cheese-slices,dogs,Can dogs eat american cheese slices?,high,todo
 can-dogs-eat-apple-chips,dogs,Can dogs eat apple chips?,high,todo
-can-dogs-eat-apple-pie,dogs,Can dogs eat apple pie?,high,todo
+can-dogs-eat-apple-pie,dogs,Can dogs eat apple pie?,high,done
 can-dogs-eat-arbys-roast-beef,dogs,Can dogs eat arbys roast beef?,high,todo
 can-dogs-eat-avocado,dogs,Can dogs eat avocado?,high,todo
 can-dogs-eat-bacon,dogs,Can dogs eat bacon?,high,todo
@@ -303,7 +303,7 @@ can-dogs-eat-hamster-treats,dogs,Can dogs eat hamster treats?,high,todo
 can-dogs-eat-honey-bunches-of-oats,dogs,Can dogs eat honey bunches of oats?,high,todo
 can-dogs-eat-honey-dew,dogs,Can dogs eat honey dew?,high,todo
 can-dogs-eat-honey-wheat-pretzels,dogs,Can dogs eat honey wheat pretzels?,high,todo
-can-dogs-eat-honeycomb,dogs,Can dogs eat honeycomb?,high,todo
+can-dogs-eat-honeycomb,dogs,Can dogs eat honeycomb?,high,skipped-no-sources
 can-dogs-eat-honeydew-melon-skin,dogs,Can dogs eat honeydew melon skin?,high,todo
 can-dogs-eat-ice-cream-cones,dogs,Can dogs eat ice cream cones?,high,todo
 can-dogs-eat-knuckle-bones,dogs,Can dogs eat knuckle bones?,high,todo
@@ -312,7 +312,7 @@ can-dogs-eat-lactose-free-milk,dogs,Can dogs eat lactose free milk?,high,done
 can-dogs-eat-lemon-grass,dogs,Can dogs eat lemon grass?,high,todo
 can-dogs-eat-lemongrass,dogs,Can dogs eat lemongrass?,high,todo
 can-dogs-eat-lettuce-and-tomatoes,dogs,Can dogs eat lettuce and tomatoes?,high,todo
-can-dogs-eat-licorice,dogs,Can dogs eat licorice?,high,todo
+can-dogs-eat-licorice,dogs,Can dogs eat licorice?,high,skipped-no-sources
 can-dogs-eat-macaroni-and-cheese,dogs,Can dogs eat macaroni and cheese?,high,todo
 can-dogs-eat-macaroni-cheese,dogs,Can dogs eat macaroni cheese?,high,todo
 can-dogs-eat-marrowfat-peas,dogs,Can dogs eat marrowfat peas?,high,todo
