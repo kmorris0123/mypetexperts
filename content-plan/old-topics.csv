@@ -345,7 +345,7 @@ can-dogs-eat-pork-liver,dogs,Can dogs eat pork liver?,high,todo
 can-dogs-eat-pork-meat,dogs,Can dogs eat pork meat?,high,todo
 can-dogs-eat-potato,dogs,Can dogs eat potato?,high,todo
 can-dogs-eat-potato-chips,dogs,Can dogs eat potato chips?,high,todo
-can-dogs-eat-potato-salad,dogs,Can dogs eat potato salad?,high,todo
+can-dogs-eat-potato-salad,dogs,Can dogs eat potato salad?,high,done
 can-dogs-eat-potatoe,dogs,Can dogs eat potatoe?,high,todo
 can-dogs-eat-potatoe-chips,dogs,Can dogs eat potatoe chips?,high,todo
 can-dogs-eat-processed-cheese,dogs,Can dogs eat processed cheese?,high,todo
@@ -409,7 +409,7 @@ can-dogs-eat-yogurt-melts,dogs,Can dogs eat yogurt melts?,high,todo
 can-dogs-have-black-eyed-peas,dogs,Can dogs have black eyed peas?,high,todo
 can-dogs-have-chicken-bouillon,dogs,Can dogs have chicken bouillon?,high,todo
 can-dogs-have-rice-cakes,dogs,Can dogs have rice cakes?,high,todo
-can-my-dog-eat-potato-salad,dogs,Can my dog eat potato salad?,high,todo
+can-my-dog-eat-potato-salad,dogs,Can my dog eat potato salad?,high,merged:can-dogs-eat-potato-salad
 can-puppies-eat-cat-food,dogs,Can puppies eat cat food?,high,todo
 what-cheese-can-dogs-eat,dogs,What cheese can dogs eat?,high,todo
 what-kind-of-rice-can-dogs-eat,dogs,What kind of rice can dogs eat?,high,todo
