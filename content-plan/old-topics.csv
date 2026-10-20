@@ -104,11 +104,11 @@ can-cats-eat-mangos,cats,Can cats eat mangos?,high,todo
 can-cats-eat-mashed-potatoes,cats,Can cats eat mashed potatoes?,high,todo
 can-cats-eat-mayonnaise-with-tuna,cats,Can cats eat mayonnaise with tuna?,high,todo
 can-cats-eat-milk,cats,Can cats eat milk?,high,todo
-can-cats-eat-mozzarella-cheese,cats,Can cats eat mozzarella cheese?,high,todo
+can-cats-eat-mozzarella-cheese,cats,Can cats eat mozzarella cheese?,high,done
 can-cats-eat-oatmeal,cats,Can cats eat oatmeal?,high,todo
 can-cats-eat-onions,cats,Can cats eat onions?,high,todo
 can-cats-eat-oranges,cats,Can cats eat oranges?,high,todo
-can-cats-eat-parmesan-cheese,cats,Can cats eat parmesan cheese?,high,todo
+can-cats-eat-parmesan-cheese,cats,Can cats eat parmesan cheese?,high,merged:can-cats-eat-mozzarella-cheese
 can-cats-eat-peanut-butter,cats,Can cats eat peanut butter?,high,todo
 can-cats-eat-peas,cats,Can cats eat peas?,high,todo
 can-cats-eat-pineapples,cats,Can cats eat pineapples?,high,todo
@@ -148,7 +148,7 @@ can-cats-eat-starkist-tuna,cats,Can cats eat starkist tuna?,high,todo
 can-cats-eat-strawberries,cats,Can cats eat strawberries?,high,todo
 can-cats-eat-strawberry-leaves,cats,Can cats eat strawberry leaves?,high,todo
 can-cats-eat-strawberry-yogurt,cats,Can cats eat strawberry yogurt?,high,todo
-can-cats-eat-string-cheese,cats,Can cats eat string cheese?,high,todo
+can-cats-eat-string-cheese,cats,Can cats eat string cheese?,high,merged:can-cats-eat-mozzarella-cheese
 can-cats-eat-sweet-potato,cats,Can cats eat sweet potato?,high,todo
 can-cats-eat-sweet-potatoes,cats,Can cats eat sweet potatoes?,high,todo
 can-cats-eat-tomato-sauce,cats,Can cats eat tomato sauce?,high,todo
