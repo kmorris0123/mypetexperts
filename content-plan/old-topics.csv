@@ -93,7 +93,7 @@ can-cats-eat-ham,cats,Can cats eat ham?,high,todo
 can-cats-eat-hamburger,cats,Can cats eat hamburger?,high,todo
 can-cats-eat-hard-boiled-eggs,cats,Can cats eat hard boiled eggs?,high,todo
 can-cats-eat-honey,cats,Can cats eat honey?,high,todo
-can-cats-eat-honey-nut-cheerios,cats,Can cats eat honey nut cheerios?,high,todo
+can-cats-eat-honey-nut-cheerios,cats,Can cats eat honey nut cheerios?,high,merged:can-cats-eat-cheerios
 can-cats-eat-honeydew,cats,Can cats eat honeydew?,high,todo
 can-cats-eat-human-tuna,cats,Can cats eat human tuna?,high,todo
 can-cats-eat-ice-cream,cats,Can cats eat ice cream?,high,todo
@@ -447,8 +447,8 @@ can-cats-eat-cardboard,cats,Can cats eat cardboard?,normal,todo
 can-cats-eat-cauliflower,cats,Can cats eat cauliflower?,normal,todo
 can-cats-eat-celery,cats,Can cats eat celery?,normal,todo
 can-cats-eat-centipedes,cats,Can cats eat centipedes?,normal,todo
-can-cats-eat-cereal,cats,Can cats eat cereal?,normal,todo
-can-cats-eat-cheerios,cats,Can cats eat cheerios?,normal,todo
+can-cats-eat-cereal,cats,Can cats eat cereal?,normal,merged:can-cats-eat-cheerios
+can-cats-eat-cheerios,cats,Can cats eat cheerios?,normal,done
 can-cats-eat-cheetos,cats,Can cats eat cheetos?,normal,todo
 can-cats-eat-cheez-its,cats,Can cats eat cheez its?,normal,todo
 can-cats-eat-cherries,cats,Can cats eat cherries?,normal,todo
