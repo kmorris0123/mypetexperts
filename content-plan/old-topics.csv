@@ -228,7 +228,7 @@ can-dogs-eat-chicken-broth,dogs,Can dogs eat chicken broth?,high,todo
 can-dogs-eat-chicken-broth-with-garlic,dogs,Can dogs eat chicken broth with garlic?,high,todo
 can-dogs-eat-chicken-broth-with-onions,dogs,Can dogs eat chicken broth with onions?,high,todo
 can-dogs-eat-chicken-fried-rice,dogs,Can dogs eat chicken fried rice?,high,todo
-can-dogs-eat-chicken-nuggets,dogs,Can dogs eat chicken nuggets?,high,todo
+can-dogs-eat-chicken-nuggets,dogs,Can dogs eat chicken nuggets?,high,merged:can-dogs-eat-fried-chicken
 can-dogs-eat-chicken-pot-pie,dogs,Can dogs eat chicken pot pie?,high,todo
 can-dogs-eat-chicken-salad,dogs,Can dogs eat chicken salad?,high,todo
 can-dogs-eat-chicken-stock,dogs,Can dogs eat chicken stock?,high,todo
@@ -280,7 +280,7 @@ can-dogs-eat-food-with-garlic,dogs,Can dogs eat food with garlic?,high,todo
 can-dogs-eat-food-with-tomato-sauce,dogs,Can dogs eat food with tomato sauce?,high,todo
 can-dogs-eat-french-bread,dogs,Can dogs eat french bread?,high,todo
 can-dogs-eat-fresh-corned-beef,dogs,Can dogs eat fresh corned beef?,high,merged:can-dogs-eat-corned-beef
-can-dogs-eat-fried-chicken,dogs,Can dogs eat fried chicken?,high,todo
+can-dogs-eat-fried-chicken,dogs,Can dogs eat fried chicken?,high,done
 can-dogs-eat-frozen-chicken-drumsticks,dogs,Can dogs eat frozen chicken drumsticks?,high,todo
 can-dogs-eat-frozen-chicken-wings,dogs,Can dogs eat frozen chicken wings?,high,todo
 can-dogs-eat-frozen-corn,dogs,Can dogs eat frozen corn?,high,todo
@@ -884,7 +884,7 @@ can-dogs-eat-nerds,dogs,Can dogs eat nerds?,normal,todo
 can-dogs-eat-nopales,dogs,Can dogs eat nopales?,normal,todo
 can-dogs-eat-nori,dogs,Can dogs eat nori?,normal,todo
 can-dogs-eat-nori-seaweed,dogs,Can dogs eat nori seaweed?,normal,todo
-can-dogs-eat-nuggets,dogs,Can dogs eat nuggets?,normal,todo
+can-dogs-eat-nuggets,dogs,Can dogs eat nuggets?,normal,merged:can-dogs-eat-fried-chicken
 can-dogs-eat-nutella,dogs,Can dogs eat nutella?,normal,todo
 can-dogs-eat-nutmeg,dogs,Can dogs eat nutmeg?,normal,todo
 can-dogs-eat-nutri-grain-bars,dogs,Can dogs eat nutri grain bars?,normal,todo
