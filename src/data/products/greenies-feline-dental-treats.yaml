@@ -1,0 +1,20 @@
+name: Feline Greenies Dental Treats
+brand: GREENIES
+imageSource: 'https://www.greenies.com/products/treats/feline-dental-oven-roasted-chicken-flavor-cat-treats'
+pet: cats
+category: Dental treats for cats
+award: Best overall
+blurb: A crunchy, low-calorie treat shaped to clean down to the gumline, made for adult cats.
+bestFor: Adult cats who like a crunchy daily treat
+pros:
+  - Listed by the Veterinary Oral Health Council for tartar control
+  - Under two calories per treat
+  - Sold in chicken, tuna, salmon and catnip flavors and four bag sizes
+cons:
+  - Only for cats 1 year or older
+  - Feeding directions differ between package pages, so follow your bag
+art: bowl
+roundup: best-cat-dental-treats
+featured: true
+image: /products/greenies-feline-dental-treats.jpg
+imageCredit: "Photo: GREENIES"
