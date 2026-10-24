@@ -102,7 +102,7 @@ can-cats-eat-mac-and-cheese,cats,Can cats eat mac and cheese?,high,done
 can-cats-eat-mandarin-oranges,cats,Can cats eat mandarin oranges?,high,todo
 can-cats-eat-mangos,cats,Can cats eat mangos?,high,todo
 can-cats-eat-mashed-potatoes,cats,Can cats eat mashed potatoes?,high,todo
-can-cats-eat-mayonnaise-with-tuna,cats,Can cats eat mayonnaise with tuna?,high,todo
+can-cats-eat-mayonnaise-with-tuna,cats,Can cats eat mayonnaise with tuna?,high,done
 can-cats-eat-milk,cats,Can cats eat milk?,high,todo
 can-cats-eat-mozzarella-cheese,cats,Can cats eat mozzarella cheese?,high,done
 can-cats-eat-oatmeal,cats,Can cats eat oatmeal?,high,todo
@@ -520,7 +520,7 @@ can-cats-eat-lizards,cats,Can cats eat lizards?,normal,todo
 can-cats-eat-lobster,cats,Can cats eat lobster?,normal,todo
 can-cats-eat-lunch-meat,cats,Can cats eat lunch meat?,normal,todo
 can-cats-eat-marshmallows,cats,Can cats eat marshmallows?,normal,todo
-can-cats-eat-mayonnaise,cats,Can cats eat mayonnaise?,normal,todo
+can-cats-eat-mayonnaise,cats,Can cats eat mayonnaise?,normal,merged:can-cats-eat-mayonnaise-with-tuna
 can-cats-eat-melon,cats,Can cats eat melon?,normal,todo
 can-cats-eat-mice,cats,Can cats eat mice?,normal,todo
 can-cats-eat-mint,cats,Can cats eat mint?,normal,todo
