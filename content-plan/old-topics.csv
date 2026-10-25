@@ -199,8 +199,8 @@ can-dogs-eat-black-eyed-peas,dogs,Can dogs eat black eyed peas?,high,skipped-no-
 can-dogs-eat-black-eyed-peas-and-cabbage,dogs,Can dogs eat black eyed peas and cabbage?,high,todo
 can-dogs-eat-black-rice,dogs,Can dogs eat black rice?,high,todo
 can-dogs-eat-blue-cheese-dressing,dogs,Can dogs eat blue cheese dressing?,high,todo
-can-dogs-eat-blueberry-muffin,dogs,Can dogs eat blueberry muffin?,high,todo
-can-dogs-eat-blueberry-muffins,dogs,Can dogs eat blueberry muffins?,high,todo
+can-dogs-eat-blueberry-muffin,dogs,Can dogs eat blueberry muffin?,high,merged:can-dogs-eat-blueberry-muffins
+can-dogs-eat-blueberry-muffins,dogs,Can dogs eat blueberry muffins?,high,done
 can-dogs-eat-bread,dogs,Can dogs eat bread?,high,todo
 can-dogs-eat-bread-crumbs,dogs,Can dogs eat bread crumbs?,high,todo
 can-dogs-eat-breaded-fish,dogs,Can dogs eat breaded fish?,high,todo
