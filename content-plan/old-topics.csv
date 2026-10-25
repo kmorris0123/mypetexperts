@@ -195,7 +195,7 @@ can-dogs-eat-beef-patties,dogs,Can dogs eat beef patties?,high,todo
 can-dogs-eat-beef-stock,dogs,Can dogs eat beef stock?,high,todo
 can-dogs-eat-beef-stock-cubes,dogs,Can dogs eat beef stock cubes?,high,todo
 can-dogs-eat-black-eye-peas,dogs,Can dogs eat black eye peas?,high,todo
-can-dogs-eat-black-eyed-peas,dogs,Can dogs eat black eyed peas?,high,todo
+can-dogs-eat-black-eyed-peas,dogs,Can dogs eat black eyed peas?,high,skipped-no-sources
 can-dogs-eat-black-eyed-peas-and-cabbage,dogs,Can dogs eat black eyed peas and cabbage?,high,todo
 can-dogs-eat-black-rice,dogs,Can dogs eat black rice?,high,todo
 can-dogs-eat-blue-cheese-dressing,dogs,Can dogs eat blue cheese dressing?,high,todo
@@ -403,7 +403,7 @@ can-dogs-eat-walnut-oil,dogs,Can dogs eat walnut oil?,high,todo
 can-dogs-eat-wet-cat-food,dogs,Can dogs eat wet cat food?,high,todo
 can-dogs-eat-whole-grain-bread,dogs,Can dogs eat whole grain bread?,high,todo
 can-dogs-eat-wild-rice,dogs,Can dogs eat wild rice?,high,todo
-can-dogs-eat-wine-gums,dogs,Can dogs eat wine gums?,high,todo
+can-dogs-eat-wine-gums,dogs,Can dogs eat wine gums?,high,done
 can-dogs-eat-yellow-saffron-rice,dogs,Can dogs eat yellow saffron rice?,high,todo
 can-dogs-eat-yogurt-melts,dogs,Can dogs eat yogurt melts?,high,todo
 can-dogs-have-black-eyed-peas,dogs,Can dogs have black eyed peas?,high,todo
