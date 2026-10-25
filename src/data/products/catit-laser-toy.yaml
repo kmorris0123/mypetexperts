@@ -1,0 +1,19 @@
+name: Catit Laser Toy
+brand: Catit
+imageSource: 'https://www.catit.com/products/laser-toy/'
+pet: cats
+category: Cat laser toys
+award: Best handheld laser
+blurb: A palm-size, mouse-shaped laser pointer that turns on when you press its head.
+bestFor: Short, hands-on play where you control the light
+pros:
+  - Mouse shape fits in your palm
+  - Press the head of the mouse to turn the laser on
+  - About 3 inches long
+cons:
+  - Small button batteries (LR44) are replaced with a screwdriver
+  - Needs you to hold and aim it, so it is not for solo play
+art: wand
+roundup: best-cat-laser-toys
+image: /products/catit-laser-toy.jpg
+imageCredit: "Photo: Catit"

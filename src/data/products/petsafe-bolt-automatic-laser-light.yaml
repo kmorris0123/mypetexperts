@@ -1,0 +1,20 @@
+name: PetSafe Bolt Automatic Laser Light Cat Toy
+brand: PetSafe
+imageSource: 'https://www.petsafe.com/p/bolt-cat-toy/PTY00-14244/'
+pet: cats
+category: Cat laser toys
+award: Best overall
+blurb: A battery-powered laser with an automatic mode for hands-free play and a manual mode you hold like a laser pointer.
+bestFor: Owners who want both hands-free and hands-on play
+pros:
+  - Automatic mode makes random patterns for about 15 minutes, then shuts off
+  - Manual mode lets you steer the laser yourself
+  - Adjustable mirror aims the laser across different surfaces
+cons:
+  - Needs 4 AA batteries, which are not included
+  - Laser play alone never lets your cat catch anything
+art: wand
+roundup: best-cat-laser-toys
+featured: true
+image: /products/petsafe-bolt-automatic-laser-light.jpg
+imageCredit: "Photo: PetSafe"
