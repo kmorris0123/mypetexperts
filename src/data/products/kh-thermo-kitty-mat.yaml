@@ -1,0 +1,19 @@
+name: K&H Thermo-Kitty Mat
+brand: K&H Pet Products
+imageSource: 'https://khpet.com/products/thermo-kitty-mat'
+pet: cats
+category: Heated cat beds
+award: Best heated mat
+blurb: A flat, reversible heated pad with a removable warmer and washable cover that fits on a shelf, cat tree or existing bed.
+bestFor: Adding warmth to a bed or perch you already have
+pros:
+  - Dual thermostat warms to about 102°F only when a cat lies on it
+  - Removable cover you can machine wash
+  - Compact 12.5 x 25 inch size
+cons:
+  - No on/off switch, so it is always on when plugged in
+  - Flat pad with no sides
+art: bed
+roundup: best-heated-cat-beds
+image: /products/kh-thermo-kitty-mat.jpg
+imageCredit: "Photo: K&H Pet Products"
