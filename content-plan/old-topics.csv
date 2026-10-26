@@ -277,7 +277,7 @@ can-dogs-eat-eggplant-cooked,dogs,Can dogs eat eggplant cooked?,high,merged:can-
 can-dogs-eat-expired-raw-chicken,dogs,Can dogs eat expired raw chicken?,high,todo
 can-dogs-eat-flavored-yogurt,dogs,Can dogs eat flavored yogurt?,high,todo
 can-dogs-eat-food-with-garlic,dogs,Can dogs eat food with garlic?,high,todo
-can-dogs-eat-food-with-tomato-sauce,dogs,Can dogs eat food with tomato sauce?,high,todo
+can-dogs-eat-food-with-tomato-sauce,dogs,Can dogs eat food with tomato sauce?,high,merged:can-dogs-eat-tomato-sauce
 can-dogs-eat-french-bread,dogs,Can dogs eat french bread?,high,todo
 can-dogs-eat-fresh-corned-beef,dogs,Can dogs eat fresh corned beef?,high,merged:can-dogs-eat-corned-beef
 can-dogs-eat-fried-chicken,dogs,Can dogs eat fried chicken?,high,done
@@ -329,7 +329,7 @@ can-dogs-eat-peas-cooked,dogs,Can dogs eat peas cooked?,high,todo
 can-dogs-eat-peas-safely,dogs,Can dogs eat peas safely?,high,todo
 can-dogs-eat-pepper-jack-cheese,dogs,Can dogs eat pepper jack cheese?,high,todo
 can-dogs-eat-pig-bones,dogs,Can dogs eat pig bones?,high,todo
-can-dogs-eat-pilchards-in-tomato-sauce,dogs,Can dogs eat pilchards in tomato sauce?,high,todo
+can-dogs-eat-pilchards-in-tomato-sauce,dogs,Can dogs eat pilchards in tomato sauce?,high,merged:can-dogs-eat-tomato-sauce
 can-dogs-eat-pinto-beans-and-rice,dogs,Can dogs eat pinto beans and rice?,high,todo
 can-dogs-eat-pistachio-ice-cream,dogs,Can dogs eat pistachio ice cream?,high,todo
 can-dogs-eat-pistachio-pudding,dogs,Can dogs eat pistachio pudding?,high,todo
@@ -395,7 +395,7 @@ can-dogs-eat-toast-bread,dogs,Can dogs eat toast bread?,high,todo
 can-dogs-eat-toasted-bread,dogs,Can dogs eat toasted bread?,high,todo
 can-dogs-eat-tomato,dogs,Can dogs eat tomato?,high,todo
 can-dogs-eat-tomato-paste,dogs,Can dogs eat tomato paste?,high,todo
-can-dogs-eat-tomato-sauce,dogs,Can dogs eat tomato sauce?,high,todo
+can-dogs-eat-tomato-sauce,dogs,Can dogs eat tomato sauce?,high,done
 can-dogs-eat-tortillas-corn,dogs,Can dogs eat tortillas corn?,high,merged:can-dogs-eat-tortillas
 can-dogs-eat-tuna,dogs,Can dogs eat tuna?,high,todo
 can-dogs-eat-walnut,dogs,Can dogs eat walnut?,high,todo
