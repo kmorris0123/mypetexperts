@@ -216,10 +216,10 @@ can-dogs-eat-cat-food,dogs,Can dogs eat cat food?,high,todo
 can-dogs-eat-cat-food-dry,dogs,Can dogs eat cat food dry?,high,todo
 can-dogs-eat-cat-grass,dogs,Can dogs eat cat grass?,high,skipped-no-sources
 can-dogs-eat-cheddar-cheese,dogs,Can dogs eat cheddar cheese?,high,todo
-can-dogs-eat-cheddar-cheese-pringles,dogs,Can dogs eat cheddar cheese pringles?,high,todo
+can-dogs-eat-cheddar-cheese-pringles,dogs,Can dogs eat cheddar cheese pringles?,high,merged:can-dogs-eat-crackers
 can-dogs-eat-cheese,dogs,Can dogs eat cheese?,high,done
-can-dogs-eat-cheese-crackers,dogs,Can dogs eat cheese crackers?,high,todo
-can-dogs-eat-cheese-itz,dogs,Can dogs eat cheese itz?,high,todo
+can-dogs-eat-cheese-crackers,dogs,Can dogs eat cheese crackers?,high,merged:can-dogs-eat-crackers
+can-dogs-eat-cheese-itz,dogs,Can dogs eat cheese itz?,high,merged:can-dogs-eat-crackers
 can-dogs-eat-cheese-rinds,dogs,Can dogs eat cheese rinds?,high,todo
 can-dogs-eat-chick-peas,dogs,Can dogs eat chick peas?,high,todo
 can-dogs-eat-chicken,dogs,Can dogs eat chicken?,high,todo
@@ -368,8 +368,8 @@ can-dogs-eat-rice,dogs,Can dogs eat rice?,high,todo
 can-dogs-eat-rice-cake,dogs,Can dogs eat rice cake?,high,todo
 can-dogs-eat-rice-cake-2,dogs,Can dogs eat rice cake 2?,high,todo
 can-dogs-eat-rice-cakes,dogs,Can dogs eat rice cakes?,high,todo
-can-dogs-eat-rice-crackers,dogs,Can dogs eat rice crackers?,high,todo
-can-dogs-eat-rice-crackers-2,dogs,Can dogs eat rice crackers 2?,high,todo
+can-dogs-eat-rice-crackers,dogs,Can dogs eat rice crackers?,high,merged:can-dogs-eat-crackers
+can-dogs-eat-rice-crackers-2,dogs,Can dogs eat rice crackers 2?,high,merged:can-dogs-eat-crackers
 can-dogs-eat-ricotta-cheese,dogs,Can dogs eat ricotta cheese?,high,todo
 can-dogs-eat-rose-apples,dogs,Can dogs eat rose apples?,high,todo
 can-dogs-eat-saffron-rice,dogs,Can dogs eat saffron rice?,high,todo
@@ -698,8 +698,8 @@ can-dogs-eat-cattails,dogs,Can dogs eat cattails?,normal,todo
 can-dogs-eat-caviar,dogs,Can dogs eat caviar?,normal,todo
 can-dogs-eat-chard,dogs,Can dogs eat chard?,normal,todo
 can-dogs-eat-chayote,dogs,Can dogs eat chayote?,normal,todo
-can-dogs-eat-cheez-its,dogs,Can dogs eat cheez its?,normal,todo
-can-dogs-eat-cheez-its-2,dogs,Can dogs eat cheez its 2?,normal,todo
+can-dogs-eat-cheez-its,dogs,Can dogs eat cheez its?,normal,merged:can-dogs-eat-crackers
+can-dogs-eat-cheez-its-2,dogs,Can dogs eat cheez its 2?,normal,merged:can-dogs-eat-crackers
 can-dogs-eat-chef-boyardee-raviolis,dogs,Can dogs eat chef boyardee raviolis?,normal,todo
 can-dogs-eat-chia,dogs,Can dogs eat chia?,normal,todo
 can-dogs-eat-chickpea-flour,dogs,Can dogs eat chickpea flour?,normal,todo
@@ -741,9 +741,9 @@ can-dogs-eat-cookie-dough,dogs,Can dogs eat cookie dough?,normal,todo
 can-dogs-eat-cor,dogs,Can dogs eat cor?,normal,todo
 can-dogs-eat-coriander,dogs,Can dogs eat coriander?,normal,todo
 can-dogs-eat-couscous,dogs,Can dogs eat couscous?,normal,todo
-can-dogs-eat-cracker,dogs,Can dogs eat cracker?,normal,todo
-can-dogs-eat-crackers,dogs,Can dogs eat crackers?,normal,todo
-can-dogs-eat-crackers-with-salt,dogs,Can dogs eat crackers with salt?,normal,todo
+can-dogs-eat-cracker,dogs,Can dogs eat cracker?,normal,merged:can-dogs-eat-crackers
+can-dogs-eat-crackers,dogs,Can dogs eat crackers?,normal,done
+can-dogs-eat-crackers-with-salt,dogs,Can dogs eat crackers with salt?,normal,merged:can-dogs-eat-crackers
 can-dogs-eat-cranberries,dogs,Can dogs eat cranberries?,normal,todo
 can-dogs-eat-cranberrys,dogs,Can dogs eat cranberrys?,normal,todo
 can-dogs-eat-cream,dogs,Can dogs eat cream?,normal,todo
@@ -927,7 +927,7 @@ can-dogs-eat-pirates-booty,dogs,Can dogs eat pirates booty?,normal,todo
 can-dogs-eat-pirk,dogs,Can dogs eat pirk?,normal,todo
 can-dogs-eat-pita-chips,dogs,Can dogs eat pita chips?,normal,todo
 can-dogs-eat-plain-couscous,dogs,Can dogs eat plain couscous?,normal,todo
-can-dogs-eat-plain-crackers,dogs,Can dogs eat plain crackers?,normal,todo
+can-dogs-eat-plain-crackers,dogs,Can dogs eat plain crackers?,normal,merged:can-dogs-eat-crackers
 can-dogs-eat-plain-pasta,dogs,Can dogs eat plain pasta?,normal,todo
 can-dogs-eat-plaintains,dogs,Can dogs eat plaintains?,normal,todo
 can-dogs-eat-plantain,dogs,Can dogs eat plantain?,normal,todo
@@ -941,7 +941,7 @@ can-dogs-eat-potted-meat,dogs,Can dogs eat potted meat?,normal,todo
 can-dogs-eat-powdered-sugar,dogs,Can dogs eat powdered sugar?,normal,todo
 can-dogs-eat-prickly-pear,dogs,Can dogs eat prickly pear?,normal,todo
 can-dogs-eat-prickly-pears,dogs,Can dogs eat prickly pears?,normal,todo
-can-dogs-eat-pringles,dogs,Can dogs eat pringles?,normal,todo
+can-dogs-eat-pringles,dogs,Can dogs eat pringles?,normal,merged:can-dogs-eat-crackers
 can-dogs-eat-prosciutto,dogs,Can dogs eat prosciutto?,normal,todo
 can-dogs-eat-provolone,dogs,Can dogs eat provolone?,normal,todo
 can-dogs-eat-prunes,dogs,Can dogs eat prunes?,normal,todo
@@ -998,10 +998,10 @@ can-dogs-eat-sage-2,dogs,Can dogs eat sage 2?,normal,todo
 can-dogs-eat-salad,dogs,Can dogs eat salad?,normal,todo
 can-dogs-eat-salad-dressing,dogs,Can dogs eat salad dressing?,normal,todo
 can-dogs-eat-salsa,dogs,Can dogs eat salsa?,normal,todo
-can-dogs-eat-salt-crackers,dogs,Can dogs eat salt crackers?,normal,todo
-can-dogs-eat-salted-crackers,dogs,Can dogs eat salted crackers?,normal,todo
+can-dogs-eat-salt-crackers,dogs,Can dogs eat salt crackers?,normal,merged:can-dogs-eat-crackers
+can-dogs-eat-salted-crackers,dogs,Can dogs eat salted crackers?,normal,merged:can-dogs-eat-crackers
 can-dogs-eat-salted-seaweed,dogs,Can dogs eat salted seaweed?,normal,todo
-can-dogs-eat-saltine-crackers,dogs,Can dogs eat saltine crackers?,normal,todo
+can-dogs-eat-saltine-crackers,dogs,Can dogs eat saltine crackers?,normal,merged:can-dogs-eat-crackers
 can-dogs-eat-sandwich-meat,dogs,Can dogs eat sandwich meat?,normal,todo
 can-dogs-eat-sardines,dogs,Can dogs eat sardines?,normal,todo
 can-dogs-eat-sardines-in-water,dogs,Can dogs eat sardines in water?,normal,todo
@@ -1086,7 +1086,7 @@ can-dogs-eat-wheat-cereal,dogs,Can dogs eat wheat cereal?,normal,todo
 can-dogs-eat-wheat-flour,dogs,Can dogs eat wheat flour?,normal,todo
 can-dogs-eat-wheat-germ,dogs,Can dogs eat wheat germ?,normal,todo
 can-dogs-eat-white-beans,dogs,Can dogs eat white beans?,normal,todo
-can-dogs-eat-white-cheddar-cheez-its,dogs,Can dogs eat white cheddar cheez its?,normal,todo
+can-dogs-eat-white-cheddar-cheez-its,dogs,Can dogs eat white cheddar cheez its?,normal,merged:can-dogs-eat-crackers
 can-dogs-eat-white-nectarines,dogs,Can dogs eat white nectarines?,normal,todo
 can-dogs-eat-with-a-cone-on,dogs,Can dogs eat with a cone on?,normal,todo
 can-dogs-eat-worcester-sauce,dogs,Can dogs eat worcester sauce?,normal,todo
