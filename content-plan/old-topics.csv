@@ -302,7 +302,7 @@ can-dogs-eat-hamburger,dogs,Can dogs eat hamburger?,high,todo
 can-dogs-eat-hamster-treats,dogs,Can dogs eat hamster treats?,high,todo
 can-dogs-eat-honey-bunches-of-oats,dogs,Can dogs eat honey bunches of oats?,high,todo
 can-dogs-eat-honey-dew,dogs,Can dogs eat honey dew?,high,todo
-can-dogs-eat-honey-wheat-pretzels,dogs,Can dogs eat honey wheat pretzels?,high,todo
+can-dogs-eat-honey-wheat-pretzels,dogs,Can dogs eat honey wheat pretzels?,high,merged:can-dogs-eat-pretzels
 can-dogs-eat-honeycomb,dogs,Can dogs eat honeycomb?,high,skipped-no-sources
 can-dogs-eat-honeydew-melon-skin,dogs,Can dogs eat honeydew melon skin?,high,todo
 can-dogs-eat-ice-cream-cones,dogs,Can dogs eat ice cream cones?,high,todo
