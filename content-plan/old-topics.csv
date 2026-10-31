@@ -183,7 +183,7 @@ can-dogs-eat-apple-pie,dogs,Can dogs eat apple pie?,high,done
 can-dogs-eat-arbys-roast-beef,dogs,Can dogs eat arbys roast beef?,high,todo
 can-dogs-eat-avocado,dogs,Can dogs eat avocado?,high,todo
 can-dogs-eat-bacon,dogs,Can dogs eat bacon?,high,todo
-can-dogs-eat-bacon-fat,dogs,Can dogs eat bacon fat?,high,todo
+can-dogs-eat-bacon-fat,dogs,Can dogs eat bacon fat?,high,done
 can-dogs-eat-baked-beans-in-tomato-sauce,dogs,Can dogs eat baked beans in tomato sauce?,high,merged:can-dogs-eat-baked-beans
 can-dogs-eat-baked-potato,dogs,Can dogs eat baked potato?,high,todo
 can-dogs-eat-bbq-pork,dogs,Can dogs eat bbq pork?,high,todo
@@ -295,7 +295,7 @@ can-dogs-eat-green-beans,dogs,Can dogs eat green beans?,high,todo
 can-dogs-eat-green-tea-ice-cream,dogs,Can dogs eat green tea ice cream?,high,todo
 can-dogs-eat-ham,dogs,Can dogs eat ham?,high,todo
 can-dogs-eat-ham-bone,dogs,Can dogs eat ham bone?,high,todo
-can-dogs-eat-ham-fat,dogs,Can dogs eat ham fat?,high,todo
+can-dogs-eat-ham-fat,dogs,Can dogs eat ham fat?,high,merged:can-dogs-eat-bacon-fat
 can-dogs-eat-ham-hock-bones,dogs,Can dogs eat ham hock bones?,high,todo
 can-dogs-eat-ham-hocks,dogs,Can dogs eat ham hocks?,high,todo
 can-dogs-eat-hamburger,dogs,Can dogs eat hamburger?,high,todo
