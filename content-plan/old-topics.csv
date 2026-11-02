@@ -276,7 +276,7 @@ can-dogs-eat-egg-salad,dogs,Can dogs eat egg salad?,high,todo
 can-dogs-eat-eggplant-cooked,dogs,Can dogs eat eggplant cooked?,high,merged:can-dogs-eat-eggplant
 can-dogs-eat-expired-raw-chicken,dogs,Can dogs eat expired raw chicken?,high,todo
 can-dogs-eat-flavored-yogurt,dogs,Can dogs eat flavored yogurt?,high,todo
-can-dogs-eat-food-with-garlic,dogs,Can dogs eat food with garlic?,high,todo
+can-dogs-eat-food-with-garlic,dogs,Can dogs eat food with garlic?,high,merged:can-dogs-eat-garlic-bread
 can-dogs-eat-food-with-tomato-sauce,dogs,Can dogs eat food with tomato sauce?,high,merged:can-dogs-eat-tomato-sauce
 can-dogs-eat-french-bread,dogs,Can dogs eat french bread?,high,todo
 can-dogs-eat-fresh-corned-beef,dogs,Can dogs eat fresh corned beef?,high,merged:can-dogs-eat-corned-beef
@@ -285,8 +285,8 @@ can-dogs-eat-frozen-chicken-drumsticks,dogs,Can dogs eat frozen chicken drumstic
 can-dogs-eat-frozen-chicken-wings,dogs,Can dogs eat frozen chicken wings?,high,todo
 can-dogs-eat-frozen-corn,dogs,Can dogs eat frozen corn?,high,todo
 can-dogs-eat-garlic,dogs,Can dogs eat garlic?,high,todo
-can-dogs-eat-garlic-bread,dogs,Can dogs eat garlic bread?,high,todo
-can-dogs-eat-garlic-in-food,dogs,Can dogs eat garlic in food?,high,todo
+can-dogs-eat-garlic-bread,dogs,Can dogs eat garlic bread?,high,done
+can-dogs-eat-garlic-in-food,dogs,Can dogs eat garlic in food?,high,merged:can-dogs-eat-garlic-bread
 can-dogs-eat-goat-cheese,dogs,Can dogs eat goat cheese?,high,todo
 can-dogs-eat-grain-bread,dogs,Can dogs eat grain bread?,high,todo
 can-dogs-eat-granny-smith-apples,dogs,Can dogs eat granny smith apples?,high,todo
