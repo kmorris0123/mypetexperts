@@ -193,7 +193,7 @@ can-dogs-eat-beef,dogs,Can dogs eat beef?,high,todo
 can-dogs-eat-beef-broth,dogs,Can dogs eat beef broth?,high,todo
 can-dogs-eat-beef-patties,dogs,Can dogs eat beef patties?,high,todo
 can-dogs-eat-beef-stock,dogs,Can dogs eat beef stock?,high,todo
-can-dogs-eat-beef-stock-cubes,dogs,Can dogs eat beef stock cubes?,high,todo
+can-dogs-eat-beef-stock-cubes,dogs,Can dogs eat beef stock cubes?,high,merged:can-dogs-eat-chicken-bouillon
 can-dogs-eat-black-eye-peas,dogs,Can dogs eat black eye peas?,high,todo
 can-dogs-eat-black-eyed-peas,dogs,Can dogs eat black eyed peas?,high,skipped-no-sources
 can-dogs-eat-black-eyed-peas-and-cabbage,dogs,Can dogs eat black eyed peas and cabbage?,high,todo
@@ -223,7 +223,7 @@ can-dogs-eat-cheese-itz,dogs,Can dogs eat cheese itz?,high,merged:can-dogs-eat-c
 can-dogs-eat-cheese-rinds,dogs,Can dogs eat cheese rinds?,high,todo
 can-dogs-eat-chick-peas,dogs,Can dogs eat chick peas?,high,todo
 can-dogs-eat-chicken,dogs,Can dogs eat chicken?,high,todo
-can-dogs-eat-chicken-bouillon,dogs,Can dogs eat chicken bouillon?,high,todo
+can-dogs-eat-chicken-bouillon,dogs,Can dogs eat chicken bouillon?,high,done
 can-dogs-eat-chicken-broth,dogs,Can dogs eat chicken broth?,high,todo
 can-dogs-eat-chicken-broth-with-garlic,dogs,Can dogs eat chicken broth with garlic?,high,todo
 can-dogs-eat-chicken-broth-with-onions,dogs,Can dogs eat chicken broth with onions?,high,todo
@@ -367,7 +367,7 @@ can-dogs-eat-red-rice-2,dogs,Can dogs eat red rice 2?,high,todo
 can-dogs-eat-rice,dogs,Can dogs eat rice?,high,todo
 can-dogs-eat-rice-cake,dogs,Can dogs eat rice cake?,high,todo
 can-dogs-eat-rice-cake-2,dogs,Can dogs eat rice cake 2?,high,todo
-can-dogs-eat-rice-cakes,dogs,Can dogs eat rice cakes?,high,todo
+can-dogs-eat-rice-cakes,dogs,Can dogs eat rice cakes?,high,skipped-no-sources
 can-dogs-eat-rice-crackers,dogs,Can dogs eat rice crackers?,high,merged:can-dogs-eat-crackers
 can-dogs-eat-rice-crackers-2,dogs,Can dogs eat rice crackers 2?,high,merged:can-dogs-eat-crackers
 can-dogs-eat-ricotta-cheese,dogs,Can dogs eat ricotta cheese?,high,todo
@@ -407,7 +407,7 @@ can-dogs-eat-wine-gums,dogs,Can dogs eat wine gums?,high,done
 can-dogs-eat-yellow-saffron-rice,dogs,Can dogs eat yellow saffron rice?,high,todo
 can-dogs-eat-yogurt-melts,dogs,Can dogs eat yogurt melts?,high,todo
 can-dogs-have-black-eyed-peas,dogs,Can dogs have black eyed peas?,high,todo
-can-dogs-have-chicken-bouillon,dogs,Can dogs have chicken bouillon?,high,todo
+can-dogs-have-chicken-bouillon,dogs,Can dogs have chicken bouillon?,high,merged:can-dogs-eat-chicken-bouillon
 can-dogs-have-rice-cakes,dogs,Can dogs have rice cakes?,high,todo
 can-my-dog-eat-potato-salad,dogs,Can my dog eat potato salad?,high,merged:can-dogs-eat-potato-salad
 can-puppies-eat-cat-food,dogs,Can puppies eat cat food?,high,todo
@@ -1040,7 +1040,7 @@ can-dogs-eat-squid,dogs,Can dogs eat squid?,normal,todo
 can-dogs-eat-squid-ink-pasta,dogs,Can dogs eat squid ink pasta?,normal,todo
 can-dogs-eat-starfruit,dogs,Can dogs eat starfruit?,normal,todo
 can-dogs-eat-steak-with-salt-and-pepper,dogs,Can dogs eat steak with salt and pepper?,normal,todo
-can-dogs-eat-stock-cubes,dogs,Can dogs eat stock cubes?,normal,todo
+can-dogs-eat-stock-cubes,dogs,Can dogs eat stock cubes?,normal,merged:can-dogs-eat-chicken-bouillon
 can-dogs-eat-sugar,dogs,Can dogs eat sugar?,normal,todo
 can-dogs-eat-sugar-free-pudding,dogs,Can dogs eat sugar free pudding?,normal,todo
 can-dogs-eat-sugar-wafers,dogs,Can dogs eat sugar wafers?,normal,todo
