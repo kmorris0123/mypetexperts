@@ -240,8 +240,8 @@ can-dogs-eat-cold-rice-from-the-fridge,dogs,Can dogs eat cold rice from the frid
 can-dogs-eat-cones-without-ice-cream,dogs,Can dogs eat cones without ice cream?,high,todo
 can-dogs-eat-cooked-black-eyed-peas,dogs,Can dogs eat cooked black eyed peas?,high,todo
 can-dogs-eat-cooked-bones-pork,dogs,Can dogs eat cooked bones pork?,high,merged:can-dogs-eat-ham-bone
-can-dogs-eat-cooked-chicken-necks,dogs,Can dogs eat cooked chicken necks?,high,todo
-can-dogs-eat-cooked-chicken-necks-2,dogs,Can dogs eat cooked chicken necks 2?,high,todo
+can-dogs-eat-cooked-chicken-necks,dogs,Can dogs eat cooked chicken necks?,high,merged:can-dogs-eat-chicken-bones
+can-dogs-eat-cooked-chicken-necks-2,dogs,Can dogs eat cooked chicken necks 2?,high,merged:can-dogs-eat-chicken-bones
 can-dogs-eat-cooked-corn,dogs,Can dogs eat cooked corn?,high,todo
 can-dogs-eat-cooked-eggplant,dogs,Can dogs eat cooked eggplant?,high,merged:can-dogs-eat-eggplant
 can-dogs-eat-cooked-ham,dogs,Can dogs eat cooked ham?,high,todo
@@ -281,8 +281,8 @@ can-dogs-eat-food-with-tomato-sauce,dogs,Can dogs eat food with tomato sauce?,hi
 can-dogs-eat-french-bread,dogs,Can dogs eat french bread?,high,todo
 can-dogs-eat-fresh-corned-beef,dogs,Can dogs eat fresh corned beef?,high,merged:can-dogs-eat-corned-beef
 can-dogs-eat-fried-chicken,dogs,Can dogs eat fried chicken?,high,done
-can-dogs-eat-frozen-chicken-drumsticks,dogs,Can dogs eat frozen chicken drumsticks?,high,todo
-can-dogs-eat-frozen-chicken-wings,dogs,Can dogs eat frozen chicken wings?,high,todo
+can-dogs-eat-frozen-chicken-drumsticks,dogs,Can dogs eat frozen chicken drumsticks?,high,merged:can-dogs-eat-chicken-bones
+can-dogs-eat-frozen-chicken-wings,dogs,Can dogs eat frozen chicken wings?,high,merged:can-dogs-eat-chicken-bones
 can-dogs-eat-frozen-corn,dogs,Can dogs eat frozen corn?,high,todo
 can-dogs-eat-garlic,dogs,Can dogs eat garlic?,high,todo
 can-dogs-eat-garlic-bread,dogs,Can dogs eat garlic bread?,high,done
