@@ -239,7 +239,7 @@ can-dogs-eat-cold-cooked-rice,dogs,Can dogs eat cold cooked rice?,high,todo
 can-dogs-eat-cold-rice-from-the-fridge,dogs,Can dogs eat cold rice from the fridge?,high,todo
 can-dogs-eat-cones-without-ice-cream,dogs,Can dogs eat cones without ice cream?,high,todo
 can-dogs-eat-cooked-black-eyed-peas,dogs,Can dogs eat cooked black eyed peas?,high,todo
-can-dogs-eat-cooked-bones-pork,dogs,Can dogs eat cooked bones pork?,high,todo
+can-dogs-eat-cooked-bones-pork,dogs,Can dogs eat cooked bones pork?,high,merged:can-dogs-eat-ham-bone
 can-dogs-eat-cooked-chicken-necks,dogs,Can dogs eat cooked chicken necks?,high,todo
 can-dogs-eat-cooked-chicken-necks-2,dogs,Can dogs eat cooked chicken necks 2?,high,todo
 can-dogs-eat-cooked-corn,dogs,Can dogs eat cooked corn?,high,todo
@@ -248,7 +248,7 @@ can-dogs-eat-cooked-ham,dogs,Can dogs eat cooked ham?,high,todo
 can-dogs-eat-cooked-peas,dogs,Can dogs eat cooked peas?,high,todo
 can-dogs-eat-cooked-pork,dogs,Can dogs eat cooked pork?,high,todo
 can-dogs-eat-cooked-pork-meat,dogs,Can dogs eat cooked pork meat?,high,todo
-can-dogs-eat-cooked-pork-shoulder-bones,dogs,Can dogs eat cooked pork shoulder bones?,high,todo
+can-dogs-eat-cooked-pork-shoulder-bones,dogs,Can dogs eat cooked pork shoulder bones?,high,merged:can-dogs-eat-ham-bone
 can-dogs-eat-cooked-rabbit-bones,dogs,Can dogs eat cooked rabbit bones?,high,todo
 can-dogs-eat-cooked-tuna,dogs,Can dogs eat cooked tuna?,high,todo
 can-dogs-eat-corn,dogs,Can dogs eat corn?,high,todo
@@ -294,10 +294,10 @@ can-dogs-eat-grape-seed-oil,dogs,Can dogs eat grape seed oil?,high,todo
 can-dogs-eat-green-beans,dogs,Can dogs eat green beans?,high,todo
 can-dogs-eat-green-tea-ice-cream,dogs,Can dogs eat green tea ice cream?,high,todo
 can-dogs-eat-ham,dogs,Can dogs eat ham?,high,todo
-can-dogs-eat-ham-bone,dogs,Can dogs eat ham bone?,high,todo
+can-dogs-eat-ham-bone,dogs,Can dogs eat ham bone?,high,done
 can-dogs-eat-ham-fat,dogs,Can dogs eat ham fat?,high,merged:can-dogs-eat-bacon-fat
-can-dogs-eat-ham-hock-bones,dogs,Can dogs eat ham hock bones?,high,todo
-can-dogs-eat-ham-hocks,dogs,Can dogs eat ham hocks?,high,todo
+can-dogs-eat-ham-hock-bones,dogs,Can dogs eat ham hock bones?,high,merged:can-dogs-eat-ham-bone
+can-dogs-eat-ham-hocks,dogs,Can dogs eat ham hocks?,high,merged:can-dogs-eat-ham-bone
 can-dogs-eat-hamburger,dogs,Can dogs eat hamburger?,high,todo
 can-dogs-eat-hamster-treats,dogs,Can dogs eat hamster treats?,high,todo
 can-dogs-eat-honey-bunches-of-oats,dogs,Can dogs eat honey bunches of oats?,high,done
@@ -328,7 +328,7 @@ can-dogs-eat-parmesan-cheese,dogs,Can dogs eat parmesan cheese?,high,todo
 can-dogs-eat-peas-cooked,dogs,Can dogs eat peas cooked?,high,todo
 can-dogs-eat-peas-safely,dogs,Can dogs eat peas safely?,high,todo
 can-dogs-eat-pepper-jack-cheese,dogs,Can dogs eat pepper jack cheese?,high,todo
-can-dogs-eat-pig-bones,dogs,Can dogs eat pig bones?,high,todo
+can-dogs-eat-pig-bones,dogs,Can dogs eat pig bones?,high,merged:can-dogs-eat-ham-bone
 can-dogs-eat-pilchards-in-tomato-sauce,dogs,Can dogs eat pilchards in tomato sauce?,high,merged:can-dogs-eat-tomato-sauce
 can-dogs-eat-pinto-beans-and-rice,dogs,Can dogs eat pinto beans and rice?,high,todo
 can-dogs-eat-pistachio-ice-cream,dogs,Can dogs eat pistachio ice cream?,high,todo
@@ -378,7 +378,7 @@ can-dogs-eat-shortbread,dogs,Can dogs eat shortbread?,high,todo
 can-dogs-eat-sliced-cheese,dogs,Can dogs eat sliced cheese?,high,todo
 can-dogs-eat-slow-cooked-bones,dogs,Can dogs eat slow cooked bones?,high,todo
 can-dogs-eat-smoked-ham,dogs,Can dogs eat smoked ham?,high,todo
-can-dogs-eat-smoked-ham-hocks,dogs,Can dogs eat smoked ham hocks?,high,todo
+can-dogs-eat-smoked-ham-hocks,dogs,Can dogs eat smoked ham hocks?,high,merged:can-dogs-eat-ham-bone
 can-dogs-eat-snap-peas,dogs,Can dogs eat snap peas?,high,todo
 can-dogs-eat-snow-peas,dogs,Can dogs eat snow peas?,high,todo
 can-dogs-eat-strawberry,dogs,Can dogs eat strawberry?,high,todo
