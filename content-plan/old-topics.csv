@@ -187,8 +187,8 @@ can-dogs-eat-bacon-fat,dogs,Can dogs eat bacon fat?,high,done
 can-dogs-eat-baked-beans-in-tomato-sauce,dogs,Can dogs eat baked beans in tomato sauce?,high,merged:can-dogs-eat-baked-beans
 can-dogs-eat-baked-potato,dogs,Can dogs eat baked potato?,high,todo
 can-dogs-eat-bbq-pork,dogs,Can dogs eat bbq pork?,high,todo
-can-dogs-eat-bean-and-cheese-burritos,dogs,Can dogs eat bean and cheese burritos?,high,todo
-can-dogs-eat-beans-and-cheese,dogs,Can dogs eat beans and cheese?,high,todo
+can-dogs-eat-bean-and-cheese-burritos,dogs,Can dogs eat bean and cheese burritos?,high,merged:can-dogs-eat-beans-and-cheese
+can-dogs-eat-beans-and-cheese,dogs,Can dogs eat beans and cheese?,high,done
 can-dogs-eat-beef,dogs,Can dogs eat beef?,high,todo
 can-dogs-eat-beef-broth,dogs,Can dogs eat beef broth?,high,todo
 can-dogs-eat-beef-patties,dogs,Can dogs eat beef patties?,high,todo
