@@ -262,15 +262,15 @@ can-dogs-eat-cornbeef,dogs,Can dogs eat cornbeef?,high,merged:can-dogs-eat-corne
 can-dogs-eat-cornbread,dogs,Can dogs eat cornbread?,high,todo
 can-dogs-eat-corned-beef,dogs,Can dogs eat corned beef?,high,done
 can-dogs-eat-creamed-corn,dogs,Can dogs eat creamed corn?,high,todo
-can-dogs-eat-custard-apple,dogs,Can dogs eat custard apple?,high,todo
-can-dogs-eat-custard-ice-cream,dogs,Can dogs eat custard ice cream?,high,todo
+can-dogs-eat-custard-apple,dogs,Can dogs eat custard apple?,high,skipped-no-sources
+can-dogs-eat-custard-ice-cream,dogs,Can dogs eat custard ice cream?,high,merged:can-dogs-eat-egg-custard
 can-dogs-eat-deviled-eggs,dogs,Can dogs eat deviled eggs?,high,todo
 can-dogs-eat-dry-cat-food,dogs,Can dogs eat dry cat food?,high,todo
 can-dogs-eat-durian-ice-cream,dogs,Can dogs eat durian ice cream?,high,todo
 can-dogs-eat-easy-cheese,dogs,Can dogs eat easy cheese?,high,todo
 can-dogs-eat-edam-cheese,dogs,Can dogs eat edam cheese?,high,todo
-can-dogs-eat-egg-custard,dogs,Can dogs eat egg custard?,high,todo
-can-dogs-eat-egg-custard-tarts,dogs,Can dogs eat egg custard tarts?,high,todo
+can-dogs-eat-egg-custard,dogs,Can dogs eat egg custard?,high,done
+can-dogs-eat-egg-custard-tarts,dogs,Can dogs eat egg custard tarts?,high,merged:can-dogs-eat-egg-custard
 can-dogs-eat-egg-rolls,dogs,Can dogs eat egg rolls?,high,done
 can-dogs-eat-egg-salad,dogs,Can dogs eat egg salad?,high,todo
 can-dogs-eat-eggplant-cooked,dogs,Can dogs eat eggplant cooked?,high,merged:can-dogs-eat-eggplant
@@ -290,7 +290,7 @@ can-dogs-eat-garlic-in-food,dogs,Can dogs eat garlic in food?,high,merged:can-do
 can-dogs-eat-goat-cheese,dogs,Can dogs eat goat cheese?,high,todo
 can-dogs-eat-grain-bread,dogs,Can dogs eat grain bread?,high,todo
 can-dogs-eat-granny-smith-apples,dogs,Can dogs eat granny smith apples?,high,todo
-can-dogs-eat-grape-seed-oil,dogs,Can dogs eat grape seed oil?,high,todo
+can-dogs-eat-grape-seed-oil,dogs,Can dogs eat grape seed oil?,high,skipped-no-sources
 can-dogs-eat-green-beans,dogs,Can dogs eat green beans?,high,todo
 can-dogs-eat-green-tea-ice-cream,dogs,Can dogs eat green tea ice cream?,high,todo
 can-dogs-eat-ham,dogs,Can dogs eat ham?,high,todo
@@ -751,7 +751,7 @@ can-dogs-eat-cream-of-wheat,dogs,Can dogs eat cream of wheat?,normal,todo
 can-dogs-eat-cupcake-wrappers,dogs,Can dogs eat cupcake wrappers?,normal,todo
 can-dogs-eat-cured-meat,dogs,Can dogs eat cured meat?,normal,todo
 can-dogs-eat-curry,dogs,Can dogs eat curry?,normal,todo
-can-dogs-eat-custard,dogs,Can dogs eat custard?,normal,todo
+can-dogs-eat-custard,dogs,Can dogs eat custard?,normal,merged:can-dogs-eat-egg-custard
 can-dogs-eat-dijon-mustard,dogs,Can dogs eat dijon mustard?,normal,todo
 can-dogs-eat-dill,dogs,Can dogs eat dill?,normal,todo
 can-dogs-eat-dill-pickles,dogs,Can dogs eat dill pickles?,normal,todo
@@ -788,7 +788,7 @@ can-dogs-eat-french-toast,dogs,Can dogs eat french toast?,normal,todo
 can-dogs-eat-fried-food,dogs,Can dogs eat fried food?,normal,todo
 can-dogs-eat-fries,dogs,Can dogs eat fries?,normal,todo
 can-dogs-eat-frosting,dogs,Can dogs eat frosting?,normal,todo
-can-dogs-eat-frozen-custard,dogs,Can dogs eat frozen custard?,normal,todo
+can-dogs-eat-frozen-custard,dogs,Can dogs eat frozen custard?,normal,merged:can-dogs-eat-egg-custard
 can-dogs-eat-fruit-cake,dogs,Can dogs eat fruit cake?,normal,todo
 can-dogs-eat-fruit-roll-ups,dogs,Can dogs eat fruit roll ups?,normal,todo
 can-dogs-eat-ginger,dogs,Can dogs eat ginger?,normal,todo
@@ -1071,7 +1071,7 @@ can-dogs-eat-tzatziki,dogs,Can dogs eat tzatziki?,normal,todo
 can-dogs-eat-tzatziki-sauce,dogs,Can dogs eat tzatziki sauce?,normal,todo
 can-dogs-eat-unions,dogs,Can dogs eat unions?,normal,todo
 can-dogs-eat-vanilla,dogs,Can dogs eat vanilla?,normal,todo
-can-dogs-eat-vanilla-custard,dogs,Can dogs eat vanilla custard?,normal,todo
+can-dogs-eat-vanilla-custard,dogs,Can dogs eat vanilla custard?,normal,merged:can-dogs-eat-egg-custard
 can-dogs-eat-vanilla-extract,dogs,Can dogs eat vanilla extract?,normal,todo
 can-dogs-eat-vanilla-pudding,dogs,Can dogs eat vanilla pudding?,normal,todo
 can-dogs-eat-veal,dogs,Can dogs eat veal?,normal,todo
