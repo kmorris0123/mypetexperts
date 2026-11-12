@@ -186,7 +186,7 @@ can-dogs-eat-bacon,dogs,Can dogs eat bacon?,high,todo
 can-dogs-eat-bacon-fat,dogs,Can dogs eat bacon fat?,high,done
 can-dogs-eat-baked-beans-in-tomato-sauce,dogs,Can dogs eat baked beans in tomato sauce?,high,merged:can-dogs-eat-baked-beans
 can-dogs-eat-baked-potato,dogs,Can dogs eat baked potato?,high,todo
-can-dogs-eat-bbq-pork,dogs,Can dogs eat bbq pork?,high,todo
+can-dogs-eat-bbq-pork,dogs,Can dogs eat bbq pork?,high,done
 can-dogs-eat-bean-and-cheese-burritos,dogs,Can dogs eat bean and cheese burritos?,high,merged:can-dogs-eat-beans-and-cheese
 can-dogs-eat-beans-and-cheese,dogs,Can dogs eat beans and cheese?,high,done
 can-dogs-eat-beef,dogs,Can dogs eat beef?,high,todo
@@ -349,7 +349,7 @@ can-dogs-eat-potato-salad,dogs,Can dogs eat potato salad?,high,done
 can-dogs-eat-potatoe,dogs,Can dogs eat potatoe?,high,todo
 can-dogs-eat-potatoe-chips,dogs,Can dogs eat potatoe chips?,high,todo
 can-dogs-eat-processed-cheese,dogs,Can dogs eat processed cheese?,high,todo
-can-dogs-eat-pulled-pork,dogs,Can dogs eat pulled pork?,high,todo
+can-dogs-eat-pulled-pork,dogs,Can dogs eat pulled pork?,high,merged:can-dogs-eat-bbq-pork
 can-dogs-eat-pumpkin-muffins,dogs,Can dogs eat pumpkin muffins?,high,todo
 can-dogs-eat-quorn-ham,dogs,Can dogs eat quorn ham?,high,todo
 can-dogs-eat-rabbit-bones,dogs,Can dogs eat rabbit bones?,high,skipped-no-sources
