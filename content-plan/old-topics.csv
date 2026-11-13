@@ -323,7 +323,7 @@ can-dogs-eat-natural-peanut-butter,dogs,Can dogs eat natural peanut butter?,high
 can-dogs-eat-onions,dogs,Can dogs eat onions?,high,todo
 can-dogs-eat-onions-and-tomatoes,dogs,Can dogs eat onions and tomatoes?,high,todo
 can-dogs-eat-onions-safely,dogs,Can dogs eat onions safely?,high,todo
-can-dogs-eat-panda-express-orange-chicken,dogs,Can dogs eat panda express orange chicken?,high,todo
+can-dogs-eat-panda-express-orange-chicken,dogs,Can dogs eat panda express orange chicken?,high,merged:can-dogs-eat-teriyaki-chicken
 can-dogs-eat-parmesan-cheese,dogs,Can dogs eat parmesan cheese?,high,todo
 can-dogs-eat-peas-cooked,dogs,Can dogs eat peas cooked?,high,todo
 can-dogs-eat-peas-safely,dogs,Can dogs eat peas safely?,high,todo
@@ -390,7 +390,7 @@ can-dogs-eat-sushi-rice,dogs,Can dogs eat sushi rice?,high,todo
 can-dogs-eat-sweet-corn,dogs,Can dogs eat sweet corn?,high,todo
 can-dogs-eat-sweetcorn,dogs,Can dogs eat sweetcorn?,high,todo
 can-dogs-eat-swiss-cheese,dogs,Can dogs eat swiss cheese?,high,todo
-can-dogs-eat-teriyaki-chicken,dogs,Can dogs eat teriyaki chicken?,high,todo
+can-dogs-eat-teriyaki-chicken,dogs,Can dogs eat teriyaki chicken?,high,done
 can-dogs-eat-toast-bread,dogs,Can dogs eat toast bread?,high,todo
 can-dogs-eat-toasted-bread,dogs,Can dogs eat toasted bread?,high,todo
 can-dogs-eat-tomato,dogs,Can dogs eat tomato?,high,todo
