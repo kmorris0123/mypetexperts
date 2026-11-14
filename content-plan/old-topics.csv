@@ -416,8 +416,8 @@ what-kind-of-rice-can-dogs-eat,dogs,What kind of rice can dogs eat?,high,todo
 what-peanut-butter-can-dogs-eat,dogs,What peanut butter can dogs eat?,high,todo
 what-rice-can-dogs-eat,dogs,What rice can dogs eat?,high,todo
 can-cats-die-from-eating-a-poisoned-rat,cats,Can cats die from eating a poisoned rat?,normal,todo
-can-cats-eat-aloe,cats,Can cats eat aloe?,normal,todo
-can-cats-eat-aloe-plants,cats,Can cats eat aloe plants?,normal,todo
+can-cats-eat-aloe,cats,Can cats eat aloe?,normal,done
+can-cats-eat-aloe-plants,cats,Can cats eat aloe plants?,normal,merged:can-cats-eat-aloe
 can-cats-eat-anchovies,cats,Can cats eat anchovies?,normal,todo
 can-cats-eat-ants,cats,Can cats eat ants?,normal,todo
 can-cats-eat-arugula,cats,Can cats eat arugula?,normal,todo
