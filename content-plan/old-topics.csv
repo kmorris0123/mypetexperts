@@ -176,8 +176,8 @@ can-dog-eat-pandan-bread,dogs,Can dog eat pandan bread?,high,todo
 can-dogs-die-from-eating-cat-food,dogs,Can dogs die from eating cat food?,high,todo
 can-dogs-eat-a-raw-egg,dogs,Can dogs eat a raw egg?,high,todo
 can-dogs-eat-almond-milk,dogs,Can dogs eat almond milk?,high,done
-can-dogs-eat-american-cheese,dogs,Can dogs eat american cheese?,high,todo
-can-dogs-eat-american-cheese-slices,dogs,Can dogs eat american cheese slices?,high,todo
+can-dogs-eat-american-cheese,dogs,Can dogs eat american cheese?,high,merged:what-cheese-can-dogs-eat
+can-dogs-eat-american-cheese-slices,dogs,Can dogs eat american cheese slices?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-apple-chips,dogs,Can dogs eat apple chips?,high,done
 can-dogs-eat-apple-pie,dogs,Can dogs eat apple pie?,high,done
 can-dogs-eat-arbys-roast-beef,dogs,Can dogs eat arbys roast beef?,high,todo
@@ -198,7 +198,7 @@ can-dogs-eat-black-eye-peas,dogs,Can dogs eat black eye peas?,high,skipped-no-so
 can-dogs-eat-black-eyed-peas,dogs,Can dogs eat black eyed peas?,high,skipped-no-sources
 can-dogs-eat-black-eyed-peas-and-cabbage,dogs,Can dogs eat black eyed peas and cabbage?,high,skipped-no-sources
 can-dogs-eat-black-rice,dogs,Can dogs eat black rice?,high,todo
-can-dogs-eat-blue-cheese-dressing,dogs,Can dogs eat blue cheese dressing?,high,todo
+can-dogs-eat-blue-cheese-dressing,dogs,Can dogs eat blue cheese dressing?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-blueberry-muffin,dogs,Can dogs eat blueberry muffin?,high,merged:can-dogs-eat-blueberry-muffins
 can-dogs-eat-blueberry-muffins,dogs,Can dogs eat blueberry muffins?,high,done
 can-dogs-eat-bread,dogs,Can dogs eat bread?,high,todo
@@ -215,12 +215,12 @@ can-dogs-eat-canned-sweet-corn,dogs,Can dogs eat canned sweet corn?,high,todo
 can-dogs-eat-cat-food,dogs,Can dogs eat cat food?,high,todo
 can-dogs-eat-cat-food-dry,dogs,Can dogs eat cat food dry?,high,todo
 can-dogs-eat-cat-grass,dogs,Can dogs eat cat grass?,high,skipped-no-sources
-can-dogs-eat-cheddar-cheese,dogs,Can dogs eat cheddar cheese?,high,todo
+can-dogs-eat-cheddar-cheese,dogs,Can dogs eat cheddar cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-cheddar-cheese-pringles,dogs,Can dogs eat cheddar cheese pringles?,high,merged:can-dogs-eat-crackers
 can-dogs-eat-cheese,dogs,Can dogs eat cheese?,high,done
 can-dogs-eat-cheese-crackers,dogs,Can dogs eat cheese crackers?,high,merged:can-dogs-eat-crackers
 can-dogs-eat-cheese-itz,dogs,Can dogs eat cheese itz?,high,merged:can-dogs-eat-crackers
-can-dogs-eat-cheese-rinds,dogs,Can dogs eat cheese rinds?,high,todo
+can-dogs-eat-cheese-rinds,dogs,Can dogs eat cheese rinds?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-chick-peas,dogs,Can dogs eat chick peas?,high,todo
 can-dogs-eat-chicken,dogs,Can dogs eat chicken?,high,todo
 can-dogs-eat-chicken-bouillon,dogs,Can dogs eat chicken bouillon?,high,done
@@ -267,8 +267,8 @@ can-dogs-eat-custard-ice-cream,dogs,Can dogs eat custard ice cream?,high,merged:
 can-dogs-eat-deviled-eggs,dogs,Can dogs eat deviled eggs?,high,todo
 can-dogs-eat-dry-cat-food,dogs,Can dogs eat dry cat food?,high,todo
 can-dogs-eat-durian-ice-cream,dogs,Can dogs eat durian ice cream?,high,todo
-can-dogs-eat-easy-cheese,dogs,Can dogs eat easy cheese?,high,todo
-can-dogs-eat-edam-cheese,dogs,Can dogs eat edam cheese?,high,todo
+can-dogs-eat-easy-cheese,dogs,Can dogs eat easy cheese?,high,merged:what-cheese-can-dogs-eat
+can-dogs-eat-edam-cheese,dogs,Can dogs eat edam cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-egg-custard,dogs,Can dogs eat egg custard?,high,done
 can-dogs-eat-egg-custard-tarts,dogs,Can dogs eat egg custard tarts?,high,merged:can-dogs-eat-egg-custard
 can-dogs-eat-egg-rolls,dogs,Can dogs eat egg rolls?,high,done
@@ -287,7 +287,7 @@ can-dogs-eat-frozen-corn,dogs,Can dogs eat frozen corn?,high,todo
 can-dogs-eat-garlic,dogs,Can dogs eat garlic?,high,todo
 can-dogs-eat-garlic-bread,dogs,Can dogs eat garlic bread?,high,done
 can-dogs-eat-garlic-in-food,dogs,Can dogs eat garlic in food?,high,merged:can-dogs-eat-garlic-bread
-can-dogs-eat-goat-cheese,dogs,Can dogs eat goat cheese?,high,todo
+can-dogs-eat-goat-cheese,dogs,Can dogs eat goat cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-grain-bread,dogs,Can dogs eat grain bread?,high,todo
 can-dogs-eat-granny-smith-apples,dogs,Can dogs eat granny smith apples?,high,todo
 can-dogs-eat-grape-seed-oil,dogs,Can dogs eat grape seed oil?,high,skipped-no-sources
@@ -307,7 +307,7 @@ can-dogs-eat-honeycomb,dogs,Can dogs eat honeycomb?,high,skipped-no-sources
 can-dogs-eat-honeydew-melon-skin,dogs,Can dogs eat honeydew melon skin?,high,merged:can-dogs-eat-honey-dew
 can-dogs-eat-ice-cream-cones,dogs,Can dogs eat ice cream cones?,high,todo
 can-dogs-eat-knuckle-bones,dogs,Can dogs eat knuckle bones?,high,todo
-can-dogs-eat-kraft-cheese,dogs,Can dogs eat kraft cheese?,high,todo
+can-dogs-eat-kraft-cheese,dogs,Can dogs eat kraft cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-lactose-free-milk,dogs,Can dogs eat lactose free milk?,high,done
 can-dogs-eat-lemon-grass,dogs,Can dogs eat lemon grass?,high,merged:can-dogs-eat-lemongrass
 can-dogs-eat-lemongrass,dogs,Can dogs eat lemongrass?,high,done
@@ -316,7 +316,7 @@ can-dogs-eat-licorice,dogs,Can dogs eat licorice?,high,skipped-no-sources
 can-dogs-eat-macaroni-and-cheese,dogs,Can dogs eat macaroni and cheese?,high,todo
 can-dogs-eat-macaroni-cheese,dogs,Can dogs eat macaroni cheese?,high,todo
 can-dogs-eat-marrowfat-peas,dogs,Can dogs eat marrowfat peas?,high,todo
-can-dogs-eat-mozzarella-cheese,dogs,Can dogs eat mozzarella cheese?,high,todo
+can-dogs-eat-mozzarella-cheese,dogs,Can dogs eat mozzarella cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-multigrain-bread,dogs,Can dogs eat multigrain bread?,high,todo
 can-dogs-eat-naan-bread,dogs,Can dogs eat naan bread?,high,todo
 can-dogs-eat-natural-peanut-butter,dogs,Can dogs eat natural peanut butter?,high,todo
@@ -324,10 +324,10 @@ can-dogs-eat-onions,dogs,Can dogs eat onions?,high,todo
 can-dogs-eat-onions-and-tomatoes,dogs,Can dogs eat onions and tomatoes?,high,todo
 can-dogs-eat-onions-safely,dogs,Can dogs eat onions safely?,high,todo
 can-dogs-eat-panda-express-orange-chicken,dogs,Can dogs eat panda express orange chicken?,high,merged:can-dogs-eat-teriyaki-chicken
-can-dogs-eat-parmesan-cheese,dogs,Can dogs eat parmesan cheese?,high,todo
+can-dogs-eat-parmesan-cheese,dogs,Can dogs eat parmesan cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-peas-cooked,dogs,Can dogs eat peas cooked?,high,todo
 can-dogs-eat-peas-safely,dogs,Can dogs eat peas safely?,high,todo
-can-dogs-eat-pepper-jack-cheese,dogs,Can dogs eat pepper jack cheese?,high,todo
+can-dogs-eat-pepper-jack-cheese,dogs,Can dogs eat pepper jack cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-pig-bones,dogs,Can dogs eat pig bones?,high,merged:can-dogs-eat-ham-bone
 can-dogs-eat-pilchards-in-tomato-sauce,dogs,Can dogs eat pilchards in tomato sauce?,high,merged:can-dogs-eat-tomato-sauce
 can-dogs-eat-pinto-beans-and-rice,dogs,Can dogs eat pinto beans and rice?,high,todo
@@ -348,7 +348,7 @@ can-dogs-eat-potato-chips,dogs,Can dogs eat potato chips?,high,todo
 can-dogs-eat-potato-salad,dogs,Can dogs eat potato salad?,high,done
 can-dogs-eat-potatoe,dogs,Can dogs eat potatoe?,high,todo
 can-dogs-eat-potatoe-chips,dogs,Can dogs eat potatoe chips?,high,todo
-can-dogs-eat-processed-cheese,dogs,Can dogs eat processed cheese?,high,todo
+can-dogs-eat-processed-cheese,dogs,Can dogs eat processed cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-pulled-pork,dogs,Can dogs eat pulled pork?,high,merged:can-dogs-eat-bbq-pork
 can-dogs-eat-pumpkin-muffins,dogs,Can dogs eat pumpkin muffins?,high,todo
 can-dogs-eat-quorn-ham,dogs,Can dogs eat quorn ham?,high,todo
@@ -370,12 +370,12 @@ can-dogs-eat-rice-cake-2,dogs,Can dogs eat rice cake 2?,high,todo
 can-dogs-eat-rice-cakes,dogs,Can dogs eat rice cakes?,high,skipped-no-sources
 can-dogs-eat-rice-crackers,dogs,Can dogs eat rice crackers?,high,merged:can-dogs-eat-crackers
 can-dogs-eat-rice-crackers-2,dogs,Can dogs eat rice crackers 2?,high,merged:can-dogs-eat-crackers
-can-dogs-eat-ricotta-cheese,dogs,Can dogs eat ricotta cheese?,high,todo
+can-dogs-eat-ricotta-cheese,dogs,Can dogs eat ricotta cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-rose-apples,dogs,Can dogs eat rose apples?,high,todo
 can-dogs-eat-saffron-rice,dogs,Can dogs eat saffron rice?,high,todo
 can-dogs-eat-scalloped-potatoes,dogs,Can dogs eat scalloped potatoes?,high,todo
 can-dogs-eat-shortbread,dogs,Can dogs eat shortbread?,high,done
-can-dogs-eat-sliced-cheese,dogs,Can dogs eat sliced cheese?,high,todo
+can-dogs-eat-sliced-cheese,dogs,Can dogs eat sliced cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-slow-cooked-bones,dogs,Can dogs eat slow cooked bones?,high,todo
 can-dogs-eat-smoked-ham,dogs,Can dogs eat smoked ham?,high,todo
 can-dogs-eat-smoked-ham-hocks,dogs,Can dogs eat smoked ham hocks?,high,merged:can-dogs-eat-ham-bone
@@ -389,7 +389,7 @@ can-dogs-eat-sun-dried-tomatoes,dogs,Can dogs eat sun dried tomatoes?,high,todo
 can-dogs-eat-sushi-rice,dogs,Can dogs eat sushi rice?,high,todo
 can-dogs-eat-sweet-corn,dogs,Can dogs eat sweet corn?,high,todo
 can-dogs-eat-sweetcorn,dogs,Can dogs eat sweetcorn?,high,todo
-can-dogs-eat-swiss-cheese,dogs,Can dogs eat swiss cheese?,high,todo
+can-dogs-eat-swiss-cheese,dogs,Can dogs eat swiss cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-teriyaki-chicken,dogs,Can dogs eat teriyaki chicken?,high,done
 can-dogs-eat-toast-bread,dogs,Can dogs eat toast bread?,high,todo
 can-dogs-eat-toasted-bread,dogs,Can dogs eat toasted bread?,high,todo
@@ -411,7 +411,7 @@ can-dogs-have-chicken-bouillon,dogs,Can dogs have chicken bouillon?,high,merged:
 can-dogs-have-rice-cakes,dogs,Can dogs have rice cakes?,high,todo
 can-my-dog-eat-potato-salad,dogs,Can my dog eat potato salad?,high,merged:can-dogs-eat-potato-salad
 can-puppies-eat-cat-food,dogs,Can puppies eat cat food?,high,todo
-what-cheese-can-dogs-eat,dogs,What cheese can dogs eat?,high,todo
+what-cheese-can-dogs-eat,dogs,What cheese can dogs eat?,high,done
 what-kind-of-rice-can-dogs-eat,dogs,What kind of rice can dogs eat?,high,todo
 what-peanut-butter-can-dogs-eat,dogs,What peanut butter can dogs eat?,high,todo
 what-rice-can-dogs-eat,dogs,What rice can dogs eat?,high,todo
