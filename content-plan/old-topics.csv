@@ -264,7 +264,7 @@ can-dogs-eat-corned-beef,dogs,Can dogs eat corned beef?,high,done
 can-dogs-eat-creamed-corn,dogs,Can dogs eat creamed corn?,high,todo
 can-dogs-eat-custard-apple,dogs,Can dogs eat custard apple?,high,skipped-no-sources
 can-dogs-eat-custard-ice-cream,dogs,Can dogs eat custard ice cream?,high,merged:can-dogs-eat-egg-custard
-can-dogs-eat-deviled-eggs,dogs,Can dogs eat deviled eggs?,high,todo
+can-dogs-eat-deviled-eggs,dogs,Can dogs eat deviled eggs?,high,merged:can-dogs-eat-egg-salad
 can-dogs-eat-dry-cat-food,dogs,Can dogs eat dry cat food?,high,todo
 can-dogs-eat-durian-ice-cream,dogs,Can dogs eat durian ice cream?,high,todo
 can-dogs-eat-easy-cheese,dogs,Can dogs eat easy cheese?,high,merged:what-cheese-can-dogs-eat
@@ -272,7 +272,7 @@ can-dogs-eat-edam-cheese,dogs,Can dogs eat edam cheese?,high,merged:what-cheese-
 can-dogs-eat-egg-custard,dogs,Can dogs eat egg custard?,high,done
 can-dogs-eat-egg-custard-tarts,dogs,Can dogs eat egg custard tarts?,high,merged:can-dogs-eat-egg-custard
 can-dogs-eat-egg-rolls,dogs,Can dogs eat egg rolls?,high,done
-can-dogs-eat-egg-salad,dogs,Can dogs eat egg salad?,high,todo
+can-dogs-eat-egg-salad,dogs,Can dogs eat egg salad?,high,done
 can-dogs-eat-eggplant-cooked,dogs,Can dogs eat eggplant cooked?,high,merged:can-dogs-eat-eggplant
 can-dogs-eat-expired-raw-chicken,dogs,Can dogs eat expired raw chicken?,high,todo
 can-dogs-eat-flavored-yogurt,dogs,Can dogs eat flavored yogurt?,high,todo
