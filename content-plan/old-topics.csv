@@ -335,7 +335,7 @@ can-dogs-eat-pistachio-ice-cream,dogs,Can dogs eat pistachio ice cream?,high,tod
 can-dogs-eat-pistachio-pudding,dogs,Can dogs eat pistachio pudding?,high,todo
 can-dogs-eat-pita-bread,dogs,Can dogs eat pita bread?,high,todo
 can-dogs-eat-plain-rice,dogs,Can dogs eat plain rice?,high,todo
-can-dogs-eat-plain-rice-cakes,dogs,Can dogs eat plain rice cakes?,high,todo
+can-dogs-eat-plain-rice-cakes,dogs,Can dogs eat plain rice cakes?,high,merged:can-dogs-eat-rice-cakes
 can-dogs-eat-plain-white-rice,dogs,Can dogs eat plain white rice?,high,todo
 can-dogs-eat-pomegranate-yogurt,dogs,Can dogs eat pomegranate yogurt?,high,todo
 can-dogs-eat-pork,dogs,Can dogs eat pork?,high,todo
@@ -365,9 +365,9 @@ can-dogs-eat-red-onion-2,dogs,Can dogs eat red onion 2?,high,todo
 can-dogs-eat-red-rice,dogs,Can dogs eat red rice?,high,todo
 can-dogs-eat-red-rice-2,dogs,Can dogs eat red rice 2?,high,todo
 can-dogs-eat-rice,dogs,Can dogs eat rice?,high,todo
-can-dogs-eat-rice-cake,dogs,Can dogs eat rice cake?,high,todo
-can-dogs-eat-rice-cake-2,dogs,Can dogs eat rice cake 2?,high,todo
-can-dogs-eat-rice-cakes,dogs,Can dogs eat rice cakes?,high,skipped-no-sources
+can-dogs-eat-rice-cake,dogs,Can dogs eat rice cake?,high,merged:can-dogs-eat-rice-cakes
+can-dogs-eat-rice-cake-2,dogs,Can dogs eat rice cake 2?,high,merged:can-dogs-eat-rice-cakes
+can-dogs-eat-rice-cakes,dogs,Can dogs eat rice cakes?,high,done
 can-dogs-eat-rice-crackers,dogs,Can dogs eat rice crackers?,high,merged:can-dogs-eat-crackers
 can-dogs-eat-rice-crackers-2,dogs,Can dogs eat rice crackers 2?,high,merged:can-dogs-eat-crackers
 can-dogs-eat-ricotta-cheese,dogs,Can dogs eat ricotta cheese?,high,merged:what-cheese-can-dogs-eat
@@ -408,7 +408,7 @@ can-dogs-eat-yellow-saffron-rice,dogs,Can dogs eat yellow saffron rice?,high,tod
 can-dogs-eat-yogurt-melts,dogs,Can dogs eat yogurt melts?,high,todo
 can-dogs-have-black-eyed-peas,dogs,Can dogs have black eyed peas?,high,skipped-no-sources
 can-dogs-have-chicken-bouillon,dogs,Can dogs have chicken bouillon?,high,merged:can-dogs-eat-chicken-bouillon
-can-dogs-have-rice-cakes,dogs,Can dogs have rice cakes?,high,todo
+can-dogs-have-rice-cakes,dogs,Can dogs have rice cakes?,high,merged:can-dogs-eat-rice-cakes
 can-my-dog-eat-potato-salad,dogs,Can my dog eat potato salad?,high,merged:can-dogs-eat-potato-salad
 can-puppies-eat-cat-food,dogs,Can puppies eat cat food?,high,todo
 what-cheese-can-dogs-eat,dogs,What cheese can dogs eat?,high,done
