@@ -254,7 +254,7 @@ can-dogs-eat-cooked-tuna,dogs,Can dogs eat cooked tuna?,high,todo
 can-dogs-eat-corn,dogs,Can dogs eat corn?,high,todo
 can-dogs-eat-corn-bread,dogs,Can dogs eat corn bread?,high,todo
 can-dogs-eat-corn-dogs,dogs,Can dogs eat corn dogs?,high,done
-can-dogs-eat-corn-grits,dogs,Can dogs eat corn grits?,high,todo
+can-dogs-eat-corn-grits,dogs,Can dogs eat corn grits?,high,merged:can-dogs-eat-grits
 can-dogs-eat-corn-muffins,dogs,Can dogs eat corn muffins?,high,todo
 can-dogs-eat-corn-nuts,dogs,Can dogs eat corn nuts?,high,todo
 can-dogs-eat-corn-tortillas,dogs,Can dogs eat corn tortillas?,high,merged:can-dogs-eat-tortillas
@@ -799,7 +799,7 @@ can-dogs-eat-green-chiles,dogs,Can dogs eat green chiles?,normal,todo
 can-dogs-eat-green-tea,dogs,Can dogs eat green tea?,normal,todo
 can-dogs-eat-greenbeans,dogs,Can dogs eat greenbeans?,normal,todo
 can-dogs-eat-greens,dogs,Can dogs eat greens?,normal,todo
-can-dogs-eat-grits,dogs,Can dogs eat grits?,normal,todo
+can-dogs-eat-grits,dogs,Can dogs eat grits?,normal,done
 can-dogs-eat-ground-oyster-shells,dogs,Can dogs eat ground oyster shells?,normal,todo
 can-dogs-eat-ground-oyster-shells-2,dogs,Can dogs eat ground oyster shells 2?,normal,todo
 can-dogs-eat-guava-fruit,dogs,Can dogs eat guava fruit?,normal,todo
