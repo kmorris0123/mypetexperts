@@ -190,9 +190,9 @@ can-dogs-eat-bbq-pork,dogs,Can dogs eat bbq pork?,high,done
 can-dogs-eat-bean-and-cheese-burritos,dogs,Can dogs eat bean and cheese burritos?,high,merged:can-dogs-eat-beans-and-cheese
 can-dogs-eat-beans-and-cheese,dogs,Can dogs eat beans and cheese?,high,done
 can-dogs-eat-beef,dogs,Can dogs eat beef?,high,todo
-can-dogs-eat-beef-broth,dogs,Can dogs eat beef broth?,high,todo
+can-dogs-eat-beef-broth,dogs,Can dogs eat beef broth?,high,done
 can-dogs-eat-beef-patties,dogs,Can dogs eat beef patties?,high,todo
-can-dogs-eat-beef-stock,dogs,Can dogs eat beef stock?,high,todo
+can-dogs-eat-beef-stock,dogs,Can dogs eat beef stock?,high,merged:can-dogs-eat-beef-broth
 can-dogs-eat-beef-stock-cubes,dogs,Can dogs eat beef stock cubes?,high,merged:can-dogs-eat-chicken-bouillon
 can-dogs-eat-black-eye-peas,dogs,Can dogs eat black eye peas?,high,skipped-no-sources
 can-dogs-eat-black-eyed-peas,dogs,Can dogs eat black eyed peas?,high,skipped-no-sources
