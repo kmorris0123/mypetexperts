@@ -330,7 +330,7 @@ can-dogs-eat-peas-safely,dogs,Can dogs eat peas safely?,high,todo
 can-dogs-eat-pepper-jack-cheese,dogs,Can dogs eat pepper jack cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-pig-bones,dogs,Can dogs eat pig bones?,high,merged:can-dogs-eat-ham-bone
 can-dogs-eat-pilchards-in-tomato-sauce,dogs,Can dogs eat pilchards in tomato sauce?,high,merged:can-dogs-eat-tomato-sauce
-can-dogs-eat-pinto-beans-and-rice,dogs,Can dogs eat pinto beans and rice?,high,todo
+can-dogs-eat-pinto-beans-and-rice,dogs,Can dogs eat pinto beans and rice?,high,skipped-no-sources
 can-dogs-eat-pistachio-ice-cream,dogs,Can dogs eat pistachio ice cream?,high,todo
 can-dogs-eat-pistachio-pudding,dogs,Can dogs eat pistachio pudding?,high,todo
 can-dogs-eat-pita-bread,dogs,Can dogs eat pita bread?,high,todo
@@ -373,7 +373,7 @@ can-dogs-eat-rice-crackers-2,dogs,Can dogs eat rice crackers 2?,high,merged:can-
 can-dogs-eat-ricotta-cheese,dogs,Can dogs eat ricotta cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-rose-apples,dogs,Can dogs eat rose apples?,high,todo
 can-dogs-eat-saffron-rice,dogs,Can dogs eat saffron rice?,high,todo
-can-dogs-eat-scalloped-potatoes,dogs,Can dogs eat scalloped potatoes?,high,todo
+can-dogs-eat-scalloped-potatoes,dogs,Can dogs eat scalloped potatoes?,high,done
 can-dogs-eat-shortbread,dogs,Can dogs eat shortbread?,high,done
 can-dogs-eat-sliced-cheese,dogs,Can dogs eat sliced cheese?,high,merged:what-cheese-can-dogs-eat
 can-dogs-eat-slow-cooked-bones,dogs,Can dogs eat slow cooked bones?,high,todo
