@@ -420,10 +420,10 @@ can-cats-eat-aloe,cats,Can cats eat aloe?,normal,done
 can-cats-eat-aloe-plants,cats,Can cats eat aloe plants?,normal,merged:can-cats-eat-aloe
 can-cats-eat-anchovies,cats,Can cats eat anchovies?,normal,done
 can-cats-eat-ants,cats,Can cats eat ants?,normal,todo
-can-cats-eat-arugula,cats,Can cats eat arugula?,normal,todo
-can-cats-eat-asparagus,cats,Can cats eat asparagus?,normal,todo
+can-cats-eat-arugula,cats,Can cats eat arugula?,normal,skipped-no-sources
+can-cats-eat-asparagus,cats,Can cats eat asparagus?,normal,skipped-no-sources
 can-cats-eat-bamboo,cats,Can cats eat bamboo?,normal,todo
-can-cats-eat-basil,cats,Can cats eat basil?,normal,todo
+can-cats-eat-basil,cats,Can cats eat basil?,normal,done
 can-cats-eat-beans,cats,Can cats eat beans?,normal,todo
 can-cats-eat-beets,cats,Can cats eat beets?,normal,todo
 can-cats-eat-bell-peppers,cats,Can cats eat bell peppers?,normal,todo
