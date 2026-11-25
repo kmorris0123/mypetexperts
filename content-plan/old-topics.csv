@@ -424,7 +424,7 @@ can-cats-eat-arugula,cats,Can cats eat arugula?,normal,skipped-no-sources
 can-cats-eat-asparagus,cats,Can cats eat asparagus?,normal,skipped-no-sources
 can-cats-eat-bamboo,cats,Can cats eat bamboo?,normal,todo
 can-cats-eat-basil,cats,Can cats eat basil?,normal,done
-can-cats-eat-beans,cats,Can cats eat beans?,normal,todo
+can-cats-eat-beans,cats,Can cats eat beans?,normal,skipped-no-sources
 can-cats-eat-beets,cats,Can cats eat beets?,normal,todo
 can-cats-eat-bell-peppers,cats,Can cats eat bell peppers?,normal,todo
 can-cats-eat-berries,cats,Can cats eat berries?,normal,todo
@@ -463,7 +463,7 @@ can-cats-eat-clams,cats,Can cats eat clams?,normal,todo
 can-cats-eat-cockroaches,cats,Can cats eat cockroaches?,normal,todo
 can-cats-eat-coconut,cats,Can cats eat coconut?,normal,todo
 can-cats-eat-coconut-oil,cats,Can cats eat coconut oil?,normal,todo
-can-cats-eat-cooked-fish,cats,Can cats eat cooked fish?,normal,todo
+can-cats-eat-cooked-fish,cats,Can cats eat cooked fish?,normal,merged:can-cats-eat-fish
 can-cats-eat-cookies,cats,Can cats eat cookies?,normal,todo
 can-cats-eat-cotton-candy,cats,Can cats eat cotton candy?,normal,todo
 can-cats-eat-crab,cats,Can cats eat crab?,normal,todo
@@ -481,7 +481,7 @@ can-cats-eat-doritos,cats,Can cats eat doritos?,normal,todo
 can-cats-eat-dragon-fruit,cats,Can cats eat dragon fruit?,normal,todo
 can-cats-eat-edamame,cats,Can cats eat edamame?,normal,todo
 can-cats-eat-figs,cats,Can cats eat figs?,normal,todo
-can-cats-eat-fish,cats,Can cats eat fish?,normal,todo
+can-cats-eat-fish,cats,Can cats eat fish?,normal,done
 can-cats-eat-flies,cats,Can cats eat flies?,normal,todo
 can-cats-eat-flowers,cats,Can cats eat flowers?,normal,todo
 can-cats-eat-french-fries,cats,Can cats eat french fries?,normal,todo
