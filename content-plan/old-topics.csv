@@ -234,7 +234,7 @@ can-dogs-eat-chicken-salad,dogs,Can dogs eat chicken salad?,high,done
 can-dogs-eat-chicken-stock,dogs,Can dogs eat chicken stock?,high,todo
 can-dogs-eat-chickpeas,dogs,Can dogs eat chickpeas?,high,todo
 can-dogs-eat-chickpeas-from-a-can,dogs,Can dogs eat chickpeas from a can?,high,todo
-can-dogs-eat-chorizo-and-eggs,dogs,Can dogs eat chorizo and eggs?,high,todo
+can-dogs-eat-chorizo-and-eggs,dogs,Can dogs eat chorizo and eggs?,high,merged:can-dogs-eat-chorizo
 can-dogs-eat-cold-cooked-rice,dogs,Can dogs eat cold cooked rice?,high,todo
 can-dogs-eat-cold-rice-from-the-fridge,dogs,Can dogs eat cold rice from the fridge?,high,todo
 can-dogs-eat-cones-without-ice-cream,dogs,Can dogs eat cones without ice cream?,high,todo
@@ -714,7 +714,7 @@ can-dogs-eat-chilli-beans,dogs,Can dogs eat chilli beans?,normal,todo
 can-dogs-eat-chinese-fortune-cookies,dogs,Can dogs eat chinese fortune cookies?,normal,todo
 can-dogs-eat-chips,dogs,Can dogs eat chips?,normal,todo
 can-dogs-eat-chips-ahoy,dogs,Can dogs eat chips ahoy?,normal,todo
-can-dogs-eat-chorizo,dogs,Can dogs eat chorizo?,normal,todo
+can-dogs-eat-chorizo,dogs,Can dogs eat chorizo?,normal,done
 can-dogs-eat-clementine,dogs,Can dogs eat clementine?,normal,todo
 can-dogs-eat-clover-sprouts,dogs,Can dogs eat clover sprouts?,normal,todo
 can-dogs-eat-cocktail-sausages,dogs,Can dogs eat cocktail sausages?,normal,todo
