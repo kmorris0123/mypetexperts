@@ -512,9 +512,9 @@ can-cats-eat-lamb,cats,Can cats eat lamb?,normal,todo
 can-cats-eat-lasagna,cats,Can cats eat lasagna?,normal,todo
 can-cats-eat-lavender,cats,Can cats eat lavender?,normal,todo
 can-cats-eat-leeks,cats,Can cats eat leeks?,normal,todo
-can-cats-eat-lemon,cats,Can cats eat lemon?,normal,todo
+can-cats-eat-lemon,cats,Can cats eat lemon?,normal,done
 can-cats-eat-lentils,cats,Can cats eat lentils?,normal,todo
-can-cats-eat-lime,cats,Can cats eat lime?,normal,todo
+can-cats-eat-lime,cats,Can cats eat lime?,normal,merged:can-cats-eat-lemon
 can-cats-eat-liver,cats,Can cats eat liver?,normal,todo
 can-cats-eat-lizards,cats,Can cats eat lizards?,normal,todo
 can-cats-eat-lobster,cats,Can cats eat lobster?,normal,todo
