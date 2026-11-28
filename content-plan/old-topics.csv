@@ -466,7 +466,7 @@ can-cats-eat-coconut-oil,cats,Can cats eat coconut oil?,normal,todo
 can-cats-eat-cooked-fish,cats,Can cats eat cooked fish?,normal,merged:can-cats-eat-fish
 can-cats-eat-cookies,cats,Can cats eat cookies?,normal,todo
 can-cats-eat-cotton-candy,cats,Can cats eat cotton candy?,normal,todo
-can-cats-eat-crab,cats,Can cats eat crab?,normal,todo
+can-cats-eat-crab,cats,Can cats eat crab?,normal,done
 can-cats-eat-crackers,cats,Can cats eat crackers?,normal,todo
 can-cats-eat-cranberries,cats,Can cats eat cranberries?,normal,todo
 can-cats-eat-crickets,cats,Can cats eat crickets?,normal,todo
@@ -499,7 +499,7 @@ can-cats-eat-hot-cheetos,cats,Can cats eat hot cheetos?,normal,todo
 can-cats-eat-hot-dogs,cats,Can cats eat hot dogs?,normal,todo
 can-cats-eat-human-food,cats,Can cats eat human food?,normal,todo
 can-cats-eat-hummus,cats,Can cats eat hummus?,normal,merged:can-cats-eat-chickpeas
-can-cats-eat-imitation-crab,cats,Can cats eat imitation crab?,normal,todo
+can-cats-eat-imitation-crab,cats,Can cats eat imitation crab?,normal,merged:can-cats-eat-crab
 can-cats-eat-jalapenos,cats,Can cats eat jalapenos?,normal,todo
 can-cats-eat-jello,cats,Can cats eat jello?,normal,todo
 can-cats-eat-kale,cats,Can cats eat kale?,normal,todo
